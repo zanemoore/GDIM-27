@@ -7,6 +7,7 @@ public class ObjectPickUp : MonoBehaviour
     [SerializeField] private GameObject item;
     [SerializeField] private GameObject tempHold;
     [SerializeField] private bool isHolding = false;
+    [SerializeField] private bool isStandingOn = false;
     [SerializeField] private float throwForce;
 
     private float distance;
@@ -49,17 +50,36 @@ public class ObjectPickUp : MonoBehaviour
 
     void OnMouseDown()
     {
-        Rigidbody body = item.GetComponent<Rigidbody>();
-
-        if (distance <= 3.5)
+        if(isStandingOn == false)
         {
-            isHolding = true;
-            body.useGravity = false;
-            body.detectCollisions = true;
+            Rigidbody body = item.GetComponent<Rigidbody>();
+
+            if (distance <= 3.5)
+            {
+                isHolding = true;
+                body.useGravity = false;
+                body.detectCollisions = true;
+            }
         }
     }
     void OnMouseUp()
     {
         isHolding = false;
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            isStandingOn = true;
+        }
+    }
+
+    void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            isStandingOn = false;
+        }
     }
 }

@@ -14,11 +14,11 @@ TagManager:
   - UI
   - 
   - 
-  - Character
+  - Player
+  - Wall
   - Ground
-  - 
-  - 
-  - 
+  - Stairs
+  - Object
   - 
   - 
   - 
