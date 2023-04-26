@@ -229,7 +229,7 @@ public class MascotAI : MonoBehaviour, MascotHearing
         caughtPlayer = true;
 
         //activate jump scare kill animation
-        Time.timeScale = 0;
+        //Time.timeScale = 0;
     }
 
     private void KillPlayer()
