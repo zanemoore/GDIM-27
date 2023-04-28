@@ -8,6 +8,7 @@ public class MainMenuNavigator_TEMP : MonoBehaviour
 {
     [SerializeField] GameObject mainMenu;//A game object representing base menu
     [SerializeField] GameObject settingsMenu;//A game object representing settings menu
+    [SerializeField] GameObject levelSelectMenu; //A game object representing level select menu
     [SerializeField] string mainScene; //Main scene
     [SerializeField] string loadScene; //Scene loaded next
 
@@ -21,6 +22,15 @@ public class MainMenuNavigator_TEMP : MonoBehaviour
     {
         mainMenu.SetActive(true);
         settingsMenu.SetActive(false);
+        levelSelectMenu.SetActive(false);
+    }
+
+    //Opens Level Select Menu
+    public void GoToLevelSelect()
+    {
+        mainMenu.SetActive(false);
+        settingsMenu.SetActive(false);
+        levelSelectMenu.SetActive(true);
     }
 
     //Opens setting menu
@@ -28,6 +38,7 @@ public class MainMenuNavigator_TEMP : MonoBehaviour
     {
         mainMenu.SetActive(false);
         settingsMenu.SetActive(true);
+        levelSelectMenu.SetActive(false);
     }
 
     //Starts game
