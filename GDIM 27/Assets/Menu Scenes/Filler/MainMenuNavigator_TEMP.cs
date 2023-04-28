@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 //ALL THIS IS TEMP CODE MEANT TO TEST MENU SWITCHING
 public class MainMenuNavigator_TEMP : MonoBehaviour
@@ -11,6 +13,9 @@ public class MainMenuNavigator_TEMP : MonoBehaviour
     [SerializeField] GameObject levelSelectMenu; //A game object representing level select menu
     [SerializeField] string mainScene; //Main scene
     [SerializeField] string loadScene; //Scene loaded next
+
+    [SerializeField]
+    List<string> sceneMgmtList;
 
     [SerializeField]
     List<int> resWidths;//A list of screen size widths
@@ -41,11 +46,22 @@ public class MainMenuNavigator_TEMP : MonoBehaviour
         levelSelectMenu.SetActive(false);
     }
 
-    //Starts game
-    public void OnStartGame()
+    //TEMP CODE BELOW, NEEDS REFACTORING
+    public void ToUCI()
     {
-        SceneManager.LoadScene(loadScene);
+        SceneManager.LoadScene(sceneMgmtList[0]);
     }
+
+    public void ToUCR()
+    {
+        SceneManager.LoadScene(sceneMgmtList[1]);
+    }
+
+    public void ToUCSD()
+    {
+        SceneManager.LoadScene(sceneMgmtList[2]);
+    }
+
 
     //Quits game
     public void OnQuitGame()
