@@ -1,85 +1,123 @@
-using System.Collections;
-using System.Collections.Generic;
+using Sounds;
+using StarterAssets;
 using UnityEngine;
+using UnityEngine.Events;
 
-public class ObjectPickUp : MonoBehaviour
+namespace Sounds
 {
-    [SerializeField] private GameObject item;
-    [SerializeField] private GameObject tempHold;
-    [SerializeField] private bool isHolding = false;
-    [SerializeField] private bool isStandingOn = false;
-    [SerializeField] private float throwForce;
-
-    private float distance;
-    private Vector3 objectPos;
-
-    void Update()
+    public class ObjectPickUp : MonoBehaviour
     {
-        Rigidbody body = item.GetComponent<Rigidbody>();
+        FirstPersonController firstPersonController;
 
-        distance = Vector3.Distance(item.transform.position, tempHold.transform.position);
+        [SerializeField] private GameObject item;
+        [SerializeField] private GameObject tempHold;
+        [SerializeField] private AudioSource source = null;
+        [SerializeField] private bool isHolding = false;
+        [SerializeField] private bool isThrown = false;
+        [SerializeField] private bool isStandingOn = false;
+        [SerializeField] private float throwForce;
+        [SerializeField] private float soundRange;
 
-        //checks distance of player from object
-        if (distance >= 3.5)
+        private float distance;
+        private Vector3 objectPos;
+
+        void Update()
+        {
+            Rigidbody body = item.GetComponent<Rigidbody>();
+
+            distance = Vector3.Distance(item.transform.position, tempHold.transform.position);
+
+            //checks distance of player from object
+            if (distance >= 3.5)
+            {
+                isHolding = false;
+            }
+
+            //check if player is holding object
+            if (isHolding == true)
+            {
+                isThrown = false;
+                body.velocity = Vector3.zero;
+                body.angularVelocity = Vector3.zero;
+                item.transform.SetParent(tempHold.transform);
+
+                //throws object
+                if (Input.GetMouseButtonDown(1))
+                {
+                    body.AddForce(tempHold.transform.forward * throwForce);
+                    isHolding = false;
+                    isThrown = true;
+                }
+            }
+            else
+            {
+                objectPos = item.transform.position;
+                item.transform.SetParent(null);
+                item.transform.position = objectPos;
+                body.useGravity = true;
+            }
+        }
+
+        public void MakeASound()
+        {
+            // doesn't allow for sounds to overlap
+            if (source.isPlaying)
+            {
+                return;
+            }
+
+            source.Play();
+
+            var sound = new ObjectSound(transform.position, soundRange);
+
+            ObjectSoundManager.MakeSound(sound);
+        }
+
+        void OnMouseDown()
+        {
+            if (isStandingOn == false)
+            {
+                Rigidbody body = item.GetComponent<Rigidbody>();
+
+                if (distance <= 3.5)
+                {
+                    isHolding = true;
+                    body.useGravity = false;
+                    body.detectCollisions = true;
+                }
+            }
+        }
+        void OnMouseUp()
         {
             isHolding = false;
         }
 
-        //check if player is holding object
-        if (isHolding == true)
+        void OnCollisionEnter(Collision collision)
         {
-            body.velocity = Vector3.zero;
-            body.angularVelocity = Vector3.zero;
-            item.transform.SetParent(tempHold.transform);
-
-            //throws object
-            if (Input.GetMouseButtonDown(1))
+            if (collision.gameObject.tag == "Player")
             {
-                body.AddForce(tempHold.transform.forward * throwForce);
-                isHolding = false;
+                isStandingOn = true;
+            }
+            else if (collision.gameObject.tag == "Mascot")
+            {
+                return;
+            }
+            else
+            {
+                if (isThrown == true)
+                {
+                    MakeASound();
+                    isThrown = false;
+                }
             }
         }
-        else
-        {
-            objectPos = item.transform.position;
-            item.transform.SetParent(null);
-            item.transform.position = objectPos;
-            body.useGravity = true;
-        }
-    }
 
-    void OnMouseDown()
-    {
-        if(isStandingOn == false)
+        void OnCollisionExit(Collision collision)
         {
-            Rigidbody body = item.GetComponent<Rigidbody>();
-
-            if (distance <= 3.5)
+            if (collision.gameObject.tag == "Player")
             {
-                isHolding = true;
-                body.useGravity = false;
-                body.detectCollisions = true;
+                isStandingOn = false;
             }
-        }
-    }
-    void OnMouseUp()
-    {
-        isHolding = false;
-    }
-
-    void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag == "Player")
-        {
-            isStandingOn = true;
-        }
-    }
-
-    void OnCollisionExit(Collision collision)
-    {
-        if (collision.gameObject.tag == "Player")
-        {
-            isStandingOn = false;
         }
     }
 }

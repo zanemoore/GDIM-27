@@ -1,10 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Sounds
 {
-    public class ObjectSound : MonoBehaviour
+    public class ObjectSound
     {
         public ObjectSound(Vector3 objectPosition, float objectRange)
         {

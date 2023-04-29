@@ -1,36 +1,50 @@
 using Sounds;
 using System.Collections;
-using System.Collections.Generic;
+using TMPro;
+using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class MascotAI : MonoBehaviour, MascotHearing
 {
-    //Navmesh
-    [SerializeField] private NavMeshAgent agent;
-    [SerializeField] private LayerMask playerLayer;
-    [SerializeField] private LayerMask wallLayer;
+    [SerializeField] private Slider awarenessMeter;
+    [SerializeField] private TextMeshProUGUI awarenessValueText;
+    [SerializeField] private int awarenessMaxValue;
+    [SerializeField] private int value;
 
     //Player
+    [Space(10)]
     [SerializeField] private Transform playerModel;
     private Vector3 playerLastPosition = Vector3.zero;
     private Vector3 playerPosition;
 
-    //Waypoints
-    [SerializeField] private Transform[] waypoints;
-    private int currentWaypointIndex;
+    [Header("Nav Mesh")]
+    [SerializeField] private NavMeshAgent agent;
+    [SerializeField] private LayerMask playerLayer;
+    [SerializeField] private LayerMask wallLayer;
 
-    //Editable Variables
-    [SerializeField] private float startWaitTime = 2;
+    [Header("Mascot Movement")]
+    [SerializeField] private float startWaitTime = 1;
     [SerializeField] private float timeToRotate = 2;
     [SerializeField] private float walkSpeed = 2;
     [SerializeField] private float runSpeed = 4;
-    [SerializeField] private float viewAngle = 90;
-    [SerializeField] private float viewRadius = 15;
-    [SerializeField] private float killRadius = 2;
-    ///[SerializeField] float meshResolution = 1f;
-    ///[SerializeField] float edgeDistance = 0.5f;
-    ///[SerializeField] int edgeIterations = 4;
+    [SerializeField] private float killSpeed = 16;
+    [SerializeField] private float slowdownDuration = 2;
+    [SerializeField] private float slowdownMultiplier = 0.5f;
+
+    [Header("Mascot Vision")]
+    [Range(0, 360)]
+    [SerializeField] public float viewAngle = 90;
+    [SerializeField] public float viewRadius = 15;
+    [SerializeField] public float killRadius = 2;
+    [SerializeField] public float awarenessRadius = 5;
+
+    //Waypoints
+    [Space(10)]
+    [SerializeField] private Transform[] waypoints;
+    private int currentWaypointIndex;
 
     //Uneditable Variables
     private float waitTime;
@@ -38,13 +52,30 @@ public class MascotAI : MonoBehaviour, MascotHearing
     private bool playerInRange;
     private bool playerNear;
     private bool isPatrol;
-    private bool caughtPlayer;
+    private bool isChasing;
+    private bool isDistracted;
+    private bool killPlayer;
+    private bool reachedObject;
+    private bool stopTimer = false;
+    private int tickUp = 1;
+    private int tickDown = 2;
+    protected float timerUp;
+    protected float timerDown;
+
+    [HideInInspector]
+    public AwarenessMeter meter;
 
     void Start()
     {
+        awarenessMeter.maxValue = awarenessMaxValue;
+        awarenessValueText.text = value.ToString();
+
         playerPosition = Vector3.zero;
         isPatrol = true;
-        caughtPlayer = false;
+        isDistracted = false;
+        isChasing = false;
+        killPlayer = false;
+        reachedObject = false;
         playerInRange = false;
         waitTime = startWaitTime;
         rotateTime = timeToRotate;
@@ -60,14 +91,25 @@ public class MascotAI : MonoBehaviour, MascotHearing
     private void Update()
     {
         MascotView();
+        AwarenessMeter();
 
-        if (!isPatrol)
+        if (!isPatrol && (isDistracted == false))
         {
             Chasing();
         }
-        else
+        else if (isDistracted == false)
         {
             Patrolling();
+
+            if (Vector3.Distance(transform.position, playerModel.position) <= awarenessRadius)
+            {
+                float mascotRotation = transform.localRotation.eulerAngles.y;
+                transform.Rotate(0f, 180f, 0f);
+            }
+        }
+        else if (isDistracted == true)
+        {
+            Distracted();
         }
     }
 
@@ -124,7 +166,9 @@ public class MascotAI : MonoBehaviour, MascotHearing
 
                 if (Vector3.Distance(transform.position, player.position) <= killRadius)
                 {
-                    CaughtPlayer();
+                    killPlayer = true;
+                    transform.LookAt(playerModel);
+                    //activate jump scare kill animation
                 }
             }
         }
@@ -134,7 +178,7 @@ public class MascotAI : MonoBehaviour, MascotHearing
     {
         agent.SetDestination(player);
 
-        if (Vector3.Distance(transform.position, player) <= 0.3)
+        if (Vector3.Distance(transform.position, player) <= 0)
         {
             if (waitTime <= 0)
             {
@@ -192,11 +236,12 @@ public class MascotAI : MonoBehaviour, MascotHearing
 
     private void Chasing()
     {
+        isChasing = true;
         transform.LookAt(playerModel);
         playerNear = false;
         playerLastPosition = Vector3.zero;
 
-        if (!caughtPlayer)
+        if (!killPlayer)
         {
             Move(runSpeed);
             agent.SetDestination(playerPosition);
@@ -204,9 +249,10 @@ public class MascotAI : MonoBehaviour, MascotHearing
 
         if (agent.remainingDistance <= agent.stoppingDistance)
         {
-            if (waitTime <= 0 && !caughtPlayer && Vector3.Distance(transform.position, GameObject.FindGameObjectWithTag("Player").transform.position) >= 6f)
+            if (waitTime <= 0 && !killPlayer && Vector3.Distance(transform.position, GameObject.FindGameObjectWithTag("Player").transform.position) >= 6f)
             {
                 isPatrol = true;
+                isChasing = false;
                 playerNear = false;
                 Move(walkSpeed);
                 rotateTime = timeToRotate;
@@ -224,35 +270,175 @@ public class MascotAI : MonoBehaviour, MascotHearing
         }
     }
 
-    void CaughtPlayer()
+    void AwarenessMeter()
     {
-        caughtPlayer = true;
+        if (stopTimer == false)
+        {
+            timerUp += Time.deltaTime;
+        }
+        
 
-        //activate jump scare kill animation
-        //Time.timeScale = 0;
+        if ((timerUp >= tickUp) && (playerInRange == true))
+        {
+            timerUp = 0f;
+            value++;
+            awarenessMeter.value = value;
+            awarenessValueText.text = value.ToString();
+        }
+
+        if (stopTimer == false)
+        {
+            timerDown += Time.deltaTime;
+        }
+
+        if ((timerDown >= tickDown) && (playerInRange == false))
+        {
+            if (stopTimer == true)
+            {
+                return;
+            }
+            else
+            {
+                timerDown = 0f;
+                value--;
+                awarenessMeter.value = value;
+                awarenessValueText.text = value.ToString();
+            }
+        }
+
+        if (value <= 0)
+        {
+            stopTimer = true;
+        }
+
+        if ((value >= awarenessMaxValue / 2) && (value < awarenessMaxValue))
+        {
+            //Move(walkSpeed);
+            //agent.isStopped = false;
+            //agent.SetDestination(playerLastPosition);
+        }
+
+        if (value >= awarenessMaxValue)
+        {
+            //killPlayer = true;
+            //KillPlayer();
+        }
     }
 
     private void KillPlayer()
     {
-        transform.LookAt(playerModel);
-        agent.speed = 100f;
-        agent.SetDestination(playerModel.position);
+        if (killPlayer == true)
+        {
+            stopTimer = true;
+            isPatrol = false;
+            transform.LookAt(playerModel);
+            runSpeed = killSpeed;
+            Move(runSpeed);
+            agent.isStopped = false;
+            agent.SetDestination(playerModel.position);
 
-        //activate jump scare kill animation
-        Time.timeScale = 0;
-
+            if (agent.remainingDistance <= agent.stoppingDistance)
+            {
+                if (waitTime <= 0)
+                {
+                    //activate jump scare kill animation
+                    killPlayer = false;
+                }
+                else
+                {
+                    
+                }
+            }
+        }
     }
 
     public void RespondToSound(ObjectSound sound)
     {
+        if (isChasing == false)
+        {
+            isDistracted = true;
+            isPatrol = false;
+            playerNear = false;
+            Debug.Log(name + " responding to sound at " + sound.position);
 
+            if (reachedObject == false)
+            {
+                Move(walkSpeed);
+                agent.SetDestination(sound.position);
+                agent.isStopped = false;
+            }
+        }
     }
 
+    private void Distracted()
+    {
+        if (agent.remainingDistance <= agent.stoppingDistance)
+        {
+            if (waitTime <= 0)
+            {
+                Debug.Log(name + " reached sound");
+
+                isPatrol = true;
+                isDistracted = false;
+                playerNear = false;
+                reachedObject = true;
+                Move(walkSpeed);
+                rotateTime = timeToRotate;
+                waitTime = startWaitTime;
+                agent.SetDestination(waypoints[currentWaypointIndex].position);
+            }
+            else
+            {
+                Stop();
+                waitTime -= Time.deltaTime;
+            }
+        }
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Throwable")
+        {
+            StartCoroutine(Slowdown());
+        }
+    }
+
+    IEnumerator Slowdown()
+    {
+        float walk = walkSpeed;
+        float run = runSpeed;
+        walkSpeed *= slowdownMultiplier;
+        runSpeed *= slowdownMultiplier;
+        yield return new WaitForSeconds(slowdownDuration);
+        walkSpeed = walk;
+        runSpeed = run;
+    }
+
+    //COMMENT OUT WHEN BULDING GAME//
     private void OnDrawGizmos()
     {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, killRadius);
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, viewRadius);
+        Handles.color = Color.white;
+        Handles.DrawWireArc(transform.position, Vector3.up, Vector3.forward, 360, viewRadius);
+
+        Vector3 viewAngle1 = DirectionFromAngle(transform.eulerAngles.y, -viewAngle / 2);
+        Vector3 viewAngle2 = DirectionFromAngle(transform.eulerAngles.y, viewAngle / 2);
+
+        Handles.color = Color.yellow;
+        Handles.DrawLine(transform.position, transform.position + viewAngle1 * viewRadius);
+        Handles.DrawLine(transform.position, transform.position + viewAngle2 * viewRadius);
+
+        Handles.color = Color.red;
+        Handles.DrawWireArc(transform.position, Vector3.up, Vector3.forward, 360, killRadius);
+
+        Handles.color = Color.blue;
+        Handles.DrawWireArc(transform.position, Vector3.up, Vector3.forward, 360, awarenessRadius);
+    }
+
+    //COMMENT OUT WHEN BULDING GAME//
+    private Vector3 DirectionFromAngle(float eulerY, float angleInDegrees)
+    {
+        angleInDegrees += eulerY;
+
+        return new Vector3(Mathf.Sin(angleInDegrees * Mathf.Deg2Rad), 0, Mathf.Cos(angleInDegrees * Mathf.Deg2Rad));
     }
 }
