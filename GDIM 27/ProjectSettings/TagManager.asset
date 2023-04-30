@@ -6,6 +6,7 @@ TagManager:
   tags:
   - CinemachineTarget
   - Throwable
+  - Mascot
   layers:
   - Default
   - TransparentFX

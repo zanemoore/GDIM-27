@@ -480,7 +480,7 @@ MonoBehaviour:
   isThrown: 0
   isStandingOn: 0
   throwForce: 1000
-  soundRange: 100
+  soundRange: 1000
 --- !u!54 &151695762
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1041,7 +1041,7 @@ MonoBehaviour:
   isThrown: 0
   isStandingOn: 0
   throwForce: 1000
-  soundRange: 100
+  soundRange: 1000
 --- !u!54 &262494107
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1649,7 +1649,7 @@ MonoBehaviour:
   isThrown: 0
   isStandingOn: 0
   throwForce: 1000
-  soundRange: 100
+  soundRange: 1000
 --- !u!82 &441283939
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1781,7 +1781,7 @@ PrefabInstance:
     - target: {fileID: 8718778828885884488, guid: e5f4daf24146ee040b5a2d7a73b30aa0,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 3.3
+      value: 4.95
       objectReference: {fileID: 0}
     - target: {fileID: 8718778828885884488, guid: e5f4daf24146ee040b5a2d7a73b30aa0,
         type: 3}
@@ -2225,7 +2225,7 @@ MonoBehaviour:
   isThrown: 0
   isStandingOn: 0
   throwForce: 1000
-  soundRange: 100
+  soundRange: 1000
 --- !u!54 &695925838
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3175,7 +3175,7 @@ PrefabInstance:
     - target: {fileID: 8718778828885884488, guid: e5f4daf24146ee040b5a2d7a73b30aa0,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 3.3
+      value: 6.86
       objectReference: {fileID: 0}
     - target: {fileID: 8718778828885884488, guid: e5f4daf24146ee040b5a2d7a73b30aa0,
         type: 3}
@@ -3627,7 +3627,7 @@ PrefabInstance:
     - target: {fileID: 8718778828885884488, guid: e5f4daf24146ee040b5a2d7a73b30aa0,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 3.3
+      value: 5.4
       objectReference: {fileID: 0}
     - target: {fileID: 8718778828885884488, guid: e5f4daf24146ee040b5a2d7a73b30aa0,
         type: 3}
@@ -3702,7 +3702,7 @@ GameObject:
   - component: {fileID: 1501989964}
   m_Layer: 0
   m_Name: Mascot
-  m_TagString: Untagged
+  m_TagString: Mascot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3794,7 +3794,7 @@ MonoBehaviour:
   awarenessMeter: {fileID: 1401051991}
   awarenessValueText: {fileID: 1883678909}
   awarenessMaxValue: 100
-  value: 0
+  value: 50
   playerModel: {fileID: 5393215579111688472}
   agent: {fileID: 1501989966}
   playerLayer:
@@ -3807,11 +3807,12 @@ MonoBehaviour:
   timeToRotate: 2
   walkSpeed: 2
   runSpeed: 4
-  killSpeed: 16
+  huntSpeed: 5
+  killSpeed: 8
   slowdownDuration: 5
   slowdownMultiplier: 0.5
   viewAngle: 90
-  viewRadius: 15
+  viewRadius: 20
   killRadius: 3
   awarenessRadius: 5
   waypoints:
@@ -3894,7 +3895,7 @@ PrefabInstance:
     - target: {fileID: 8718778828885884488, guid: e5f4daf24146ee040b5a2d7a73b30aa0,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 3.3
+      value: 6.88
       objectReference: {fileID: 0}
     - target: {fileID: 8718778828885884488, guid: e5f4daf24146ee040b5a2d7a73b30aa0,
         type: 3}
@@ -5074,7 +5075,7 @@ PrefabInstance:
     - target: {fileID: 8718778828885884488, guid: e5f4daf24146ee040b5a2d7a73b30aa0,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 3.3
+      value: 6.88
       objectReference: {fileID: 0}
     - target: {fileID: 8718778828885884488, guid: e5f4daf24146ee040b5a2d7a73b30aa0,
         type: 3}
@@ -5589,7 +5590,7 @@ PrefabInstance:
     - target: {fileID: 8718778828885884488, guid: e5f4daf24146ee040b5a2d7a73b30aa0,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 3.3
+      value: 6.85
       objectReference: {fileID: 0}
     - target: {fileID: 8718778828885884488, guid: e5f4daf24146ee040b5a2d7a73b30aa0,
         type: 3}

@@ -100,7 +100,7 @@ namespace Sounds
             }
             else if (collision.gameObject.tag == "Mascot")
             {
-                return;
+                /// make no sound
             }
             else
             {

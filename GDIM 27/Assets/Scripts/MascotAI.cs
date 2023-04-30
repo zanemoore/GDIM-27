@@ -26,20 +26,21 @@ public class MascotAI : MonoBehaviour, MascotHearing
     [SerializeField] private LayerMask wallLayer;
 
     [Header("Mascot Movement")]
-    [SerializeField] private float startWaitTime = 1;
-    [SerializeField] private float timeToRotate = 2;
-    [SerializeField] private float walkSpeed = 2;
-    [SerializeField] private float runSpeed = 4;
-    [SerializeField] private float killSpeed = 16;
-    [SerializeField] private float slowdownDuration = 2;
-    [SerializeField] private float slowdownMultiplier = 0.5f;
+    [SerializeField] private float startWaitTime;
+    [SerializeField] private float timeToRotate;
+    [SerializeField] private float walkSpeed;
+    [SerializeField] private float runSpeed;
+    [SerializeField] private float huntSpeed;
+    [SerializeField] private float killSpeed;
+    [SerializeField] private float slowdownDuration;
+    [SerializeField] private float slowdownMultiplier;
 
     [Header("Mascot Vision")]
     [Range(0, 360)]
-    [SerializeField] public float viewAngle = 90;
-    [SerializeField] public float viewRadius = 15;
-    [SerializeField] public float killRadius = 2;
-    [SerializeField] public float awarenessRadius = 5;
+    [SerializeField] public float viewAngle;
+    [SerializeField] public float viewRadius;
+    [SerializeField] public float killRadius;
+    [SerializeField] public float awarenessRadius;
 
     //Waypoints
     [Space(10)]
@@ -54,9 +55,12 @@ public class MascotAI : MonoBehaviour, MascotHearing
     private bool isPatrol;
     private bool isChasing;
     private bool isDistracted;
+    private bool isHunting;
     private bool killPlayer;
+    private bool caughtPlayer;
     private bool reachedObject;
-    private bool stopTimer = false;
+    private bool reachedPosition;
+    private bool stopTimer;
     private int tickUp = 1;
     private int tickDown = 2;
     protected float timerUp;
@@ -74,9 +78,13 @@ public class MascotAI : MonoBehaviour, MascotHearing
         isPatrol = true;
         isDistracted = false;
         isChasing = false;
+        isHunting = false;
         killPlayer = false;
+        caughtPlayer = false;
         reachedObject = false;
+        reachedPosition = false;
         playerInRange = false;
+        stopTimer = false;
         waitTime = startWaitTime;
         rotateTime = timeToRotate;
 
@@ -93,11 +101,11 @@ public class MascotAI : MonoBehaviour, MascotHearing
         MascotView();
         AwarenessMeter();
 
-        if (!isPatrol && (isDistracted == false))
+        if (!isPatrol && (isDistracted == false) && (isHunting == false))
         {
             Chasing();
         }
-        else if (isDistracted == false)
+        else if (isDistracted == false && (isHunting == false))
         {
             Patrolling();
 
@@ -110,6 +118,10 @@ public class MascotAI : MonoBehaviour, MascotHearing
         else if (isDistracted == true)
         {
             Distracted();
+        }
+        else if (isHunting == true)
+        {
+            Hunting();
         }
     }
 
@@ -148,10 +160,45 @@ public class MascotAI : MonoBehaviour, MascotHearing
                 {
                     playerInRange = true;
                     isPatrol = false;
+
+                    if (Vector3.Distance(transform.position, player.position) <= killRadius)
+                    {
+                        isChasing = false;
+                        isPatrol = false;
+                        isHunting = false;
+                        isDistracted = false;
+                        value = awarenessMaxValue;
+                        awarenessMeter.value = value;
+                        awarenessValueText.text = value.ToString();
+                        transform.LookAt(playerModel);
+                        caughtPlayer = true;
+                        killPlayer = true;
+                        stopTimer = true;
+                        Stop();
+                        //activate jump scare kill animation
+                    }
                 }
                 else
                 {
                     playerInRange = false;
+
+                    if (isPatrol == true)
+                    {
+                        Move(walkSpeed);
+                    }
+
+                    if (isChasing == true)
+                    {
+                        Move(runSpeed);
+                    }
+
+                    if (isHunting == true)
+                    {
+                        Move(huntSpeed);
+                    }
+
+                    agent.SetDestination(playerLastPosition);
+                    //Debug.Log("BEHIND A WALL");
                 }
             }
 
@@ -160,16 +207,9 @@ public class MascotAI : MonoBehaviour, MascotHearing
                 playerInRange = false;
             }
 
-            if (playerInRange)
+            if (playerInRange == true)
             {
                 playerPosition = player.transform.position;
-
-                if (Vector3.Distance(transform.position, player.position) <= killRadius)
-                {
-                    killPlayer = true;
-                    transform.LookAt(playerModel);
-                    //activate jump scare kill animation
-                }
             }
         }
     }
@@ -249,7 +289,7 @@ public class MascotAI : MonoBehaviour, MascotHearing
 
         if (agent.remainingDistance <= agent.stoppingDistance)
         {
-            if (waitTime <= 0 && !killPlayer && Vector3.Distance(transform.position, GameObject.FindGameObjectWithTag("Player").transform.position) >= 6f)
+            if (waitTime <= 0 && !killPlayer && Vector3.Distance(transform.position, GameObject.FindGameObjectWithTag("Player").transform.position) >= 4f)
             {
                 isPatrol = true;
                 isChasing = false;
@@ -261,7 +301,7 @@ public class MascotAI : MonoBehaviour, MascotHearing
             }
             else
             {
-                if (Vector3.Distance(transform.position, GameObject.FindGameObjectWithTag("Player").transform.position) >= 2.5f)
+                if (Vector3.Distance(transform.position, GameObject.FindGameObjectWithTag("Player").transform.position) >= 2f)
                 {
                     Stop();
                     waitTime -= Time.deltaTime;
@@ -280,10 +320,13 @@ public class MascotAI : MonoBehaviour, MascotHearing
 
         if ((timerUp >= tickUp) && (playerInRange == true))
         {
-            timerUp = 0f;
-            value++;
-            awarenessMeter.value = value;
-            awarenessValueText.text = value.ToString();
+            if (value < awarenessMaxValue)
+            {
+                timerUp = 0f;
+                value++;
+                awarenessMeter.value = value;
+                awarenessValueText.text = value.ToString();
+            }
         }
 
         if (stopTimer == false)
@@ -293,11 +336,7 @@ public class MascotAI : MonoBehaviour, MascotHearing
 
         if ((timerDown >= tickDown) && (playerInRange == false))
         {
-            if (stopTimer == true)
-            {
-                return;
-            }
-            else
+            if (value > 0)
             {
                 timerDown = 0f;
                 value--;
@@ -306,22 +345,47 @@ public class MascotAI : MonoBehaviour, MascotHearing
             }
         }
 
-        if (value <= 0)
+        if ((value == awarenessMaxValue / 2) && (value < awarenessMaxValue))
         {
-            stopTimer = true;
+            isPatrol = false;
+            playerNear = false;
+
+            if (reachedPosition == false)
+            {
+                isHunting = true;
+                Move(huntSpeed);
+                agent.SetDestination(playerLastPosition);
+                agent.isStopped = false;
+            }
         }
 
-        if ((value >= awarenessMaxValue / 2) && (value < awarenessMaxValue))
+        if ((value >= awarenessMaxValue) && (caughtPlayer == false))
         {
-            //Move(walkSpeed);
-            //agent.isStopped = false;
-            //agent.SetDestination(playerLastPosition);
+            killPlayer = true;
+            KillPlayer();
         }
+    }
 
-        if (value >= awarenessMaxValue)
+    private void Hunting()
+    {
+        if (agent.remainingDistance <= agent.stoppingDistance)
         {
-            //killPlayer = true;
-            //KillPlayer();
+            if (waitTime <= 0)
+            {
+                isPatrol = true;
+                isHunting = false;
+                playerNear = false;
+                reachedPosition = true;
+                Move(walkSpeed);
+                rotateTime = timeToRotate;
+                waitTime = startWaitTime;
+                agent.SetDestination(waypoints[currentWaypointIndex].position);
+            }
+            else
+            {
+                Stop();
+                waitTime -= Time.deltaTime;
+            }
         }
     }
 
@@ -331,23 +395,18 @@ public class MascotAI : MonoBehaviour, MascotHearing
         {
             stopTimer = true;
             isPatrol = false;
+            isHunting = false;
+            isDistracted = false;
             transform.LookAt(playerModel);
             runSpeed = killSpeed;
             Move(runSpeed);
             agent.isStopped = false;
             agent.SetDestination(playerModel.position);
 
-            if (agent.remainingDistance <= agent.stoppingDistance)
+            if (Vector3.Distance(transform.position, playerModel.position) <= killRadius)
             {
-                if (waitTime <= 0)
-                {
-                    //activate jump scare kill animation
-                    killPlayer = false;
-                }
-                else
-                {
-                    
-                }
+                Stop();
+                //activate jump scare kill animation
             }
         }
     }
@@ -386,6 +445,7 @@ public class MascotAI : MonoBehaviour, MascotHearing
                 rotateTime = timeToRotate;
                 waitTime = startWaitTime;
                 agent.SetDestination(waypoints[currentWaypointIndex].position);
+                reachedObject = false;
             }
             else
             {
@@ -399,19 +459,33 @@ public class MascotAI : MonoBehaviour, MascotHearing
     {
         if (collision.gameObject.tag == "Throwable")
         {
-            StartCoroutine(Slowdown());
+
+            GameObject throwable = GameObject.FindWithTag("Throwable");
+            Rigidbody rigidbody = throwable.GetComponent<Rigidbody>();
+
+            Debug.Log(rigidbody.velocity.magnitude);
+
+
+            if (rigidbody.velocity.magnitude > 1)
+            {
+                Debug.Log("SLOWDOWN ACTIVATED");
+
+                walkSpeed *= slowdownMultiplier;
+                runSpeed *= slowdownMultiplier;
+                StartCoroutine(Slowdown());
+            }
+            else
+            {
+                return;
+            }
         }
     }
 
     IEnumerator Slowdown()
     {
-        float walk = walkSpeed;
-        float run = runSpeed;
-        walkSpeed *= slowdownMultiplier;
-        runSpeed *= slowdownMultiplier;
         yield return new WaitForSeconds(slowdownDuration);
-        walkSpeed = walk;
-        runSpeed = run;
+        walkSpeed /= slowdownMultiplier;
+        runSpeed /= slowdownMultiplier;
     }
 
     //COMMENT OUT WHEN BULDING GAME//
