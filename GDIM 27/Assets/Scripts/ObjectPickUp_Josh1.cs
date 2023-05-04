@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 namespace Sounds
 {
-    public class ObjectPickUp : MonoBehaviour
+    public class ObjectPickUp_Josh1 : MonoBehaviour
     {
         FirstPersonController firstPersonController;
 
@@ -22,11 +22,27 @@ namespace Sounds
         private GameObject throwReticle;
         
 
+        // public bool grabbable = false;
         private float distance;
         private Vector3 objectPos;
+        private bool afterStart = false;
 
+        private void Start()
+        {
+            normalReticle = GameObject.Find("Reticle D");
+            grabReticle = GameObject.Find("Reticle G");
+            throwReticle = GameObject.Find("Reticle T");
+            afterStart = true;
+        }
         void Update()
         {
+            if (afterStart)
+            {
+                grabReticle.SetActive(false);
+                normalReticle.SetActive(true);
+                throwReticle.SetActive(false);
+                afterStart = false;
+            }
             Rigidbody body = item.GetComponent<Rigidbody>();
 
             distance = Vector3.Distance(item.transform.position, tempHold.transform.position);
@@ -44,7 +60,9 @@ namespace Sounds
                 body.velocity = Vector3.zero;
                 body.angularVelocity = Vector3.zero;
                 item.transform.SetParent(tempHold.transform);
-
+                grabReticle.SetActive(false);
+                normalReticle.SetActive(false);
+                throwReticle.SetActive(true);
                 //throws object
                 if (Input.GetMouseButtonDown(1))
                 {
@@ -88,12 +106,43 @@ namespace Sounds
                     isHolding = true;
                     body.useGravity = false;
                     body.detectCollisions = true;
+                    grabReticle.SetActive(false);
+                    normalReticle.SetActive(false);
+                    throwReticle.SetActive(true);
                 }
             }
         }
         void OnMouseUp()
         {
             isHolding = false;
+            //grabbable = false;
+            grabReticle.SetActive(false);
+            normalReticle.SetActive(true);
+            throwReticle.SetActive(false);
+        }
+
+        void OnMouseOver()
+        {
+            if (isStandingOn == false)
+            {
+                Rigidbody body = item.GetComponent<Rigidbody>();
+
+                if (distance <= 3.5)
+                {
+                    body.useGravity = false;
+                    body.detectCollisions = true;
+                    grabReticle.SetActive(true);
+                    normalReticle.SetActive(false);
+                    throwReticle.SetActive(false);
+                }
+            }
+        }
+
+        private void OnMouseExit()
+        {
+            grabReticle.SetActive(false);
+            normalReticle.SetActive(true);
+            throwReticle.SetActive(false);
         }
 
 
