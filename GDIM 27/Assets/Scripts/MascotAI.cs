@@ -9,6 +9,7 @@ using UnityEngine.UI;
 
 public class MascotAI : MonoBehaviour, MascotHearing
 {
+    [SerializeField] private Transform mascotModel;
     [SerializeField] private Slider awarenessMeter;
     [SerializeField] private TextMeshProUGUI awarenessValueText;
     [SerializeField] private int awarenessMaxValue;
@@ -405,8 +406,9 @@ public class MascotAI : MonoBehaviour, MascotHearing
 
             if (Vector3.Distance(transform.position, playerModel.position) <= killRadius)
             {
+                playerModel.transform.LookAt(mascotModel);
                 Stop();
-                //activate jump scare kill animation
+                //activate jump scare kill animation?
             }
         }
     }
