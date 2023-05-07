@@ -282,6 +282,11 @@ public class MascotAI : MonoBehaviour, MascotHearing
         playerNear = false;
         playerLastPosition = Vector3.zero;
 
+        if (!GetComponent<FMODUnity.StudioEventEmitter>().IsPlaying())
+        {
+            GetComponent<FMODUnity.StudioEventEmitter>().Play(); // plays chase sound, can be moved to a different place if we need it somewhere else
+        }
+
         if (!killPlayer)
         {
             Move(runSpeed);
