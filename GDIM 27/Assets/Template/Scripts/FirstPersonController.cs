@@ -72,6 +72,9 @@ namespace StarterAssets
 		private StarterAssetsInputs _input;
 		private GameObject _mainCamera;
 
+
+		public GameObject currentCamera; 
+
 		private const float _threshold = 0.01f;
 
 		private bool IsCurrentDeviceMouse
@@ -93,6 +96,9 @@ namespace StarterAssets
 			{
 				_mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
 			}
+
+			currentCamera = gameObject; // This is for switching cameras when hiding;
+
 		}
 
 		private void Start()
@@ -147,7 +153,7 @@ namespace StarterAssets
 				CinemachineCameraTarget.transform.localRotation = Quaternion.Euler(_cinemachineTargetPitch, 0.0f, 0.0f);
 
 				// rotate the player left and right
-				transform.Rotate(Vector3.up * _rotationVelocity);
+				currentCamera.transform.Rotate(Vector3.up * _rotationVelocity);
 			}
 		}
 
