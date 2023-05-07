@@ -243,6 +243,7 @@ MonoBehaviour:
   Banks:
   - Boss
   - Meter
+  - Player
   - SFX
   BanksToLoad: []
   LiveUpdatePort: 9264
