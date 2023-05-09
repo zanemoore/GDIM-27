@@ -10,10 +10,13 @@ using UnityEngine.UI;
 public class MascotAI : MonoBehaviour, MascotHearing
 {
     [SerializeField] private Transform mascotModel;
+    [SerializeField] private Animator mascotAnimator;
     [SerializeField] private Slider awarenessMeter;
     [SerializeField] private TextMeshProUGUI awarenessValueText;
     [SerializeField] private int awarenessMaxValue;
     [SerializeField] private int value;
+    [SerializeField] private int tickUp;
+    [SerializeField] private int tickDown;
 
     //Player
     [Space(10)]
@@ -62,8 +65,6 @@ public class MascotAI : MonoBehaviour, MascotHearing
     private bool reachedObject;
     private bool reachedPosition;
     private bool stopTimer;
-    private int tickUp = 1;
-    private int tickDown = 2;
     protected float timerUp;
     protected float timerDown;
 
@@ -91,7 +92,7 @@ public class MascotAI : MonoBehaviour, MascotHearing
         waitTime = startWaitTime;
         rotateTime = timeToRotate;
 
-        currentWaypointIndex = 0;
+        currentWaypointIndex = Random.Range(0, waypoints.Length);
 
         agent = GetComponent<NavMeshAgent>();
         agent.isStopped = false;
@@ -101,16 +102,16 @@ public class MascotAI : MonoBehaviour, MascotHearing
 
     private void Update()
     {
+        AwarenessMeter();
+
         if ((hide.isHidden == true) && (isPatrol == true))
         {
-            
+            ///player hidden while mascot is patrolling
         }
         else
         {
             MascotView();
         }
-        
-        AwarenessMeter();
 
         if (!isPatrol && (isDistracted == false) && (isHunting == false))
         {
@@ -134,6 +135,16 @@ public class MascotAI : MonoBehaviour, MascotHearing
         {
             Hunting();
         }
+
+        if ((isChasing == true) || (isHunting == true))
+        {
+            mascotAnimator.SetTrigger("Run");
+        }
+
+        if ((isDistracted == true) || (isPatrol == true))
+        {
+            mascotAnimator.SetTrigger("Walk");
+        }
     }
 
     void Move(float speed)
@@ -144,13 +155,14 @@ public class MascotAI : MonoBehaviour, MascotHearing
 
     void Stop()
     {
+        mascotAnimator.SetTrigger("Idle");
         agent.isStopped = true;
         agent.speed = 0;
     }
 
     private void NextPoint()
     {
-        currentWaypointIndex = Random.Range(0, waypoints.Length);
+        currentWaypointIndex = (currentWaypointIndex + Random.Range(0, waypoints.Length - 1)) % waypoints.Length;
         agent.SetDestination(waypoints[currentWaypointIndex].position);
     }
 
@@ -251,7 +263,7 @@ public class MascotAI : MonoBehaviour, MascotHearing
 
     private void Patrolling()
     {
-        if (playerNear)
+        if (playerNear == true)
         {
             if (rotateTime <= 0)
             {
@@ -261,7 +273,7 @@ public class MascotAI : MonoBehaviour, MascotHearing
             else
             {
                 Stop();
-                rotateTime -= Time.deltaTime;
+                rotateTime -= Time.fixedDeltaTime;
             }
         }
         else
@@ -281,7 +293,7 @@ public class MascotAI : MonoBehaviour, MascotHearing
                 else
                 {
                     Stop();
-                    waitTime -= Time.deltaTime;
+                    waitTime -= Time.fixedDeltaTime;
                 }
             }
         }
@@ -302,7 +314,7 @@ public class MascotAI : MonoBehaviour, MascotHearing
 
         if (agent.remainingDistance <= agent.stoppingDistance)
         {
-            if (waitTime <= 0 && !killPlayer && Vector3.Distance(transform.position, GameObject.FindGameObjectWithTag("Player").transform.position) >= 4f)
+            if (waitTime <= 0 && !killPlayer && Vector3.Distance(transform.position, GameObject.FindGameObjectWithTag("Player").transform.position) >= 6f)
             {
                 isPatrol = true;
                 isChasing = false;
@@ -319,6 +331,29 @@ public class MascotAI : MonoBehaviour, MascotHearing
                     Stop();
                     waitTime -= Time.deltaTime;
                 }
+            }
+        }
+    }
+
+    private void Hunting()
+    {
+        if (agent.remainingDistance <= agent.stoppingDistance)
+        {
+            if (waitTime <= 0)
+            {
+                isPatrol = true;
+                isHunting = false;
+                playerNear = false;
+                reachedPosition = true;
+                Move(walkSpeed);
+                rotateTime = timeToRotate;
+                waitTime = startWaitTime;
+                agent.SetDestination(waypoints[currentWaypointIndex].position);
+            }
+            else
+            {
+                Stop();
+                waitTime -= Time.fixedDeltaTime;
             }
         }
     }
@@ -376,29 +411,6 @@ public class MascotAI : MonoBehaviour, MascotHearing
         {
             killPlayer = true;
             KillPlayer();
-        }
-    }
-
-    private void Hunting()
-    {
-        if (agent.remainingDistance <= agent.stoppingDistance)
-        {
-            if (waitTime <= 0)
-            {
-                isPatrol = true;
-                isHunting = false;
-                playerNear = false;
-                reachedPosition = true;
-                Move(walkSpeed);
-                rotateTime = timeToRotate;
-                waitTime = startWaitTime;
-                agent.SetDestination(waypoints[currentWaypointIndex].position);
-            }
-            else
-            {
-                Stop();
-                waitTime -= Time.deltaTime;
-            }
         }
     }
 
@@ -464,7 +476,7 @@ public class MascotAI : MonoBehaviour, MascotHearing
             else
             {
                 Stop();
-                waitTime -= Time.deltaTime;
+                waitTime -= Time.fixedDeltaTime;
             }
         }
     }
@@ -477,7 +489,7 @@ public class MascotAI : MonoBehaviour, MascotHearing
             GameObject throwable = GameObject.FindWithTag("Throwable");
             Rigidbody rigidbody = throwable.GetComponent<Rigidbody>();
 
-            Debug.Log(rigidbody.velocity.magnitude);
+            //Debug.Log(rigidbody.velocity.magnitude);
 
 
             if (rigidbody.velocity.magnitude > 1)
@@ -492,6 +504,10 @@ public class MascotAI : MonoBehaviour, MascotHearing
             {
                 return;
             }
+        }
+        else
+        {
+            return;
         }
     }
 
