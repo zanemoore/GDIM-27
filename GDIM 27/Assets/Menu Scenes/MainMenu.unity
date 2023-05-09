@@ -1456,7 +1456,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &566569571
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2627,7 +2627,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &977702065
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4338,9 +4338,9 @@ MonoBehaviour:
   mainScene: MainMenu
   loadScene: blank
   sceneMgmtList:
-  - Mascot AI Testing
-  - Playground
-  - Test Models
+  - Layout-N
+  - none
+  - none
   resWidths: d0020000
   resHeights: 00050000
 --- !u!1 &1377864475
