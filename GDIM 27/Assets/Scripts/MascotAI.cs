@@ -558,24 +558,24 @@ public class MascotAI : MonoBehaviour, MascotHearing
     }
 
     //COMMENT OUT WHEN BULDING GAME//
-    private void OnDrawGizmos()
-    {
-        Handles.color = Color.white;
-        Handles.DrawWireArc(transform.position, Vector3.up, Vector3.forward, 360, viewRadius);
+    //private void OnDrawGizmos()
+    //{
+    //    Handles.color = Color.white;
+    //    Handles.DrawWireArc(transform.position, Vector3.up, Vector3.forward, 360, viewRadius);
 
-        Vector3 viewAngle1 = DirectionFromAngle(transform.eulerAngles.y, -viewAngle / 2);
-        Vector3 viewAngle2 = DirectionFromAngle(transform.eulerAngles.y, viewAngle / 2);
+    //    Vector3 viewAngle1 = DirectionFromAngle(transform.eulerAngles.y, -viewAngle / 2);
+    //    Vector3 viewAngle2 = DirectionFromAngle(transform.eulerAngles.y, viewAngle / 2);
 
-        Handles.color = Color.yellow;
-        Handles.DrawLine(transform.position, transform.position + viewAngle1 * viewRadius);
-        Handles.DrawLine(transform.position, transform.position + viewAngle2 * viewRadius);
+    //    Handles.color = Color.yellow;
+    //    Handles.DrawLine(transform.position, transform.position + viewAngle1 * viewRadius);
+    //    Handles.DrawLine(transform.position, transform.position + viewAngle2 * viewRadius);
 
-        Handles.color = Color.red;
-        Handles.DrawWireArc(transform.position, Vector3.up, Vector3.forward, 360, killRadius);
+    //    Handles.color = Color.red;
+    //    Handles.DrawWireArc(transform.position, Vector3.up, Vector3.forward, 360, killRadius);
 
-        Handles.color = Color.blue;
-        Handles.DrawWireArc(transform.position, Vector3.up, Vector3.forward, 360, awarenessRadius);
-    }
+    //    Handles.color = Color.blue;
+    //    Handles.DrawWireArc(transform.position, Vector3.up, Vector3.forward, 360, awarenessRadius);
+    //}
 
     //COMMENT OUT WHEN BULDING GAME//
     private Vector3 DirectionFromAngle(float eulerY, float angleInDegrees)
