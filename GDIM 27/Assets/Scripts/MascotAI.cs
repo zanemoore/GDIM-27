@@ -70,6 +70,8 @@ public class MascotAI : MonoBehaviour, MascotHearing
     [HideInInspector]
     public AwarenessMeter meter;
 
+    public Hiding hide;
+
     void Start()
     {
         awarenessMeter.maxValue = awarenessMaxValue;
@@ -99,14 +101,22 @@ public class MascotAI : MonoBehaviour, MascotHearing
 
     private void Update()
     {
-        MascotView();
+        if ((hide.isHidden == true) && (isPatrol == true))
+        {
+            
+        }
+        else
+        {
+            MascotView();
+        }
+        
         AwarenessMeter();
 
         if (!isPatrol && (isDistracted == false) && (isHunting == false))
         {
             Chasing();
         }
-        else if (isDistracted == false && (isHunting == false))
+        else if ((isDistracted == false) && (isHunting == false))
         {
             Patrolling();
 
@@ -201,6 +211,8 @@ public class MascotAI : MonoBehaviour, MascotHearing
                     agent.SetDestination(playerLastPosition);
                     //Debug.Log("BEHIND A WALL");
                 }
+
+                
             }
 
             if (Vector3.Distance(transform.position, player.position) > viewRadius)

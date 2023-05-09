@@ -2745,6 +2745,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5f4daf24146ee040b5a2d7a73b30aa0, type: 3}
+--- !u!4 &857611417 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6249156008004851017, guid: 57165a9fe820e2d45a893b83d4eb7dfb,
+    type: 3}
+  m_PrefabInstance: {fileID: 6249156009473218819}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &874605735
 GameObject:
   m_ObjectHideFlags: 0
@@ -5751,6 +5757,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 514435193, guid: 2d3a85ecde41a8246a79669975912b74, type: 3}
+      propertyPath: _input
+      value: 
+      objectReference: {fileID: 2006620068}
     - target: {fileID: 2120811204765697481, guid: 2d3a85ecde41a8246a79669975912b74,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -6234,6 +6244,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6249156008004851023, guid: 57165a9fe820e2d45a893b83d4eb7dfb,
+        type: 3}
+      propertyPath: hide
+      value: 
+      objectReference: {fileID: 5393215579111688476}
+    - target: {fileID: 6249156008004851023, guid: 57165a9fe820e2d45a893b83d4eb7dfb,
+        type: 3}
+      propertyPath: value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6249156008004851023, guid: 57165a9fe820e2d45a893b83d4eb7dfb,
+        type: 3}
+      propertyPath: mascotModel
+      value: 
+      objectReference: {fileID: 857611417}
     - target: {fileID: 6249156008004851023, guid: 57165a9fe820e2d45a893b83d4eb7dfb,
         type: 3}
       propertyPath: playerModel
