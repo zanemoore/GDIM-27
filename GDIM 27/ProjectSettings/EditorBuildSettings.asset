@@ -8,13 +8,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Menu Scenes/MainMenu.unity
     guid: 271d0857530372140ab31f2a78c9f50e
-  - enabled: 1
+  - enabled: 0
     path: Assets/Zane/Mascot AI Testing.unity
     guid: b0320ea6379ce084884098a696077ab3
-  - enabled: 1
+  - enabled: 0
     path: Assets/Template/Scenes/Playground.unity
     guid: 707acc8dffb72b144bb1ffbe1c965f3d
-  - enabled: 1
+  - enabled: 0
     path: Assets/Jessica/Test Models.unity
     guid: 09b1c9ecfe7a218438d8992c34ce7366
   - enabled: 1
