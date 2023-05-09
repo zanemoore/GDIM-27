@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="EncodableAsset" id="{15b70c44-fd87-4703-a6a5-be597f5e0bdf}">
+		<property name="assetPath">
+			<value>Bottle Drop/</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{317a16db-c38b-4f03-82bf-20c8dc50849c}</destination>
+		</relationship>
+	</object>
+</objects>

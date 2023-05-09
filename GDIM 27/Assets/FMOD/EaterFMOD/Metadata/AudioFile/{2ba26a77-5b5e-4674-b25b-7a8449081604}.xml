@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{2ba26a77-5b5e-4674-b25b-7a8449081604}">
+		<property name="assetPath">
+			<value>Book Throw/bookthrow #4.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.59966666666666668</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{317a16db-c38b-4f03-82bf-20c8dc50849c}</destination>
+		</relationship>
+	</object>
+</objects>

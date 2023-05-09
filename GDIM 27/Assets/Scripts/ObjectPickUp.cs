@@ -11,7 +11,7 @@ namespace Sounds
 
         [SerializeField] private GameObject item;
         [SerializeField] private GameObject tempHold;
-        [SerializeField] private AudioSource source = null;
+        [SerializeField] private FMODUnity.StudioEventEmitter dropEmitter;
         [SerializeField] private bool isHolding = false;
         [SerializeField] private bool isThrown = false;
         [SerializeField] private bool isStandingOn = false;
@@ -65,12 +65,12 @@ namespace Sounds
         public void MakeASound()
         {
             // doesn't allow for sounds to overlap
-            if (source.isPlaying)
+            if (dropEmitter.IsPlaying())
             {
                 return;
             }
 
-            source.Play();
+            dropEmitter.Play();
 
             var sound = new ObjectSound(transform.position, soundRange);
 
@@ -101,19 +101,19 @@ namespace Sounds
         {
             if (collision.gameObject.tag == "Player")
             {
-                isStandingOn = true;
+                isStandingOn = true; // make no sound
             }
             else if (collision.gameObject.tag == "Mascot")
             {
-                /// make no sound
+                // make no sound
             }
             else
             {
                 if (isThrown == true)
                 {
-                    MakeASound();
-                    isThrown = false;
+                    isThrown = false; // edited by dare to make sound at all collisions
                 }
+                MakeASound();
             }
         }
 

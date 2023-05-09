@@ -71,6 +71,12 @@ public class MascotAI : MonoBehaviour, MascotHearing
     [HideInInspector]
     public AwarenessMeter meter;
 
+    //audio
+    public FMODUnity.StudioEventEmitter chaseEmitter;
+    public FMODUnity.StudioEventEmitter meter25Emitter;
+    public FMODUnity.StudioEventEmitter meter50Emitter;
+    public FMODUnity.StudioEventEmitter meter75Emitter;
+    
     public Hiding hide;
 
     void Start()
@@ -306,6 +312,11 @@ public class MascotAI : MonoBehaviour, MascotHearing
         playerNear = false;
         playerLastPosition = Vector3.zero;
 
+        if (!chaseEmitter.IsPlaying())
+        {
+            chaseEmitter.Play(); // plays chase sound, can be moved to a different place if we need it somewhere else
+        }
+
         if (!killPlayer)
         {
             Move(runSpeed);
@@ -393,8 +404,21 @@ public class MascotAI : MonoBehaviour, MascotHearing
             }
         }
 
-        if ((value == awarenessMaxValue / 2) && (value < awarenessMaxValue))
+        if (value == awarenessMaxValue / 4) // a quarter
         {
+            if (!meter25Emitter.IsPlaying())
+            {
+                meter25Emitter.Play();
+            }
+        }
+
+        if ((value == awarenessMaxValue / 2) && (value < awarenessMaxValue)) // half
+        {
+            if (!meter50Emitter.IsPlaying())
+            {
+                meter50Emitter.Play();
+            }
+
             isPatrol = false;
             playerNear = false;
 
@@ -404,6 +428,14 @@ public class MascotAI : MonoBehaviour, MascotHearing
                 Move(huntSpeed);
                 agent.SetDestination(playerLastPosition);
                 agent.isStopped = false;
+            }
+        }
+
+        if (value == awarenessMaxValue * 3 / 4) // 3 quarters
+        {
+            if (!meter75Emitter.IsPlaying())
+            {
+                meter75Emitter.Play();
             }
         }
 

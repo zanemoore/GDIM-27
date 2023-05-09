@@ -89,6 +89,10 @@ namespace StarterAssets
 			}
 		}
 
+		[Header("Player")]
+		public FMODUnity.StudioEventEmitter walkEmitter;
+		public FMODUnity.StudioEventEmitter runEmitter;
+
 		private void Awake()
 		{
 			// get a reference to our main camera
@@ -202,6 +206,29 @@ namespace StarterAssets
 
 			// move the player
 			_controller.Move(inputDirection.normalized * (_speed * Time.deltaTime) + new Vector3(0.0f, _verticalVelocity, 0.0f) * Time.deltaTime);
+
+			// play walk/run sound based on target sound
+			if (targetSpeed == MoveSpeed && !walkEmitter.IsPlaying())
+			{
+				if (runEmitter.IsPlaying())
+				{
+					runEmitter.Stop();
+				}
+				walkEmitter.Play();
+			}
+			else if (targetSpeed == SprintSpeed && !runEmitter.IsPlaying())
+			{
+				if (walkEmitter.IsPlaying())
+				{
+					walkEmitter.Stop();
+				}
+				runEmitter.Play();
+			}
+			else if (targetSpeed == 0) // stops on 0 input
+			{
+				walkEmitter.Stop();
+				runEmitter.Stop();
+			}
 		}
 
 		private void JumpAndGravity()

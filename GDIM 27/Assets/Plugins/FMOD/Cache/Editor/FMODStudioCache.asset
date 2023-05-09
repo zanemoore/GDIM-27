@@ -1,0 +1,429 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8840642059579113477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Run
+  m_EditorClassIdentifier: 
+  Path: event:/Run
+  Guid:
+    Data1: -344931144
+    Data2: 1109005424
+    Data3: 1127650224
+    Data4: -622259274
+  Banks:
+  - {fileID: -7436792466310433955}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 5454
+--- !u!114 &-8201655593800208562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Meter 100
+  m_EditorClassIdentifier: 
+  Path: event:/Meter 100
+  Guid:
+    Data1: -2059756022
+    Data2: 1115717873
+    Data3: 313080759
+    Data4: 1325507015
+  Banks:
+  - {fileID: 6262430949872599564}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-7436792466310433955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Player.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMOD/EaterFMOD/Build/Desktop/Player.bank
+  Name: Player
+  StudioPath: bank:/Player
+  lastModified: 638190182393296012
+  FileSizes:
+  - Name: Desktop
+    Value: 134176
+  Exists: 1
+--- !u!114 &-4953143459909211122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Meter 75
+  m_EditorClassIdentifier: 
+  Path: event:/Meter 75
+  Guid:
+    Data1: 799488191
+    Data2: 1135470399
+    Data3: -2104791391
+    Data4: 590920936
+  Banks:
+  - {fileID: 6262430949872599564}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-1343767798108723399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Boss.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMOD/EaterFMOD/Build/Desktop/Boss.bank
+  Name: Boss
+  StudioPath: bank:/Boss
+  lastModified: 638190182392894248
+  FileSizes:
+  - Name: Desktop
+    Value: 285312
+  Exists: 1
+--- !u!114 &-965073491463073282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Meter 50
+  m_EditorClassIdentifier: 
+  Path: event:/Meter 50
+  Guid:
+    Data1: -1604529756
+    Data2: 1310979689
+    Data3: 1672794299
+    Data4: -1715715206
+  Banks:
+  - {fileID: 6262430949872599564}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-392745745003248380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Meter 25
+  m_EditorClassIdentifier: 
+  Path: event:/Meter 25
+  Guid:
+    Data1: 235443940
+    Data2: 1271821186
+    Data3: 877816226
+    Data4: -194801626
+  Banks:
+  - {fileID: 6262430949872599564}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
+  m_Name: FMODStudioCache
+  m_EditorClassIdentifier: 
+  EditorBanks:
+  - {fileID: 469979032956789593}
+  - {fileID: 2754642089462094760}
+  - {fileID: 9017751981007432056}
+  - {fileID: -1343767798108723399}
+  - {fileID: 6262430949872599564}
+  - {fileID: -7436792466310433955}
+  EditorEvents:
+  - {fileID: 4696112420714702496}
+  - {fileID: 8783905909117986829}
+  - {fileID: 7799793346601879351}
+  - {fileID: 3934843266217664008}
+  - {fileID: -8201655593800208562}
+  - {fileID: -965073491463073282}
+  - {fileID: -4953143459909211122}
+  - {fileID: -392745745003248380}
+  - {fileID: 7719653922302115540}
+  - {fileID: -8840642059579113477}
+  EditorParameters: []
+  MasterBanks:
+  - {fileID: 2754642089462094760}
+  StringsBanks:
+  - {fileID: 469979032956789593}
+  cacheTime: 638190182393296012
+  cacheVersion: 131603
+--- !u!114 &469979032956789593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMOD/EaterFMOD/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 638190182392423048
+  FileSizes:
+  - Name: Desktop
+    Value: 1432
+  Exists: 1
+--- !u!114 &2754642089462094760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMOD/EaterFMOD/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 638190182392408167
+  FileSizes:
+  - Name: Desktop
+    Value: 1854
+  Exists: 1
+--- !u!114 &3934843266217664008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Book Throw
+  m_EditorClassIdentifier: 
+  Path: event:/Book Throw
+  Guid:
+    Data1: 1869813752
+    Data2: 1232240301
+    Data3: 310882986
+    Data4: 81995463
+  Banks:
+  - {fileID: 9017751981007432056}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 65
+  Length: 0
+--- !u!114 &4696112420714702496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Pickup Keys
+  m_EditorClassIdentifier: 
+  Path: event:/Pickup Keys
+  Guid:
+    Data1: 1822700893
+    Data2: 1247863361
+    Data3: 1905975987
+    Data4: 1551634128
+  Banks:
+  - {fileID: 9017751981007432056}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 65
+  Length: 0
+--- !u!114 &6262430949872599564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Meter.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMOD/EaterFMOD/Build/Desktop/Meter.bank
+  Name: Meter
+  StudioPath: bank:/Meter
+  lastModified: 638190182393102568
+  FileSizes:
+  - Name: Desktop
+    Value: 120288
+  Exists: 1
+--- !u!114 &7719653922302115540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Walk
+  m_EditorClassIdentifier: 
+  Path: event:/Walk
+  Guid:
+    Data1: 1136568856
+    Data2: 1182415110
+    Data3: 1889222297
+    Data4: 2006182564
+  Banks:
+  - {fileID: -7436792466310433955}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 6114
+--- !u!114 &7799793346601879351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Bottle Drop
+  m_EditorClassIdentifier: 
+  Path: event:/Bottle Drop
+  Guid:
+    Data1: 1151784057
+    Data2: 1076392996
+    Data3: 1257770942
+    Data4: 952587515
+  Banks:
+  - {fileID: 9017751981007432056}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 65
+  Length: 0
+--- !u!114 &8783905909117986829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Boss Chase
+  m_EditorClassIdentifier: 
+  Path: event:/Boss Chase
+  Guid:
+    Data1: 1420290889
+    Data2: 1152687838
+    Data3: -2026809203
+    Data4: -102368672
+  Banks:
+  - {fileID: -1343767798108723399}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &9017751981007432056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/SFX.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMOD/EaterFMOD/Build/Desktop/SFX.bank
+  Name: SFX
+  StudioPath: bank:/SFX
+  lastModified: 638190182392720650
+  FileSizes:
+  - Name: Desktop
+    Value: 92736
+  Exists: 1
