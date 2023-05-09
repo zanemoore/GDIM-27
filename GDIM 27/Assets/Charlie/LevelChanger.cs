@@ -10,6 +10,7 @@ public class LevelChanger : MonoBehaviour
     {
         //Start the coroutine we define below named ExampleCoroutine.
         StartCoroutine(ExampleCoroutine());
+        FadeToLevel(1);
     }
 
     IEnumerator ExampleCoroutine()
