@@ -127,7 +127,7 @@ public class MascotAI : MonoBehaviour, MascotHearing
         {
             Patrolling();
 
-            if (Vector3.Distance(transform.position, playerModel.position) <= awarenessRadius)
+            if ((Vector3.Distance(transform.position, playerModel.position) <= awarenessRadius) && (hide.isHidden == false))
             {
                 float mascotRotation = transform.localRotation.eulerAngles.y;
                 transform.Rotate(0f, 180f, 0f);
@@ -161,7 +161,6 @@ public class MascotAI : MonoBehaviour, MascotHearing
 
     void Stop()
     {
-        mascotAnimator.SetTrigger("Idle");
         agent.isStopped = true;
         agent.speed = 0;
     }
@@ -203,6 +202,7 @@ public class MascotAI : MonoBehaviour, MascotHearing
                         caughtPlayer = true;
                         killPlayer = true;
                         stopTimer = true;
+                        mascotAnimator.SetBool("Idling", true);
                         Stop();
                         //activate jump scare kill animation
                     }
@@ -261,6 +261,7 @@ public class MascotAI : MonoBehaviour, MascotHearing
             }
             else
             {
+                mascotAnimator.SetTrigger("Idle");
                 Stop();
                 waitTime -= Time.deltaTime;
             }
@@ -278,6 +279,7 @@ public class MascotAI : MonoBehaviour, MascotHearing
             }
             else
             {
+                mascotAnimator.SetTrigger("Idle");
                 Stop();
                 rotateTime -= Time.fixedDeltaTime;
             }
@@ -288,7 +290,7 @@ public class MascotAI : MonoBehaviour, MascotHearing
             playerLastPosition = Vector3.zero;
             agent.SetDestination(waypoints[currentWaypointIndex].position);
 
-            if (agent.remainingDistance <= agent.stoppingDistance)
+            if ((agent.remainingDistance <= agent.stoppingDistance) && (agent.remainingDistance != 0))
             {
                 if(waitTime <= 0)
                 {
@@ -298,6 +300,7 @@ public class MascotAI : MonoBehaviour, MascotHearing
                 }
                 else
                 {
+                    mascotAnimator.SetTrigger("Idle");
                     Stop();
                     waitTime -= Time.fixedDeltaTime;
                 }
@@ -339,6 +342,7 @@ public class MascotAI : MonoBehaviour, MascotHearing
             {
                 if (Vector3.Distance(transform.position, GameObject.FindGameObjectWithTag("Player").transform.position) >= 2f)
                 {
+                    mascotAnimator.SetTrigger("Idle");
                     Stop();
                     waitTime -= Time.deltaTime;
                 }
@@ -363,6 +367,7 @@ public class MascotAI : MonoBehaviour, MascotHearing
             }
             else
             {
+                mascotAnimator.SetTrigger("Idle");
                 Stop();
                 waitTime -= Time.fixedDeltaTime;
             }
@@ -462,6 +467,7 @@ public class MascotAI : MonoBehaviour, MascotHearing
 
             if (Vector3.Distance(transform.position, playerModel.position) <= killRadius)
             {
+                mascotAnimator.SetBool("Idling", true);
                 playerModel.transform.LookAt(mascotModel);
                 Stop();
                 //activate jump scare kill animation?
@@ -507,6 +513,7 @@ public class MascotAI : MonoBehaviour, MascotHearing
             }
             else
             {
+                mascotAnimator.SetTrigger("Idle");
                 Stop();
                 waitTime -= Time.fixedDeltaTime;
             }
