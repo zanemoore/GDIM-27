@@ -47,7 +47,7 @@ public class KeyPickUp : MonoBehaviour
             else if (obj.tag == "Exit")
             {
                 // SHOW DOOR RETICLE
-                if (Input.GetMouseButtonDown(0)))
+                if (Input.GetMouseButtonDown(0))
                 {
                     TryOpenDoor();
                 }
