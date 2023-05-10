@@ -4338,7 +4338,7 @@ MonoBehaviour:
   mainScene: MainMenu
   loadScene: blank
   sceneMgmtList:
-  - Layout-N
+  - Final Scene
   - none
   - none
   resWidths: d0020000
