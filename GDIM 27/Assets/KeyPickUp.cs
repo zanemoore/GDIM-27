@@ -44,9 +44,13 @@ public class KeyPickUp : MonoBehaviour
                 PickUpKey(obj);
                
             }
-            else if (obj.tag == "Exit" && Input.GetMouseButtonDown(0))
+            else if (obj.tag == "Exit")
             {
-                TryOpenDoor();
+                // SHOW DOOR RETICLE
+                if (Input.GetMouseButtonDown(0)))
+                {
+                    TryOpenDoor();
+                }
             }
         }
 
