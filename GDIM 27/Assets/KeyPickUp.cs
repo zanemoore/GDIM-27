@@ -1,6 +1,7 @@
 using Sounds;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class KeyPickUp : MonoBehaviour
@@ -13,6 +14,11 @@ public class KeyPickUp : MonoBehaviour
     private GameObject[] keys;
     [SerializeField]
     private GameObject mascot;
+    [SerializeField]
+    private TextMeshProUGUI uiInstructions;
+    [SerializeField]
+    private float timeToAppear = 2f;
+    private float timeWhenDisappear;
 
     private bool hasKey;
     private int numKeysTried;
@@ -42,6 +48,11 @@ public class KeyPickUp : MonoBehaviour
             {
                 TryOpenDoor();
             }
+        }
+
+        if (uiInstructions.enabled && (Time.time >= timeWhenDisappear))
+        {
+            uiInstructions.enabled = false;
         }
     }
 
@@ -73,12 +84,11 @@ public class KeyPickUp : MonoBehaviour
 
             if (numKeysTried == keys.Length)
             {
-                // Win Condition
-                print("Freedom!");
+                SetText("YOU WON");
             }
             else
             {
-                // UI saying wrong key
+                SetText("This is the Wrong Key\nDoor still locked");
                 SpawnKey(numKeysTried);
             }
 
@@ -88,14 +98,13 @@ public class KeyPickUp : MonoBehaviour
         {
             if (numKeysTried == 0)
             {
-                // UI tells you what to do
+                SetText("Door is Locked\nFind the Key");
                 SpawnKey(0);
-                print("key should have spawned, weird champ");
                 mascot.SetActive(true);
             }
             else
             {
-                // UI says rip bozo
+                SetText("Door still Locked\nFind the Key");
             }
         }
     }
@@ -104,5 +113,19 @@ public class KeyPickUp : MonoBehaviour
     private void SpawnKey(int keyNum)
     {
         keys[keyNum].SetActive(true);
+    }
+
+
+    private void EnableText()
+    {
+        uiInstructions.enabled = true;
+        timeWhenDisappear = Time.time + timeToAppear;
+    }
+
+
+    private void SetText(string text)
+    {
+        uiInstructions.text = text;
+        EnableText();
     }
 }
