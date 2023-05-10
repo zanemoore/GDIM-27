@@ -8,6 +8,8 @@ TagManager:
   - Throwable
   - Mascot
   - Hideable
+  - Key
+  - Exit
   layers:
   - Default
   - TransparentFX
