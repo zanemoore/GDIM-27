@@ -6,6 +6,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class MascotAI : MonoBehaviour, MascotHearing
 {
@@ -205,6 +206,7 @@ public class MascotAI : MonoBehaviour, MascotHearing
                         mascotAnimator.SetBool("Idling", true);
                         Stop();
                         //activate jump scare kill animation
+                        SceneManager.LoadScene("MainMenu");  // Temp for when you die - Diego
                     }
                 }
                 else
@@ -471,6 +473,8 @@ public class MascotAI : MonoBehaviour, MascotHearing
                 playerModel.transform.LookAt(mascotModel);
                 Stop();
                 //activate jump scare kill animation?
+                //activate jump scare kill animation
+                SceneManager.LoadScene("MainMenu");  // Temp for when you die - Diego
             }
         }
     }

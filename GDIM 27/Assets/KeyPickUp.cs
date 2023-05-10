@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class KeyPickUp : MonoBehaviour
 {
@@ -89,6 +90,7 @@ public class KeyPickUp : MonoBehaviour
             if (numKeysTried == keys.Length)
             {
                 SetText("YOU WON");
+                SceneManager.LoadScene("MainMenu");  // Temp for when you win - Diego
             }
             else
             {
