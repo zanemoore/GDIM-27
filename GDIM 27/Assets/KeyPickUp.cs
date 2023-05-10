@@ -29,6 +29,9 @@ public class KeyPickUp : MonoBehaviour
     {
         hasKey = false;
         numKeysTried = 0;
+        timeToAppear = 50f;
+        SetText("Leave the Building");
+        timeToAppear = 2f;
     }
 
 
