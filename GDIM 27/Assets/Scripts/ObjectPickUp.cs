@@ -153,9 +153,10 @@ namespace Sounds
             {
                 if (isThrown == true)
                 {
-                    MakeASound();
                     isThrown = false; // edited by dare to make sound at all collisions
                 }
+
+                MakeASound();
             }
         }
 

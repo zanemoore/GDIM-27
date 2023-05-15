@@ -154,6 +154,14 @@ public class MascotAI : MonoBehaviour, MascotHearing
         }
     }
 
+    void OnDestroy()
+    {
+        chaseEmitter.Stop();
+        meter25Emitter.Stop();
+        meter50Emitter.Stop();
+        meter75Emitter.Stop();
+    }
+
     void Move(float speed)
     {
         agent.isStopped = false;
