@@ -128,6 +128,12 @@ namespace StarterAssets
 			Move();
 		}
 
+		private void OnDestroy()
+		{
+			runEmitter.Stop();
+			walkEmitter.Stop();
+		}
+
 		private void LateUpdate()
 		{
 			CameraRotation();
