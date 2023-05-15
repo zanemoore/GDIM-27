@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{1e4d1985-5e35-47bc-aff8-f2eedd886386}">
+		<property name="name">
+			<value>isCutscene</value>
+		</property>
+		<relationship name="folder">
+			<destination>{bd3d6ae4-2095-49ed-9857-471fbf79f512}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{282f1e48-38cf-4e68-b84a-cc7432ae21f1}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{282f1e48-38cf-4e68-b84a-cc7432ae21f1}">
+		<property name="initialValue">
+			<value>1</value>
+		</property>
+	</object>
+</objects>

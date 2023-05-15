@@ -17,6 +17,7 @@ namespace Sounds
         [SerializeField] private bool isStandingOn = false;
         [SerializeField] private float throwForce;
         [SerializeField] private float soundRange;
+        public bool startGameAttenuation = false;
         private GameObject normalReticle;
         private GameObject grabReticle;
         private GameObject throwReticle;
@@ -91,6 +92,7 @@ namespace Sounds
             }
 
             dropEmitter.Play();
+            Debug.Log("Make a sound!");
 
             var sound = new ObjectSound(transform.position, soundRange);
 
@@ -141,6 +143,12 @@ namespace Sounds
 
         void OnCollisionEnter(Collision collision)
         {
+            if (!startGameAttenuation)
+            {
+                startGameAttenuation = true;
+                return; // ignores the first collision at the start of the game
+            }
+
             if (collision.gameObject.tag == "Player")
             {
                 isStandingOn = true; // make no sound
@@ -155,8 +163,10 @@ namespace Sounds
                 {
                     isThrown = false; // edited by dare to make sound at all collisions
                 }
-
-                MakeASound();
+                if (startGameAttenuation)
+                {
+                    MakeASound();
+                }
             }
         }
 
