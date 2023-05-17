@@ -8253,10 +8253,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mascotModel: {fileID: 0}
+  mascotAnimator: {fileID: 0}
   awarenessMeter: {fileID: 0}
   awarenessValueText: {fileID: 0}
   awarenessMaxValue: 0
   value: 0
+  tickUp: 0
+  tickDown: 0
   playerModel: {fileID: 1082400909}
   agent: {fileID: 1461308723}
   playerLayer:
@@ -8283,6 +8286,11 @@ MonoBehaviour:
   - {fileID: 228871806}
   - {fileID: 358379130}
   meter: {fileID: 0}
+  chaseEmitter: {fileID: 0}
+  meter25Emitter: {fileID: 0}
+  meter50Emitter: {fileID: 0}
+  meter75Emitter: {fileID: 0}
+  hide: {fileID: 0}
 --- !u!195 &1461308723
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -11338,6 +11346,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9005220659476430821, guid: 2d3a85ecde41a8246a79669975912b74,
+        type: 3}
+      propertyPath: field of view
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 9005220659476430821, guid: 2d3a85ecde41a8246a79669975912b74,
         type: 3}
