@@ -30,7 +30,7 @@ public class KeyPickUp : MonoBehaviour
         hasKey = false;
         numKeysTried = 0;
         timeToAppear = 50f;
-        SetText("Leave the Building");
+        SetText("I gotta find an exit.\n[Find an Exit Door]");
         timeToAppear = 2f;
     }
 
@@ -92,12 +92,12 @@ public class KeyPickUp : MonoBehaviour
 
             if (numKeysTried == keys.Length)
             {
-                SetText("YOU WON");
+                SetText("MADE IT OUT");
                 SceneManager.LoadScene("MainMenu");  // Temp for when you win - Diego
             }
             else
             {
-                SetText("This is the Wrong Key\nDoor still locked");
+                SetText("Dammit, wrong key...\nWhere's the actual key?!");
                 SpawnKey(numKeysTried);
             }
 
@@ -107,13 +107,13 @@ public class KeyPickUp : MonoBehaviour
         {
             if (numKeysTried == 0)
             {
-                SetText("Door is Locked\nFind the Key");
+                SetText("Emergency door's locked?\nMaybe there's a key...");
                 SpawnKey(0);
                 mascot.SetActive(true);
             }
             else
             {
-                SetText("Door still Locked\nFind the Key");
+                SetText("Wrong key...\nWho locks emergency doors anyways?");
             }
         }
     }
