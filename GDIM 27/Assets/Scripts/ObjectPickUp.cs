@@ -141,6 +141,13 @@ namespace Sounds
             }
         }
 
+        private void OnMouseExit()
+        {
+            grabReticle.SetActive(false);
+            normalReticle.SetActive(true);
+            throwReticle.SetActive(false);
+        }
+
         void OnCollisionEnter(Collision collision)
         {
             if (!startGameAttenuation)
