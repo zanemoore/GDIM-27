@@ -1,17 +1,35 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class LevelChanger : MonoBehaviour
 {
+    [SerializeField]
+    private GameObject openingConversation;
+    [SerializeField]
+    private TextMeshProUGUI skipInstructions;
+
     public Animator animator;
     // Start is called before the first frame update
     void Start()
     {
+        skipInstructions.text = "Press Any Key to Skip.";
         //Start the coroutine we define below named ExampleCoroutine.
         StartCoroutine(ExampleCoroutine());
         FadeToLevel(1);
     }
+
+
+    void Update()
+    {
+        if (Input.anyKey)
+        {
+            Destroy(this.gameObject);
+            Destroy(openingConversation);
+        }
+    }
+
 
     IEnumerator ExampleCoroutine()
     {
