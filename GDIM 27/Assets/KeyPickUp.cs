@@ -29,7 +29,7 @@ public class KeyPickUp : MonoBehaviour
     {
         hasKey = false;
         numKeysTried = 0;
-        timeToAppear = 50f;
+        timeToAppear = 50f;  // This is 50f to make sure the text stays up past the entirety of the cutscene
         SetText("I gotta find an exit.\n[Find an Exit Door]");
         timeToAppear = 2f;
     }
@@ -67,7 +67,6 @@ public class KeyPickUp : MonoBehaviour
 
     private void PickUpKey(GameObject key)
     {
-        Destroy(key);
         hasKey = true;
 
         // doesn't allow for sounds to overlap
@@ -81,6 +80,8 @@ public class KeyPickUp : MonoBehaviour
         var sound = new ObjectSound(transform.position, soundRange);
 
         ObjectSoundManager.MakeSound(sound);
+
+        Destroy(key);
     }
 
 
@@ -92,7 +93,7 @@ public class KeyPickUp : MonoBehaviour
 
             if (numKeysTried == keys.Length)
             {
-                SetText("MADE IT OUT");
+                Cursor.lockState = CursorLockMode.None;
                 SceneManager.LoadScene("MainMenu");  // Temp for when you win - Diego
             }
             else

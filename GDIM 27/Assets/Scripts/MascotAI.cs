@@ -214,6 +214,7 @@ public class MascotAI : MonoBehaviour, MascotHearing
                         mascotAnimator.SetBool("Idling", true);
                         Stop();
                         //activate jump scare kill animation
+                        Cursor.lockState = CursorLockMode.None;
                         SceneManager.LoadScene("MainMenu");  // Temp for when you die - Diego
                     }
                 }
