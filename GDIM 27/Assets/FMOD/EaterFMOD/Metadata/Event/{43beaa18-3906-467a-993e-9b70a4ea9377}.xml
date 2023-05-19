@@ -64,7 +64,7 @@
 	<object class="MarkerTrack" id="{2a9b3d56-89a7-4799-b1a7-58e3828fac7c}" />
 	<object class="GroupTrack" id="{3928f90e-17aa-481b-994b-8ee2483bce20}">
 		<relationship name="modules">
-			<destination>{1f618f54-b24e-4719-b73b-c3212d2b97be}</destination>
+			<destination>{ae9b2438-f979-44eb-b5ca-6f40564195f6}</destination>
 		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{04ca3139-6440-4e6d-8b8e-1ebc6c839185}</destination>
@@ -72,7 +72,7 @@
 	</object>
 	<object class="Timeline" id="{fbe85efd-6953-4043-b133-5a291645c68e}">
 		<relationship name="modules">
-			<destination>{1f618f54-b24e-4719-b73b-c3212d2b97be}</destination>
+			<destination>{ae9b2438-f979-44eb-b5ca-6f40564195f6}</destination>
 		</relationship>
 		<relationship name="markers">
 			<destination>{9bc85843-270c-4bce-8fa1-8008c7cb2fdf}</destination>
@@ -101,12 +101,18 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{9bc81f72-e626-4ab4-ad2b-66237b66d72b}" />
-	<object class="SingleSound" id="{1f618f54-b24e-4719-b73b-c3212d2b97be}">
+	<object class="SingleSound" id="{ae9b2438-f979-44eb-b5ca-6f40564195f6}">
 		<property name="length">
-			<value>6.1146666666666665</value>
+			<value>7.5912513780323447</value>
+		</property>
+		<property name="timelockedOffset">
+			<value>0.17587362196765499</value>
+		</property>
+		<property name="volume">
+			<value>3</value>
 		</property>
 		<relationship name="audioFile">
-			<destination>{cf73973c-dc66-4c54-a232-36b589f5925d}</destination>
+			<destination>{ccd99b72-734e-47eb-8275-0e0858b396f7}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{04ca3139-6440-4e6d-8b8e-1ebc6c839185}">
@@ -127,9 +133,6 @@
 		<property name="position">
 			<value>0</value>
 		</property>
-		<property name="tempo">
-			<value>157</value>
-		</property>
 		<relationship name="timeline">
 			<destination>{fbe85efd-6953-4043-b133-5a291645c68e}</destination>
 		</relationship>
@@ -142,7 +145,7 @@
 			<value>0</value>
 		</property>
 		<property name="length">
-			<value>6.1146666666666665</value>
+			<value>7.5912513780323447</value>
 		</property>
 		<relationship name="timeline">
 			<destination>{fbe85efd-6953-4043-b133-5a291645c68e}</destination>
@@ -167,7 +170,7 @@
 	</object>
 	<object class="TransitionMarker" id="{9c0b6f77-8b6b-4642-a8b1-4327c55de0f1}">
 		<property name="position">
-			<value>5.3503184713375802</value>
+			<value>5.5414012738853504</value>
 		</property>
 		<property name="triggerProbabilityEnabled">
 			<value>true</value>

@@ -22,6 +22,20 @@ public class MainMenuNavigator_TEMP : MonoBehaviour
     [SerializeField]
     List<int> resHeights;//A list of screen size heights
 
+    public FMODUnity.StudioEventEmitter hover;
+    public FMODUnity.StudioEventEmitter click;
+
+    // plays button sounds - dare
+    public void hoverSound()
+    {
+        hover.Play();
+    }
+
+    public void clickSound()
+    {
+        click.Play();
+    }
+
     //Sets Base Menu to Active
     public void GoToBase()
     {

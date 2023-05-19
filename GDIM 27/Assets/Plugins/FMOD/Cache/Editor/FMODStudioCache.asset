@@ -26,7 +26,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 5454
+  Length: 5882
 --- !u!114 &-8201655593800208562
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69,10 +69,10 @@ MonoBehaviour:
   Path: Assets/FMOD/EaterFMOD/Build/Desktop/Player.bank
   Name: Player
   StudioPath: bank:/Player
-  lastModified: 638200285708659272
+  lastModified: 638200315142262359
   FileSizes:
   - Name: Desktop
-    Value: 547968
+    Value: 527456
   Exists: 1
 --- !u!114 &-6800084379903067509
 MonoBehaviour:
@@ -172,7 +172,7 @@ MonoBehaviour:
   Path: Assets/FMOD/EaterFMOD/Build/Desktop/Boss.bank
   Name: Boss
   StudioPath: bank:/Boss
-  lastModified: 638200285708183111
+  lastModified: 638200315141686993
   FileSizes:
   - Name: Desktop
     Value: 699104
@@ -265,13 +265,42 @@ MonoBehaviour:
   - {fileID: 5856595566218580690}
   - {fileID: 751012922505474429}
   - {fileID: -6800084379903067509}
+  - {fileID: 2576922302647877196}
+  - {fileID: 393249496385139898}
   EditorParameters: []
   MasterBanks:
   - {fileID: 2754642089462094760}
   StringsBanks:
   - {fileID: 469979032956789593}
-  cacheTime: 638200285708986637
+  cacheTime: 638200315142629388
   cacheVersion: 131603
+--- !u!114 &393249496385139898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Hover
+  m_EditorClassIdentifier: 
+  Path: event:/Hover
+  Guid:
+    Data1: -985719325
+    Data2: 1227703836
+    Data3: 1883428767
+    Data4: -1333179849
+  Banks:
+  - {fileID: 9017751981007432056}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &469979032956789593
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -287,10 +316,10 @@ MonoBehaviour:
   Path: Assets/FMOD/EaterFMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638200285708237672
+  lastModified: 638200315141741553
   FileSizes:
   - Name: Desktop
-    Value: 1666
+    Value: 1794
   Exists: 1
 --- !u!114 &751012922505474429
 MonoBehaviour:
@@ -319,6 +348,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 65
   Length: 0
+--- !u!114 &2576922302647877196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Click
+  m_EditorClassIdentifier: 
+  Path: event:/Click
+  Guid:
+    Data1: 856681742
+    Data2: 1337587007
+    Data3: 1111377068
+    Data4: 1956088757
+  Banks:
+  - {fileID: 9017751981007432056}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &2754642089462094760
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -334,10 +390,10 @@ MonoBehaviour:
   Path: Assets/FMOD/EaterFMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638200285708222793
+  lastModified: 638200315141726675
   FileSizes:
   - Name: Desktop
-    Value: 2672
+    Value: 2818
   Exists: 1
 --- !u!114 &3934843266217664008
 MonoBehaviour:
@@ -461,7 +517,7 @@ MonoBehaviour:
   Path: Assets/FMOD/EaterFMOD/Build/Desktop/Meter.bank
   Name: Meter
   StudioPath: bank:/Meter
-  lastModified: 638200285708445993
+  lastModified: 638200315142014351
   FileSizes:
   - Name: Desktop
     Value: 120288
@@ -492,7 +548,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 6114
+  Length: 7591
 --- !u!114 &7799793346601879351
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -562,8 +618,8 @@ MonoBehaviour:
   Path: Assets/FMOD/EaterFMOD/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638200285708986637
+  lastModified: 638200315142629388
   FileSizes:
   - Name: Desktop
-    Value: 1032288
+    Value: 1063936
   Exists: 1
