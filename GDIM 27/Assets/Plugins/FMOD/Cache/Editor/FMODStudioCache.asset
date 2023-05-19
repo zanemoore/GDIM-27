@@ -69,11 +69,38 @@ MonoBehaviour:
   Path: Assets/FMOD/EaterFMOD/Build/Desktop/Player.bank
   Name: Player
   StudioPath: bank:/Player
-  lastModified: 638200315142262359
+  lastModified: 638200321526302374
   FileSizes:
   - Name: Desktop
     Value: 527456
   Exists: 1
+--- !u!114 &-7401954350262166670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Door Locked
+  m_EditorClassIdentifier: 
+  Path: event:/Door Locked
+  Guid:
+    Data1: -1008791390
+    Data2: 1126711149
+    Data3: -1667164524
+    Data4: 253992911
+  Banks:
+  - {fileID: 9017751981007432056}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-6800084379903067509
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -172,7 +199,7 @@ MonoBehaviour:
   Path: Assets/FMOD/EaterFMOD/Build/Desktop/Boss.bank
   Name: Boss
   StudioPath: bank:/Boss
-  lastModified: 638200315141686993
+  lastModified: 638200321525672451
   FileSizes:
   - Name: Desktop
     Value: 699104
@@ -267,12 +294,15 @@ MonoBehaviour:
   - {fileID: -6800084379903067509}
   - {fileID: 2576922302647877196}
   - {fileID: 393249496385139898}
+  - {fileID: 2799303476098466443}
+  - {fileID: 3053964818374211471}
+  - {fileID: -7401954350262166670}
   EditorParameters: []
   MasterBanks:
   - {fileID: 2754642089462094760}
   StringsBanks:
   - {fileID: 469979032956789593}
-  cacheTime: 638200315142629388
+  cacheTime: 638200321527537411
   cacheVersion: 131603
 --- !u!114 &393249496385139898
 MonoBehaviour:
@@ -316,10 +346,10 @@ MonoBehaviour:
   Path: Assets/FMOD/EaterFMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638200315141741553
+  lastModified: 638200321525736929
   FileSizes:
   - Name: Desktop
-    Value: 1794
+    Value: 1922
   Exists: 1
 --- !u!114 &751012922505474429
 MonoBehaviour:
@@ -390,11 +420,65 @@ MonoBehaviour:
   Path: Assets/FMOD/EaterFMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638200315141726675
+  lastModified: 638200321525717094
   FileSizes:
   - Name: Desktop
     Value: 2818
   Exists: 1
+--- !u!114 &2799303476098466443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Keys
+  m_EditorClassIdentifier: 
+  Path: event:/Keys
+  Guid:
+    Data1: -412598702
+    Data2: 1139912274
+    Data3: 112788136
+    Data4: -1533169000
+  Banks:
+  - {fileID: 9017751981007432056}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &3053964818374211471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Door Unlocked
+  m_EditorClassIdentifier: 
+  Path: event:/Door Unlocked
+  Guid:
+    Data1: 960161659
+    Data2: 1219647087
+    Data3: -1144948293
+    Data4: -79626969
+  Banks:
+  - {fileID: 9017751981007432056}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &3934843266217664008
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -517,7 +601,7 @@ MonoBehaviour:
   Path: Assets/FMOD/EaterFMOD/Build/Desktop/Meter.bank
   Name: Meter
   StudioPath: bank:/Meter
-  lastModified: 638200315142014351
+  lastModified: 638200321526004769
   FileSizes:
   - Name: Desktop
     Value: 120288
@@ -618,8 +702,8 @@ MonoBehaviour:
   Path: Assets/FMOD/EaterFMOD/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638200315142629388
+  lastModified: 638200321527537411
   FileSizes:
   - Name: Desktop
-    Value: 1063936
+    Value: 1120352
   Exists: 1

@@ -8,7 +8,11 @@ using UnityEngine.SceneManagement;
 public class KeyPickUp : MonoBehaviour
 {
     [SerializeField]
-    private FMODUnity.StudioEventEmitter dropEmitter;
+    private FMODUnity.StudioEventEmitter keyEmitter;
+    [SerializeField]
+    private FMODUnity.StudioEventEmitter lockedEmitter;
+    [SerializeField]
+    private FMODUnity.StudioEventEmitter unlockedEmitter;
     [SerializeField]
     private float soundRange;
     [SerializeField]
@@ -70,12 +74,12 @@ public class KeyPickUp : MonoBehaviour
         hasKey = true;
 
         // doesn't allow for sounds to overlap
-        if (dropEmitter == null || dropEmitter.IsPlaying())
+        if (keyEmitter == null || keyEmitter.IsPlaying())
         {
             return;
         }
 
-        dropEmitter.Play();
+        keyEmitter.Play();
 
         var sound = new ObjectSound(transform.position, soundRange);
 
@@ -93,11 +97,20 @@ public class KeyPickUp : MonoBehaviour
 
             if (numKeysTried == keys.Length)
             {
+                if (!unlockedEmitter.IsPlaying())
+                {
+                    unlockedEmitter.Play();
+                }
+
                 Cursor.lockState = CursorLockMode.None;
                 SceneManager.LoadScene("MainMenu");  // Temp for when you win - Diego
             }
             else
             {
+                if (!lockedEmitter.IsPlaying())
+                {
+                    lockedEmitter.Play();
+                }
                 SetText("Dammit, wrong key...\nWhere's the actual key?!");
                 SpawnKey(numKeysTried);
             }
@@ -106,6 +119,11 @@ public class KeyPickUp : MonoBehaviour
         }
         else
         {
+            if (!lockedEmitter.IsPlaying())
+            {
+                lockedEmitter.Play();
+            }
+
             if (numKeysTried == 0)
             {
                 SetText("Emergency door's locked?\nMaybe there's a key...");
