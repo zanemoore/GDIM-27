@@ -18,6 +18,9 @@ namespace Sounds
         [SerializeField] private float throwForce;
         [SerializeField] private float soundRange;
         public bool startGameAttenuation = false;
+        private bool waited = false;
+        private float timer = 0;
+        private float waitTime = 1;
         private GameObject normalReticle;
         private GameObject grabReticle;
         private GameObject throwReticle;
@@ -37,6 +40,11 @@ namespace Sounds
 
         void Update()
         {
+            if (!waited) // controls sound at the very beginning
+            {
+                waitALittle();
+            }
+
             if (afterStart)
             {
                 grabReticle.SetActive(false);
@@ -151,8 +159,7 @@ namespace Sounds
         void OnCollisionEnter(Collision collision)
         {
             if (!startGameAttenuation)
-            {
-                startGameAttenuation = true;
+            {   
                 return; // ignores the first collision at the start of the game
             }
 
@@ -182,6 +189,17 @@ namespace Sounds
             if (collision.gameObject.tag == "Player")
             {
                 isStandingOn = false;
+            }
+        }
+
+        private void waitALittle() // turns on sound after a little
+        {
+            timer += Time.deltaTime;
+
+            if (timer >= waitTime)
+            {
+                waited = true;
+                startGameAttenuation = true;
             }
         }
     }
