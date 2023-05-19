@@ -8,6 +8,8 @@ public class LevelChanger : MonoBehaviour
     [SerializeField]
     private GameObject openingConversation;
     [SerializeField]
+    private WhiteNoiseHandler whiteNoise;
+    [SerializeField]
     private TextMeshProUGUI skipInstructions;
 
     public Animator animator;
@@ -46,5 +48,6 @@ public class LevelChanger : MonoBehaviour
     public void FadeToLevel(int levelIndex)
     {
         animator.SetTrigger("FadeIn"); 
+        whiteNoise.startNoise();
     }
 }
