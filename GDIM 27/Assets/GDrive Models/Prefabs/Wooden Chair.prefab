@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8996169434047054463}
   - component: {fileID: 6057340622182300469}
   - component: {fileID: 7289714894526160801}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,8 +92,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8406219792722637607}
-  - component: {fileID: 8296295857597863118}
-  m_Layer: 0
+  - component: {fileID: 676034586}
+  - component: {fileID: 676034585}
+  - component: {fileID: 8110540121875399738}
+  m_Layer: 13
   m_Name: Wooden Chair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -107,7 +109,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9215267474699151773}
-  m_LocalRotation: {x: -0, y: -0.7121397, z: -0, w: 0.7020378}
+  m_LocalRotation: {x: 0, y: -0.7121424, z: 0, w: 0.70203507}
   m_LocalPosition: {x: -141.567, y: 0.486, z: -95.208}
   m_LocalScale: {x: 0.12534732, y: 0.12534732, z: 0.12534732}
   m_ConstrainProportionsScale: 1
@@ -116,7 +118,37 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -90.819, z: 0}
---- !u!65 &8296295857597863118
+--- !u!54 &676034586
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9215267474699151773}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &676034585
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9215267474699151773}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
+--- !u!65 &8110540121875399738
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -127,5 +159,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 5.9, y: 9.75, z: 5.5}
-  m_Center: {x: 2.5, y: 2.5, z: -1.2}
+  m_Size: {x: 5.2712555, y: 9.422568, z: 5.736894}
+  m_Center: {x: 2.2721674, y: 2.2835252, z: -1.1997885}
