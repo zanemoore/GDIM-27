@@ -16,6 +16,7 @@ public class LevelChanger : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Cursor.lockState = CursorLockMode.Locked;
         skipInstructions.text = "Press Any Key to Skip.";
         //Start the coroutine we define below named ExampleCoroutine.
         StartCoroutine(ExampleCoroutine());
@@ -27,8 +28,9 @@ public class LevelChanger : MonoBehaviour
     {
         if (Input.anyKey)
         {
-            Destroy(this.gameObject);
+            Cursor.lockState = CursorLockMode.None;
             Destroy(openingConversation);
+            Destroy(this.gameObject);
         }
     }
 
@@ -47,7 +49,8 @@ public class LevelChanger : MonoBehaviour
 
     public void FadeToLevel(int levelIndex)
     {
-        animator.SetTrigger("FadeIn"); 
+        animator.SetTrigger("FadeIn");
         whiteNoise.startNoise();
+        Cursor.lockState = CursorLockMode.None;
     }
 }
