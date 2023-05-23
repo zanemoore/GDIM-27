@@ -13370,6 +13370,11 @@ PrefabInstance:
       propertyPath: keys.Array.data[2]
       value: 
       objectReference: {fileID: 1499577553}
+    - target: {fileID: 1978471637655604388, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
+        type: 3}
+      propertyPath: canPush
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8616685848737228371, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
         type: 3}
       propertyPath: currentCamera
@@ -19553,10 +19558,10 @@ RectTransform:
   m_Father: {fileID: 865590838}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.59689397, y: 0.7763166}
-  m_AnchorMax: {x: 0.916788, y: 0.9106835}
-  m_AnchoredPosition: {x: -1.6828613, y: -1.2507935}
-  m_SizeDelta: {x: 120.193726, y: 25.79779}
+  m_AnchorMin: {x: 0.6513699, y: 0.81254894}
+  m_AnchorMax: {x: 0.96826524, y: 0.9433223}
+  m_AnchoredPosition: {x: -1.4030151, y: 2.5}
+  m_SizeDelta: {x: 121.193726, y: 24.79779}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1583171292
 MonoBehaviour:
@@ -19613,7 +19618,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -25637,6 +25642,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6688677873723367287, guid: e39598940180e104e873fb12a76d462b,
+        type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 6688677874510296161, guid: e39598940180e104e873fb12a76d462b,
         type: 3}
       propertyPath: m_Name
@@ -25707,6 +25717,11 @@ PrefabInstance:
       propertyPath: whiteNoise
       value: 
       objectReference: {fileID: 1103994172}
+    - target: {fileID: 6688677874510296172, guid: e39598940180e104e873fb12a76d462b,
+        type: 3}
+      propertyPath: fpsController
+      value: 
+      objectReference: {fileID: 1082400911}
     - target: {fileID: 6688677874510296172, guid: e39598940180e104e873fb12a76d462b,
         type: 3}
       propertyPath: skipInstructions
@@ -28977,7 +28992,6 @@ Transform:
   - {fileID: 1262141678964295117}
   - {fileID: 6506916116021028249}
   - {fileID: 7618637190129153018}
-  - {fileID: 5577758672954921872}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -30207,13 +30221,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8747727703906269638}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_LocalRotation: {x: -0.000000059604638, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 543450652810241644}
-  m_RootOrder: 9
+  m_Father: {fileID: 7618637190129153018}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &5630909654279333674
 MeshRenderer:
@@ -30598,6 +30612,7 @@ Transform:
   - {fileID: 6140191380725778461}
   - {fileID: 5340243478005300381}
   - {fileID: 4955019542162249525}
+  - {fileID: 5577758672954921872}
   m_Father: {fileID: 543450652810241644}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -31067,6 +31082,7 @@ GameObject:
   - component: {fileID: 7618637190129153018}
   - component: {fileID: 9920407247936259}
   - component: {fileID: 4953377251637172515}
+  - component: {fileID: 9141013272164820752}
   m_Layer: 9
   m_Name: Windows
   m_TagString: Untagged
@@ -31074,6 +31090,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!64 &9141013272164820752
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9141013272164820751}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -4270572096125141525, guid: 5e0f0af33b618c14087673ae397f3574, type: 3}
 --- !u!4 &9219229589350268355
 Transform:
   m_ObjectHideFlags: 0

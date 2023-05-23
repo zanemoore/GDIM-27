@@ -1,3 +1,4 @@
+using StarterAssets;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -11,12 +12,14 @@ public class LevelChanger : MonoBehaviour
     private WhiteNoiseHandler whiteNoise;
     [SerializeField]
     private TextMeshProUGUI skipInstructions;
+    [SerializeField]
+    private GameObject fpsController;
 
     public Animator animator;
     // Start is called before the first frame update
     void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
+        LockControls();
         skipInstructions.text = "Press Any Key to Skip.";
         //Start the coroutine we define below named ExampleCoroutine.
         StartCoroutine(ExampleCoroutine());
@@ -28,9 +31,7 @@ public class LevelChanger : MonoBehaviour
     {
         if (Input.anyKey)
         {
-            Cursor.lockState = CursorLockMode.None;
-            Destroy(openingConversation);
-            Destroy(this.gameObject);
+            DeleteLevelChanger();
         }
     }
 
@@ -42,6 +43,7 @@ public class LevelChanger : MonoBehaviour
 
         //yield on a new YieldInstruction that waits for 5 seconds.
         yield return new WaitForSeconds(45);
+        DeleteLevelChanger();
 
         //After we have waited 5 seconds print the time again.
         Debug.Log("Finished Coroutine at timestamp : " + Time.time);
@@ -51,6 +53,28 @@ public class LevelChanger : MonoBehaviour
     {
         animator.SetTrigger("FadeIn");
         whiteNoise.startNoise();
+    }
+
+
+    private void DeleteLevelChanger()
+    {
+        UnlockControls();
+        Destroy(openingConversation);
+        Destroy(this.gameObject);
+    }
+
+
+    private void LockControls()
+    {
+        fpsController.GetComponent<FirstPersonController>().enabled = false;
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+
+    private void UnlockControls()
+    {
+        fpsController.GetComponent<FirstPersonController>().enabled = true;
+        Cursor.visible = false;
         Cursor.lockState = CursorLockMode.None;
     }
 }
