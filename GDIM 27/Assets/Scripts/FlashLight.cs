@@ -13,6 +13,7 @@ public class FlashLight : MonoBehaviour
 
     [SerializeField]
     private GameObject flashLight;
+    public FMODUnity.StudioEventEmitter flashlightEmitter;
 
 
     void Start()
@@ -23,6 +24,7 @@ public class FlashLight : MonoBehaviour
     public void ToggleFlashlight(InputAction.CallbackContext context)
     { 
         flashLight.SetActive(!flashLight.activeInHierarchy);
+        flashlightEmitter.Play();
     }
 
     private void OnDisable()
