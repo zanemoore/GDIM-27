@@ -23,6 +23,7 @@ public class Hiding : MonoBehaviour
     public GameObject body;
 
     public bool isHidden = false; 
+    public FMODUnity.StudioEventEmitter breathingEmitter;
 
     [SerializeField]
     private PlayerInput _input;
@@ -68,6 +69,7 @@ public class Hiding : MonoBehaviour
             FPC.currentCamera = viewObject;
             body.SetActive(false);
             isHidden = true;
+            breathingEmitter.Play();
         }
         else
         {
@@ -76,6 +78,7 @@ public class Hiding : MonoBehaviour
             FPC.currentCamera = oldCamera;
             StartCoroutine(WaitForAnimation());
             isHidden = false;
+            breathingEmitter.Stop();
         }
 
         switched = !switched;

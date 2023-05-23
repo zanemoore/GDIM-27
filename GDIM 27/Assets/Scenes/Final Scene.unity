@@ -11128,6 +11128,43 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 923125694}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &932985402 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 514435191, guid: 2d3a85ecde41a8246a79669975912b74,
+    type: 3}
+  m_PrefabInstance: {fileID: 1909647179}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &932985405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 932985402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 867735127
+      Data2: 1186457877
+      Data3: 1647196049
+      Data4: 2131977240
+    Path: event:/Flashlight
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &947316258 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 9253d49045b7cab44b2e7546bdc5af9b,
@@ -13330,6 +13367,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1082400912, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+      propertyPath: breathingEmitter
+      value: 
+      objectReference: {fileID: 1082400915}
     - target: {fileID: 1089222880674915203, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
         type: 3}
       propertyPath: mascot
@@ -13559,6 +13600,37 @@ MonoBehaviour:
       Data3: -1667164524
       Data4: 253992911
     Path: event:/Door Locked
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &1082400915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1082400911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -634757022
+      Data2: 1187219070
+      Data3: -198229084
+      Data4: -538580256
+    Path: event:/Breathing
   Event: 
   PlayEvent: 0
   StopEvent: 0
@@ -24992,6 +25064,10 @@ PrefabInstance:
       propertyPath: _input
       value: 
       objectReference: {fileID: 1082400907}
+    - target: {fileID: 514435193, guid: 2d3a85ecde41a8246a79669975912b74, type: 3}
+      propertyPath: flashlightEmitter
+      value: 
+      objectReference: {fileID: 932985405}
     - target: {fileID: 2120811204765697481, guid: 2d3a85ecde41a8246a79669975912b74,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -28722,11 +28798,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: 1420290889
-      Data2: 1152687838
-      Data3: -2026809203
-      Data4: -102368672
-    Path: event:/Boss Chase
+      Data1: 756799474
+      Data2: 1189233492
+      Data3: 854363559
+      Data4: 1136135574
+    Path: event:/Chase Music
   Event: 
   PlayEvent: 0
   StopEvent: 0
@@ -28734,7 +28810,9 @@ MonoBehaviour:
   TriggerOnce: 0
   Preload: 0
   AllowNonRigidbodyDoppler: 0
-  Params: []
+  Params:
+  - Name: Chasing
+    Value: 1
   OverrideAttenuation: 0
   OverrideMinDistance: 1
   OverrideMaxDistance: 20
