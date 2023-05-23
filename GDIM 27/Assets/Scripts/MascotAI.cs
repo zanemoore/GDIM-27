@@ -322,6 +322,7 @@ public class MascotAI : MonoBehaviour, MascotHearing
     private void Chasing()
     {
         isChasing = true;
+        chaseEmitter.SetParameter("Chasing", 0f);
         transform.LookAt(playerModel);
         playerNear = false;
         playerLastPosition = Vector3.zero;
@@ -343,6 +344,7 @@ public class MascotAI : MonoBehaviour, MascotHearing
             {
                 isPatrol = true;
                 isChasing = false;
+                chaseEmitter.SetParameter("Chasing", 1);
                 playerNear = false;
                 Move(walkSpeed);
                 rotateTime = timeToRotate;

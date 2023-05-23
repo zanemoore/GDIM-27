@@ -28783,11 +28783,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: 1420290889
-      Data2: 1152687838
-      Data3: -2026809203
-      Data4: -102368672
-    Path: event:/Boss Chase
+      Data1: 756799474
+      Data2: 1189233492
+      Data3: 854363559
+      Data4: 1136135574
+    Path: event:/Chase Music
   Event: 
   PlayEvent: 0
   StopEvent: 0
@@ -28795,7 +28795,9 @@ MonoBehaviour:
   TriggerOnce: 0
   Preload: 0
   AllowNonRigidbodyDoppler: 0
-  Params: []
+  Params:
+  - Name: Chasing
+    Value: 1
   OverrideAttenuation: 0
   OverrideMinDistance: 1
   OverrideMaxDistance: 20
