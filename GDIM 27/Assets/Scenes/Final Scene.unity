@@ -13330,6 +13330,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1082400912, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+      propertyPath: breathingEmitter
+      value: 
+      objectReference: {fileID: 1082400915}
     - target: {fileID: 1089222880674915203, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
         type: 3}
       propertyPath: mascot
@@ -13554,6 +13558,37 @@ MonoBehaviour:
       Data3: -1667164524
       Data4: 253992911
     Path: event:/Door Locked
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &1082400915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1082400911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -634757022
+      Data2: 1187219070
+      Data3: -198229084
+      Data4: -538580256
+    Path: event:/Breathing
   Event: 
   PlayEvent: 0
   StopEvent: 0

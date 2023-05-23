@@ -103,7 +103,7 @@
 	<object class="MixerBusPanner" id="{9bc81f72-e626-4ab4-ad2b-66237b66d72b}" />
 	<object class="SingleSound" id="{ae9b2438-f979-44eb-b5ca-6f40564195f6}">
 		<property name="length">
-			<value>7.5912513780323447</value>
+			<value>7.5</value>
 		</property>
 		<property name="timelockedOffset">
 			<value>0.17587362196765499</value>
@@ -133,6 +133,9 @@
 		<property name="position">
 			<value>0</value>
 		</property>
+		<property name="tempo">
+			<value>112</value>
+		</property>
 		<relationship name="timeline">
 			<destination>{fbe85efd-6953-4043-b133-5a291645c68e}</destination>
 		</relationship>
@@ -145,18 +148,18 @@
 			<value>0</value>
 		</property>
 		<property name="length">
-			<value>7.5912513780323447</value>
+			<value>7.5</value>
 		</property>
 		<relationship name="timeline">
 			<destination>{fbe85efd-6953-4043-b133-5a291645c68e}</destination>
 		</relationship>
 		<relationship name="markerTrack">
-			<destination>{6a980b96-8c01-4cac-98e4-c626fe371938}</destination>
+			<destination>{275b8027-8bfd-4075-b1f4-f6e1b33dabbf}</destination>
 		</relationship>
 	</object>
 	<object class="NamedMarker" id="{a01e37aa-01ef-41f5-a2df-b2150292cb4a}">
 		<property name="position">
-			<value>2.2929936305732488</value>
+			<value>2.1428571428571428</value>
 		</property>
 		<property name="name">
 			<value>Walk</value>
@@ -170,7 +173,7 @@
 	</object>
 	<object class="TransitionMarker" id="{9c0b6f77-8b6b-4642-a8b1-4327c55de0f1}">
 		<property name="position">
-			<value>5.5414012738853504</value>
+			<value>5.8928571428571423</value>
 		</property>
 		<property name="triggerProbabilityEnabled">
 			<value>true</value>
