@@ -474,7 +474,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 83, y: -50}
-  m_SizeDelta: {x: 456.9739, y: 188.2181}
+  m_SizeDelta: {x: 439.303, y: 188.2181}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &137873774
 MonoBehaviour:
@@ -662,7 +662,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1352884560}
         m_TargetAssemblyTypeName: MainMenuNavigator_TEMP, Assembly-CSharp
-        m_MethodName: clickSound
+        m_MethodName: OnQuitGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -674,7 +674,7 @@ MonoBehaviour:
         m_CallState: 1
       - m_Target: {fileID: 1352884560}
         m_TargetAssemblyTypeName: MainMenuNavigator_TEMP, Assembly-CSharp
-        m_MethodName: OnQuitGame
+        m_MethodName: clickSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2173,7 +2173,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1352884560}
         m_TargetAssemblyTypeName: MainMenuNavigator_TEMP, Assembly-CSharp
-        m_MethodName: clickSound
+        m_MethodName: GoToBase
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2185,7 +2185,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1352884560}
         m_TargetAssemblyTypeName: MainMenuNavigator_TEMP, Assembly-CSharp
-        m_MethodName: GoToBase
+        m_MethodName: clickSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2440,7 +2440,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1352884560}
         m_TargetAssemblyTypeName: MainMenuNavigator_TEMP, Assembly-CSharp
-        m_MethodName: clickSound
+        m_MethodName: GoToSettings
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2452,7 +2452,7 @@ MonoBehaviour:
         m_CallState: 1
       - m_Target: {fileID: 1352884560}
         m_TargetAssemblyTypeName: MainMenuNavigator_TEMP, Assembly-CSharp
-        m_MethodName: GoToSettings
+        m_MethodName: clickSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3303,7 +3303,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1352884560}
         m_TargetAssemblyTypeName: MainMenuNavigator_TEMP, Assembly-CSharp
-        m_MethodName: clickSound
+        m_MethodName: GoToLevelSelect
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3315,7 +3315,7 @@ MonoBehaviour:
         m_CallState: 1
       - m_Target: {fileID: 1352884560}
         m_TargetAssemblyTypeName: MainMenuNavigator_TEMP, Assembly-CSharp
-        m_MethodName: GoToLevelSelect
+        m_MethodName: clickSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4174,7 +4174,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1352884560}
         m_TargetAssemblyTypeName: MainMenuNavigator_TEMP, Assembly-CSharp
-        m_MethodName: clickSound
+        m_MethodName: GoToBase
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4186,7 +4186,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1352884560}
         m_TargetAssemblyTypeName: MainMenuNavigator_TEMP, Assembly-CSharp
-        m_MethodName: GoToBase
+        m_MethodName: clickSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5567,7 +5567,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1352884560}
         m_TargetAssemblyTypeName: MainMenuNavigator_TEMP, Assembly-CSharp
-        m_MethodName: clickSound
+        m_MethodName: ToUCI
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5579,7 +5579,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1352884560}
         m_TargetAssemblyTypeName: MainMenuNavigator_TEMP, Assembly-CSharp
-        m_MethodName: ToUCI
+        m_MethodName: clickSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
