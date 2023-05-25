@@ -25,6 +25,12 @@ public class MainMenuNavigator_TEMP : MonoBehaviour
     public FMODUnity.StudioEventEmitter hover;
     public FMODUnity.StudioEventEmitter click;
 
+    // Adding this to Start to ensure cursor is visible at beginning
+    void Start()
+    {
+        Cursor.visible = true;
+    }
+
     // plays button sounds - dare
     public void hoverSound()
     {
@@ -102,5 +108,4 @@ public class MainMenuNavigator_TEMP : MonoBehaviour
     {
         Screen.fullScreen = _fullscreen;
     }
-
 }
