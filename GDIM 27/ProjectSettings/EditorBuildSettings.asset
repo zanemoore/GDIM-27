@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Menu Scenes/MainMenu.unity
+    path: Assets/Scenes/Menu Scenes/MainMenu.unity
     guid: 271d0857530372140ab31f2a78c9f50e
   - enabled: 0
     path: Assets/Zane/Mascot AI Testing.unity

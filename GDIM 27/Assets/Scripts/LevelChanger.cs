@@ -21,8 +21,10 @@ public class LevelChanger : MonoBehaviour
     void Start()
     {
         skipButton = KeyCode.Space; // If you want to change key to skip, just change it to KeyCode.WHATEVER
-        LockControls();
         skipInstructions.text = string.Format("Press {0} to Skip.", skipButton.ToString());
+
+        LockControls();
+
         //Start the coroutine we define below named ExampleCoroutine.
         StartCoroutine(ExampleCoroutine());
         FadeToLevel(1);
@@ -77,6 +79,5 @@ public class LevelChanger : MonoBehaviour
     {
         fpsController.GetComponent<FirstPersonController>().enabled = true;
         Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.None;
     }
 }
