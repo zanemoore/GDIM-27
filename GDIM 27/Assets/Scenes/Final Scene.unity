@@ -13595,10 +13595,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1082400912, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
-      propertyPath: breathingEmitter
-      value: 
-      objectReference: {fileID: 1082400915}
     - target: {fileID: 1089222880674915203, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
         type: 3}
       propertyPath: mascot
@@ -13606,24 +13602,9 @@ PrefabInstance:
       objectReference: {fileID: 1386066627}
     - target: {fileID: 1089222880674915203, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
         type: 3}
-      propertyPath: keyEmitter
-      value: 
-      objectReference: {fileID: 1082400910}
-    - target: {fileID: 1089222880674915203, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
-        type: 3}
-      propertyPath: lockedEmitter
-      value: 
-      objectReference: {fileID: 1082400914}
-    - target: {fileID: 1089222880674915203, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
-        type: 3}
       propertyPath: uiInstructions
       value: 
       objectReference: {fileID: 2105861448}
-    - target: {fileID: 1089222880674915203, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
-        type: 3}
-      propertyPath: unlockedEmitter
-      value: 
-      objectReference: {fileID: 1082400913}
     - target: {fileID: 1089222880674915203, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
         type: 3}
       propertyPath: keys.Array.data[0]
@@ -13639,10 +13620,10 @@ PrefabInstance:
       propertyPath: keys.Array.data[2]
       value: 
       objectReference: {fileID: 1499577553}
-    - target: {fileID: 1978471637655604388, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
+    - target: {fileID: 1089222880674915203, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
         type: 3}
-      propertyPath: canPush
-      value: 1
+      propertyPath: interactWithDoorRange
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8616685848737228371, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
         type: 3}
@@ -13747,18 +13728,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1082400905}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1082400910 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1696422704115325916, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
-    type: 3}
-  m_PrefabInstance: {fileID: 1082400905}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1082400911}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1082400911 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8616685848737228372, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
@@ -13777,99 +13746,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6514a2e35207f1a44bfd58d98535afeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1082400913
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1082400911}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  EventReference:
-    Guid:
-      Data1: 960161659
-      Data2: 1219647087
-      Data3: -1144948293
-      Data4: -79626969
-    Path: event:/Door Unlocked
-  Event: 
-  PlayEvent: 0
-  StopEvent: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  AllowNonRigidbodyDoppler: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
---- !u!114 &1082400914
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1082400911}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  EventReference:
-    Guid:
-      Data1: -1008791390
-      Data2: 1126711149
-      Data3: -1667164524
-      Data4: 253992911
-    Path: event:/Door Locked
-  Event: 
-  PlayEvent: 0
-  StopEvent: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  AllowNonRigidbodyDoppler: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
---- !u!114 &1082400915
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1082400911}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  EventReference:
-    Guid:
-      Data1: -634757022
-      Data2: 1187219070
-      Data3: -198229084
-      Data4: -538580256
-    Path: event:/Breathing
-  Event: 
-  PlayEvent: 0
-  StopEvent: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  AllowNonRigidbodyDoppler: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
 --- !u!1 &1082950605
 GameObject:
   m_ObjectHideFlags: 0
@@ -21728,6 +21604,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.24, y: 2.25, z: 0.44}
   m_Center: {x: 0, y: -0.95, z: 0}
+--- !u!54 &1732699383
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 947316258}
+  serializedVersion: 2
+  m_Mass: 5
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1001 &1735989770
 PrefabInstance:
   m_ObjectHideFlags: 0

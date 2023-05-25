@@ -16,6 +16,8 @@ public class KeyPickUp : MonoBehaviour
     [SerializeField]
     private float soundRange;
     [SerializeField]
+    private float interactWithDoorRange;
+    [SerializeField]
     private GameObject[] keys;
     [SerializeField]
     private GameObject mascot;
@@ -55,7 +57,12 @@ public class KeyPickUp : MonoBehaviour
             else if (obj.tag == "Exit")
             {
                 // SHOW DOOR RETICLE
-                if (Input.GetMouseButtonDown(0))
+
+                Rigidbody body = obj.GetComponent<Rigidbody>();
+                float distanceToDoor = Vector3.Distance(body.transform.position, this.transform.position);
+                string x = string.Format("{0}, {1}, {2}", distanceToDoor, interactWithDoorRange, distanceToDoor < interactWithDoorRange);
+                print(x);
+                if (Input.GetMouseButtonDown(0) && (distanceToDoor < interactWithDoorRange))
                 {
                     TryOpenDoor();
                 }
