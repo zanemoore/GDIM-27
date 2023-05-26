@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
   m_Name: Slabzone SDF
   m_EditorClassIdentifier: 
-  hashCode: 0
+  hashCode: 640383571
   material: {fileID: 4899535264815222496}
-  materialHashCode: 0
+  materialHashCode: 1496469907
   m_Version: 1.1.0
   m_SourceFontFileGUID: 2cd0464a580e6f947a923f269970ca0e
   m_SourceFontFile_EditorRef: {fileID: 12800000, guid: 2cd0464a580e6f947a923f269970ca0e,
@@ -2672,9 +2672,9 @@ Material:
     - _OutlineWidth: 0
     - _PerspectiveFilter: 0.875
     - _Reflectivity: 10
-    - _ScaleRatioA: 1
-    - _ScaleRatioB: 1
-    - _ScaleRatioC: 1
+    - _ScaleRatioA: 0.8333333
+    - _ScaleRatioB: 0.6770833
+    - _ScaleRatioC: 0.6770833
     - _ScaleX: 1
     - _ScaleY: 1
     - _ShaderFlags: 0
