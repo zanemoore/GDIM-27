@@ -74,9 +74,7 @@ public class MascotAI : MonoBehaviour, MascotHearing
 
     //audio
     public FMODUnity.StudioEventEmitter chaseEmitter;
-    public FMODUnity.StudioEventEmitter meter25Emitter;
     public FMODUnity.StudioEventEmitter meter50Emitter;
-    public FMODUnity.StudioEventEmitter meter75Emitter;
     
     public Hiding hide;
 
@@ -157,9 +155,7 @@ public class MascotAI : MonoBehaviour, MascotHearing
     void OnDestroy()
     {
         chaseEmitter.Stop();
-        meter25Emitter.Stop();
         meter50Emitter.Stop();
-        meter75Emitter.Stop();
     }
 
     void Move(float speed)
@@ -422,14 +418,6 @@ public class MascotAI : MonoBehaviour, MascotHearing
             }
         }
 
-        if (value == awarenessMaxValue / 4) // a quarter
-        {
-            if (!meter25Emitter.IsPlaying())
-            {
-                meter25Emitter.Play();
-            }
-        }
-
         if ((value == awarenessMaxValue / 2) && (value < awarenessMaxValue)) // half
         {
             if (!meter50Emitter.IsPlaying())
@@ -446,14 +434,6 @@ public class MascotAI : MonoBehaviour, MascotHearing
                 Move(huntSpeed);
                 agent.SetDestination(playerLastPosition);
                 agent.isStopped = false;
-            }
-        }
-
-        if (value == awarenessMaxValue * 3 / 4) // 3 quarters
-        {
-            if (!meter75Emitter.IsPlaying())
-            {
-                meter75Emitter.Play();
             }
         }
 

@@ -81,7 +81,7 @@ public class Hiding : MonoBehaviour
             body.SetActive(false);
             isHidden = true;
             _input.actions["Move"].Disable();
-            //breathingEmitter.Play();
+            breathingEmitter.Play();
         }
         else
         {
@@ -95,13 +95,17 @@ public class Hiding : MonoBehaviour
             cameraFlashLight.SetActive(false);
             _input.actions["Move"].Enable();
 
-            //breathingEmitter.Stop();
+            stopBreathingSound();
         }
 
         switched = !switched;
     
     }
 
+    public void stopBreathingSound()
+    {
+        breathingEmitter.Stop();
+    }
 
     private void OnDisable()
     {
@@ -116,4 +120,10 @@ public class Hiding : MonoBehaviour
         body.SetActive(true);
 
     }
+
+    void OnDestroy()
+    {
+        stopBreathingSound();
+    }
+
 }
