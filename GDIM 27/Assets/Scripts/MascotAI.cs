@@ -58,9 +58,9 @@ public class MascotAI : MonoBehaviour, MascotHearing
     private bool playerInRange;
     private bool playerNear;
     private bool isPatrol;
-    private bool isChasing;
+    public bool isChasing { get ; private set; }
     private bool isDistracted;
-    private bool isHunting;
+    public bool isHunting { get; private set; }
     private bool killPlayer;
     private bool caughtPlayer;
     private bool reachedObject;

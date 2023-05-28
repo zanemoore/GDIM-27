@@ -9,6 +9,10 @@ using UnityEngine.Windows;
 
 public class Hiding : MonoBehaviour
 {
+    public GameObject cameraFlashLight;
+    public GameObject PlayerFlashLight;
+    public FlashLight FL; 
+
     public FirstPersonController FPC;
     public GameObject oldCamera;
     public GameObject oldGameObject;
@@ -18,7 +22,7 @@ public class Hiding : MonoBehaviour
     private CinemachineVirtualCamera CM;
 
     private bool switched = false;
-    private bool allowed = false;
+    public bool allowed = false;
     private GameObject hideableObject;
     public GameObject body;
 
@@ -41,6 +45,7 @@ public class Hiding : MonoBehaviour
         {
             hideableObject = other.gameObject;
             allowed = true;
+            Debug.Log("ACTUALLY ENTERED");
         }
 
         Debug.Log("OTHER ENTER");
@@ -58,18 +63,25 @@ public class Hiding : MonoBehaviour
 
     public void ToggleCamera(InputAction.CallbackContext context)
     {
+        Debug.Log("Calling");
         if (!allowed)
-            return; 
+            return;
+
+        Debug.Log("Passed the function");
         if (!switched)
         {
             CM = hideableObject.gameObject.transform.GetChild(0).GetComponent<CinemachineVirtualCamera>();
             viewObject = hideableObject.gameObject.transform.GetChild(1).gameObject;
             CM.Priority = 11;
             FPC.CinemachineCameraTarget = CM.gameObject;
+            cameraFlashLight.SetActive(FL.flashLight.activeInHierarchy);
+            FL.flashLight = cameraFlashLight;
             FPC.currentCamera = viewObject;
+            PlayerFlashLight.SetActive(false);
             body.SetActive(false);
             isHidden = true;
-            breathingEmitter.Play();
+            _input.actions["Move"].Disable();
+            //breathingEmitter.Play();
         }
         else
         {
@@ -78,7 +90,12 @@ public class Hiding : MonoBehaviour
             FPC.currentCamera = oldCamera;
             StartCoroutine(WaitForAnimation());
             isHidden = false;
-            breathingEmitter.Stop();
+            PlayerFlashLight.SetActive(FL.flashLight.activeInHierarchy);
+            FL.flashLight = PlayerFlashLight;
+            cameraFlashLight.SetActive(false);
+            _input.actions["Move"].Enable();
+
+            //breathingEmitter.Stop();
         }
 
         switched = !switched;

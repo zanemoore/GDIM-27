@@ -11,8 +11,7 @@ public class FlashLight : MonoBehaviour
     [SerializeField]
     private PlayerInput _input;
 
-    [SerializeField]
-    private GameObject flashLight;
+    public GameObject flashLight;
     public FMODUnity.StudioEventEmitter flashlightEmitter;
 
 
