@@ -12,10 +12,9 @@ public class MainMenuNavigator_TEMP : MonoBehaviour
     [SerializeField] GameObject settingsMenu;//A game object representing settings menu
     [SerializeField] GameObject levelSelectMenu; //A game object representing level select menu
     [SerializeField] string mainScene; //Main scene
-    [SerializeField] string loadScene; //Scene loaded next
 
     [SerializeField]
-    List<string> sceneMgmtList;
+    List<string> sceneMgmtList;//Stores scenes inside for easier level switching
 
     [SerializeField]
     List<int> resWidths;//A list of screen size widths
@@ -29,6 +28,18 @@ public class MainMenuNavigator_TEMP : MonoBehaviour
     void Start()
     {
         Cursor.visible = true;
+    }
+
+    private void Update()
+    {
+        if (settingsMenu.activeSelf)
+        {
+            Debug.Log("Settings is active.");
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                GoToBase();
+            }
+        }
     }
 
     // plays button sounds - dare
