@@ -136,6 +136,13 @@ MonoBehaviour:
   isStandingOn: 0
   throwForce: 1000
   soundRange: 50
+  startGameAttenuation: 0
+  normalReticle: {fileID: 1720545098553308071, guid: 92584d68fbc83fd429ab883201cb2ce9,
+    type: 3}
+  grabReticle: {fileID: 8606547149915481654, guid: 7e6603689b155014e8dd5fdd935f5a14,
+    type: 3}
+  throwReticle: {fileID: 7372274881556409725, guid: a6fb6f5e131f23a47b133078e61c4536,
+    type: 3}
 --- !u!114 &6559610269838384094
 MonoBehaviour:
   m_ObjectHideFlags: 0
