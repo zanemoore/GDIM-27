@@ -21,9 +21,9 @@ namespace Sounds
         private bool waited = false;
         private float timer = 0;
         private float waitTime = 1;
-        private GameObject normalReticle;
-        private GameObject grabReticle;
-        private GameObject throwReticle;
+        [SerializeField] private GameObject normalReticle;
+        [SerializeField] private GameObject grabReticle;
+        [SerializeField] private GameObject throwReticle;
         
 
         private float distance;
@@ -32,9 +32,9 @@ namespace Sounds
 
         private void Start()
         {
-            normalReticle = GameObject.Find("Reticle D");
-            grabReticle = GameObject.Find("Reticle G");
-            throwReticle = GameObject.Find("Reticle T");
+            //normalReticle = GameObject.Find("Reticle D");
+            //grabReticle = GameObject.Find("Reticle G");
+            //throwReticle = GameObject.Find("Reticle T");
             afterStart = true;
         }
 
