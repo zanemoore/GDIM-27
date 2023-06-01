@@ -5,28 +5,57 @@ using UnityEngine.InputSystem;
 using TMPro;
 using UnityEngine.UI;
 using Unity.XR.GoogleVr;
+using System;
 
 public class Phone : MonoBehaviour
 {
+    [Serializable]
+    public class TextMessage
+    {
+        public float time;
+        [TextArea(5, 10)]
+        public string text;
+        public string sender;
+        public bool sent;
+        public bool random;
+        public float minTime;
+        public float maxTime;
+    }
+
+
     [SerializeField] private PlayerInput _input;
     [SerializeField] private Animator animator;
     [SerializeField] private TMP_Text clockText;
     [SerializeField] private float time;
     [SerializeField] private float timeScale; // how fast time should pass in game
+    
+    [SerializeField] private Transform textContainer;
+    [SerializeField] private GameObject textPrefab;
 
     public bool recievedText;
     private bool phoneActive;
+
+    [SerializeField] private List<TextMessage> texts = new List<TextMessage>();
+
 
     void Start()
     {
         phoneActive = false;
         _input.actions["Phone"].started += TogglePhone;
+
+        foreach (TextMessage msg in texts)
+        {
+            if (msg.random)
+                msg.time = UnityEngine.Random.Range(msg.minTime, msg.maxTime);    
+        }
+
     }
 
     private void Update()
     {
         time += Time.deltaTime * timeScale;
         PhoneClock();
+        CheckTimes();
     }
 
     public void TogglePhone(InputAction.CallbackContext context)
@@ -35,14 +64,45 @@ public class Phone : MonoBehaviour
         animator.SetBool("On", phoneActive);
     }
 
+
+    public void CheckTimes()
+    {
+        foreach (TextMessage msg in texts)
+        {
+            if (msg.time <= time && !msg.sent)
+            {
+                Debug.Log(msg.time);
+                DisplayMessage(msg);
+                msg.sent = true;
+            }
+        }
+    }
+
+
+    public void DisplayMessage(TextMessage msg)
+    {
+        GameObject messageBox = Instantiate(textPrefab, textContainer);
+        messageBox.transform.SetSiblingIndex(0);
+        TMP_Text message = messageBox.transform.GetChild(0).GetComponent<TMP_Text>();
+        TMP_Text messageTime = messageBox.transform.GetChild(1).GetComponent<TMP_Text>();
+        int hours = Mathf.FloorToInt(msg.time / 3600f);
+        int minutes = Mathf.FloorToInt((msg.time - hours * 3600f) / 60f);
+
+        if (hours <= 0)
+            hours = 12;
+
+        message.text = msg.text;
+        messageTime.text = string.Format("{0:00}:{1:00}", hours, minutes);
+        PhonePeek();
+    }
+    
     public void PhonePeek()
     {
-        if(recievedText == true && phoneActive == false)
+        if(!phoneActive)
         {
             animator.SetBool("Peek", true);
+            StartCoroutine(PeekTime());
         }
-
-        StartCoroutine(PeekTime());
     }
 
     IEnumerator PeekTime()
@@ -55,6 +115,9 @@ public class Phone : MonoBehaviour
     {
         int hours = Mathf.FloorToInt(time / 3600f);
         int minutes = Mathf.FloorToInt((time - hours * 3600f) / 60f);
+
+        if (hours == 0)
+            hours = 12;
 
         clockText.text = string.Format("{0:00}:{1:00}", hours, minutes);
     }
