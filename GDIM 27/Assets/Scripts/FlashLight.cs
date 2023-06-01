@@ -14,21 +14,24 @@ public class FlashLight : MonoBehaviour
     public GameObject flashLight;
     public FMODUnity.StudioEventEmitter flashlightEmitter;
 
-
+    [SerializeField] private PauseMenu pauseMenu;
     void Start()
     {
         _input.actions["Flashlight"].started += ToggleFlashlight;
     }
 
     public void ToggleFlashlight(InputAction.CallbackContext context)
-    { 
-        flashLight.SetActive(!flashLight.activeInHierarchy);
-        flashlightEmitter.Play();
+    {
+        if (pauseMenu.isPaused == false)
+        {
+            flashLight.SetActive(!flashLight.activeInHierarchy);
+            flashlightEmitter.Play();
+        }
     }
 
     private void OnDisable()
     {
         if (_input != null)
-            _input.actions["Flashlight"].started -= ToggleFlashlight;   
+            _input.actions["Flashlight"].started -= ToggleFlashlight;
     }
 }

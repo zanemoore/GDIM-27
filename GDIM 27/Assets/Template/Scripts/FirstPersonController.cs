@@ -64,7 +64,7 @@ namespace StarterAssets
 		private float _jumpTimeoutDelta;
 		private float _fallTimeoutDelta;
 
-	
+
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
 		private PlayerInput _playerInput;
 #endif
@@ -73,7 +73,7 @@ namespace StarterAssets
 		private GameObject _mainCamera;
 
 
-		public GameObject currentCamera; 
+		public GameObject currentCamera;
 
 		private const float _threshold = 0.01f;
 
@@ -81,18 +81,18 @@ namespace StarterAssets
 		{
 			get
 			{
-				#if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
+#if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
 				return _playerInput.currentControlScheme == "KeyboardMouse";
-				#else
+#else
 				return false;
-				#endif
+#endif
 			}
 		}
 
 		[Header("Player")]
 		public FMODUnity.StudioEventEmitter walkEmitter;
 		public FMODUnity.StudioEventEmitter runEmitter;
-
+		[SerializeField] private PauseMenu pause;
 		private void Awake()
 		{
 			// get a reference to our main camera
@@ -148,11 +148,11 @@ namespace StarterAssets
 		private void CameraRotation()
 		{
 			// if there is an input
-			if (_input.look.sqrMagnitude >= _threshold)
+			if (_input.look.sqrMagnitude >= _threshold && pause.isPaused == false)
 			{
 				//Don't multiply mouse input by Time.deltaTime
 				float deltaTimeMultiplier = IsCurrentDeviceMouse ? 1.0f : Time.deltaTime;
-				
+
 				_cinemachineTargetPitch += _input.look.y * RotationSpeed * deltaTimeMultiplier;
 				_rotationVelocity = _input.look.x * RotationSpeed * deltaTimeMultiplier;
 
@@ -253,8 +253,8 @@ namespace StarterAssets
 				// Jump
 				//if (_input.jump && _jumpTimeoutDelta <= 0.0f)
 				//{
-					/// the square root of H * -2 * G = how much velocity needed to reach desired height
-					//_verticalVelocity = Mathf.Sqrt(JumpHeight * -2f * Gravity);
+				/// the square root of H * -2 * G = how much velocity needed to reach desired height
+				//_verticalVelocity = Mathf.Sqrt(JumpHeight * -2f * Gravity);
 				//}
 
 				// jump timeout
