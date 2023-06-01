@@ -92,7 +92,7 @@ namespace StarterAssets
 		[Header("Player")]
 		public FMODUnity.StudioEventEmitter walkEmitter;
 		public FMODUnity.StudioEventEmitter runEmitter;
-		[SerializeField] private PauseMenu pause;
+
 		private void Awake()
 		{
 			// get a reference to our main camera
@@ -148,7 +148,7 @@ namespace StarterAssets
 		private void CameraRotation()
 		{
 			// if there is an input
-			if (_input.look.sqrMagnitude >= _threshold && pause.isPaused == false)
+			if (_input.look.sqrMagnitude >= _threshold)
 			{
 				//Don't multiply mouse input by Time.deltaTime
 				float deltaTimeMultiplier = IsCurrentDeviceMouse ? 1.0f : Time.deltaTime;
