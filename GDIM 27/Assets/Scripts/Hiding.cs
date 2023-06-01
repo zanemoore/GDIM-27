@@ -32,6 +32,7 @@ public class Hiding : MonoBehaviour
     [SerializeField]
     private PlayerInput _input;
 
+    [SerializeField] private PauseMenu pause;
     private void Start()
     {
         _input.actions["Hide"].started += ToggleCamera;
@@ -41,7 +42,7 @@ public class Hiding : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Hideable")
+        if (other.gameObject.tag == "Hideable" && pause.isPaused == false)
         {
             hideableObject = other.gameObject;
             allowed = true;
@@ -54,7 +55,7 @@ public class Hiding : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag == "Hideable")
+        if (other.gameObject.tag == "Hideable" && pause.isPaused == false)
         {
             hideableObject = null;
             allowed = false;
@@ -64,6 +65,10 @@ public class Hiding : MonoBehaviour
     public void ToggleCamera(InputAction.CallbackContext context)
     {
         Debug.Log("Calling");
+        if (pause.isPaused == true)
+        {
+            return;
+        }
         if (!allowed)
             return;
 
