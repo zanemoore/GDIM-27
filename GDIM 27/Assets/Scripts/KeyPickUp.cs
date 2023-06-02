@@ -60,8 +60,6 @@ public class KeyPickUp : MonoBehaviour
 
                 Rigidbody body = obj.GetComponent<Rigidbody>();
                 float distanceToDoor = Vector3.Distance(body.transform.position, this.transform.position);
-                string x = string.Format("{0}, {1}, {2}", distanceToDoor, interactWithDoorRange, distanceToDoor < interactWithDoorRange);
-                print(x);
                 if (Input.GetMouseButtonDown(0) && (distanceToDoor < interactWithDoorRange))
                 {
                     TryOpenDoor();
