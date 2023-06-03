@@ -144,10 +144,10 @@ GameObject:
   - component: {fileID: 5420857361349278248}
   - component: {fileID: 8616685848737228376}
   - component: {fileID: 1082400912}
+  - component: {fileID: 1089222880674915203}
   - component: {fileID: 1082400915}
   - component: {fileID: 1082400916}
   - component: {fileID: 1696422704115325916}
-  - component: {fileID: 1089222880674915203}
   - component: {fileID: 1082400913}
   - component: {fileID: 1082400914}
   - component: {fileID: 8500363143993419366}
@@ -225,6 +225,7 @@ MonoBehaviour:
   currentCamera: {fileID: 0}
   walkEmitter: {fileID: 1082400915}
   runEmitter: {fileID: 1082400916}
+  pause: {fileID: 0}
 --- !u!114 &1978471637655604388
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -372,14 +373,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6514a2e35207f1a44bfd58d98535afeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cameraFlashLight: {fileID: 0}
+  PlayerFlashLight: {fileID: 0}
+  FL: {fileID: 0}
   FPC: {fileID: 8616685848737228371}
   oldCamera: {fileID: 8616685848737228372}
   oldGameObject: {fileID: 4135013735270702863}
   seconds: 2
+  allowed: 0
   body: {fileID: 5393215578589016642}
   isHidden: 0
   breathingEmitter: {fileID: 8500363143993419366}
   _input: {fileID: 8616685848737228376}
+  pause: {fileID: 0}
+--- !u!114 &1089222880674915203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8616685848737228372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13a119f93b08aa64da376c136e5c2f11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyEmitter: {fileID: 1696422704115325916}
+  lockedEmitter: {fileID: 1082400914}
+  unlockedEmitter: {fileID: 1082400913}
+  soundRange: 1000
+  interactWithDoorRange: 6
+  keys:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  mascot: {fileID: 0}
+  uiInstructions: {fileID: 0}
+  timeToAppear: 2
 --- !u!114 &1082400915
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -473,30 +503,6 @@ MonoBehaviour:
   OverrideAttenuation: 0
   OverrideMinDistance: 1
   OverrideMaxDistance: 65
---- !u!114 &1089222880674915203
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8616685848737228372}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13a119f93b08aa64da376c136e5c2f11, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  keyEmitter: {fileID: 1696422704115325916}
-  lockedEmitter: {fileID: 1082400914}
-  unlockedEmitter: {fileID: 1082400913}
-  soundRange: 1000
-  interactWithDoorRange: 6
-  keys:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  mascot: {fileID: 0}
-  uiInstructions: {fileID: 0}
-  timeToAppear: 2
 --- !u!114 &1082400913
 MonoBehaviour:
   m_ObjectHideFlags: 0
