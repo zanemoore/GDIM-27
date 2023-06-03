@@ -25,6 +25,10 @@ public class KeyPickUp : MonoBehaviour
     private TextMeshProUGUI uiInstructions;
     [SerializeField]
     private float timeToAppear = 2f;
+    [SerializeField]
+    private GameObject dangerMeter;
+    [SerializeField]
+    private GameObject awarenessMeter;
 
     private float timeWhenDisappear;
     private bool hasKey;
@@ -134,6 +138,8 @@ public class KeyPickUp : MonoBehaviour
                 {
                     SetText("Emergency door's locked?\nMaybe there's a key...");
                     SpawnKey(0);
+                    dangerMeter.SetActive(true);
+                    awarenessMeter.SetActive(true);
                     mascot.SetActive(true);
                 }
                 else
