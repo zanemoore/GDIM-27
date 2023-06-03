@@ -81,7 +81,7 @@ MonoBehaviour:
   - {fileID: -4280205142637102059}
   MinDistance: 1
   MaxDistance: 20
-  Length: 31962
+  Length: 34601
 --- !u!114 &-7436792466310433955
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97,7 +97,7 @@ MonoBehaviour:
   Path: Assets/FMOD/EaterFMOD/Build/Desktop/Player.bank
   Name: Player
   StudioPath: bank:/Player
-  lastModified: 638204709562532925
+  lastModified: 638213928636239721
   FileSizes:
   - Name: Desktop
     Value: 611424
@@ -199,11 +199,11 @@ MonoBehaviour:
   StudioPath: 
   Min: 0
   Max: 1
-  Default: 1
+  Default: 0
   ID:
     data1: 3672771324
     data2: 4023010165
-  Type: 2
+  Type: 1
   IsGlobal: 0
   Labels:
   - true
@@ -253,10 +253,10 @@ MonoBehaviour:
   Path: Assets/FMOD/EaterFMOD/Build/Desktop/Boss.bank
   Name: Boss
   StudioPath: bank:/Boss
-  lastModified: 638204709555317648
+  lastModified: 638213928633919089
   FileSizes:
   - Name: Desktop
-    Value: 1144160
+    Value: 1142848
   Exists: 1
 --- !u!114 &-965073491463073282
 MonoBehaviour:
@@ -354,12 +354,13 @@ MonoBehaviour:
   - {fileID: -8123236842860365375}
   - {fileID: 2117036060466516632}
   - {fileID: 3732521023235740555}
+  - {fileID: 5414210478315046476}
   EditorParameters: []
   MasterBanks:
   - {fileID: 2754642089462094760}
   StringsBanks:
   - {fileID: 469979032956789593}
-  cacheTime: 638204709580785214
+  cacheTime: 638213928641029899
   cacheVersion: 131603
 --- !u!114 &393249496385139898
 MonoBehaviour:
@@ -403,10 +404,10 @@ MonoBehaviour:
   Path: Assets/FMOD/EaterFMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638204709555716583
+  lastModified: 638213928634351442
   FileSizes:
   - Name: Desktop
-    Value: 2092
+    Value: 2148
   Exists: 1
 --- !u!114 &751012922505474429
 MonoBehaviour:
@@ -504,7 +505,7 @@ MonoBehaviour:
   Path: Assets/FMOD/EaterFMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638204709555676691
+  lastModified: 638213928634253782
   FileSizes:
   - Name: Desktop
     Value: 2818
@@ -668,6 +669,33 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &5414210478315046476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Phone Vibrate
+  m_EditorClassIdentifier: 
+  Path: event:/Phone Vibrate
+  Guid:
+    Data1: 1391591451
+    Data2: 1312144544
+    Data3: -1041419858
+    Data4: -1126118960
+  Banks:
+  - {fileID: 9017751981007432056}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &5856595566218580690
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -712,7 +740,7 @@ MonoBehaviour:
   Path: Assets/FMOD/EaterFMOD/Build/Desktop/Meter.bank
   Name: Meter
   StudioPath: bank:/Meter
-  lastModified: 638204709556925500
+  lastModified: 638213928635399642
   FileSizes:
   - Name: Desktop
     Value: 120288
@@ -813,8 +841,8 @@ MonoBehaviour:
   Path: Assets/FMOD/EaterFMOD/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638204709580785214
+  lastModified: 638213928641029899
   FileSizes:
   - Name: Desktop
-    Value: 1143584
+    Value: 1195712
   Exists: 1
