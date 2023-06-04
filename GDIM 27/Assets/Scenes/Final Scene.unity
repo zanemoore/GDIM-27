@@ -15,7 +15,7 @@ RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
   m_Fog: 1
-  m_FogColor: {r: 1, g: 1, b: 1, a: 1}
+  m_FogColor: {r: 0.49019608, g: 0.49019608, b: 0.49019608, a: 0.34117648}
   m_FogMode: 2
   m_FogDensity: 0.0001
   m_LinearFogStart: 0
@@ -25,7 +25,7 @@ RenderSettings:
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 0.52
   m_AmbientMode: 3
-  m_SubtractiveShadowColor: {r: 1, g: 1, b: 1, a: 0.34117648}
+  m_SubtractiveShadowColor: {r: 0.49019608, g: 0.49019608, b: 0.49019608, a: 0.34117648}
   m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: 0
   m_FlareStrength: 0
@@ -8179,80 +8179,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!1001 &583768827
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 479826878889476896, guid: 9a9a1e4d7ee879d4db4e8b4d162031a7,
-        type: 3}
-      propertyPath: m_Name
-      value: Lounge Chair
-      objectReference: {fileID: 0}
-    - target: {fileID: 1000749840890861978, guid: 9a9a1e4d7ee879d4db4e8b4d162031a7,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1000749840890861978, guid: 9a9a1e4d7ee879d4db4e8b4d162031a7,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -180.5495
-      objectReference: {fileID: 0}
-    - target: {fileID: 1000749840890861978, guid: 9a9a1e4d7ee879d4db4e8b4d162031a7,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.627
-      objectReference: {fileID: 0}
-    - target: {fileID: 1000749840890861978, guid: 9a9a1e4d7ee879d4db4e8b4d162031a7,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -115.86894
-      objectReference: {fileID: 0}
-    - target: {fileID: 1000749840890861978, guid: 9a9a1e4d7ee879d4db4e8b4d162031a7,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.6900476
-      objectReference: {fileID: 0}
-    - target: {fileID: 1000749840890861978, guid: 9a9a1e4d7ee879d4db4e8b4d162031a7,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1000749840890861978, guid: 9a9a1e4d7ee879d4db4e8b4d162031a7,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.723764
-      objectReference: {fileID: 0}
-    - target: {fileID: 1000749840890861978, guid: 9a9a1e4d7ee879d4db4e8b4d162031a7,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1000749840890861978, guid: 9a9a1e4d7ee879d4db4e8b4d162031a7,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1000749840890861978, guid: 9a9a1e4d7ee879d4db4e8b4d162031a7,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -92.732
-      objectReference: {fileID: 0}
-    - target: {fileID: 1000749840890861978, guid: 9a9a1e4d7ee879d4db4e8b4d162031a7,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2045128884027405596, guid: 9a9a1e4d7ee879d4db4e8b4d162031a7,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2a4c5ab3833e55c438b502b0626f02cd, type: 2}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 9a9a1e4d7ee879d4db4e8b4d162031a7, type: 3}
 --- !u!1001 &610741827
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15335,6 +15261,80 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!1001 &1147929577
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 479826878889476896, guid: 9a9a1e4d7ee879d4db4e8b4d162031a7,
+        type: 3}
+      propertyPath: m_Name
+      value: Lounge Chair
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000749840890861978, guid: 9a9a1e4d7ee879d4db4e8b4d162031a7,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000749840890861978, guid: 9a9a1e4d7ee879d4db4e8b4d162031a7,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -180.55823
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000749840890861978, guid: 9a9a1e4d7ee879d4db4e8b4d162031a7,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.715
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000749840890861978, guid: 9a9a1e4d7ee879d4db4e8b4d162031a7,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -115.05202
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000749840890861978, guid: 9a9a1e4d7ee879d4db4e8b4d162031a7,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.6900476
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000749840890861978, guid: 9a9a1e4d7ee879d4db4e8b4d162031a7,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000749840890861978, guid: 9a9a1e4d7ee879d4db4e8b4d162031a7,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.723764
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000749840890861978, guid: 9a9a1e4d7ee879d4db4e8b4d162031a7,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000749840890861978, guid: 9a9a1e4d7ee879d4db4e8b4d162031a7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000749840890861978, guid: 9a9a1e4d7ee879d4db4e8b4d162031a7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -92.732
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000749840890861978, guid: 9a9a1e4d7ee879d4db4e8b4d162031a7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2045128884027405596, guid: 9a9a1e4d7ee879d4db4e8b4d162031a7,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9850976d6d8a72c4db0ad7bde230eed5, type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9a9a1e4d7ee879d4db4e8b4d162031a7, type: 3}
 --- !u!4 &1153115962 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6323582616882643617, guid: 9ff9cb86b92e9f2429f4b47412804464,
@@ -24984,7 +24984,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 0.2735849, g: 0.16131185, b: 0.16131185, a: 1}
-  m_Intensity: 76.08
+  m_Intensity: 0.15
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
