@@ -16,7 +16,7 @@ public class KeyPickUp : MonoBehaviour
     [SerializeField]
     private float soundRange;
     [SerializeField]
-    private float interactWithDoorRange;
+    private float maxInteractRange;
     [SerializeField]
     private GameObject[] keys;
     [SerializeField]
@@ -25,8 +25,12 @@ public class KeyPickUp : MonoBehaviour
     private TextMeshProUGUI uiInstructions;
     [SerializeField]
     private float timeToAppear = 2f;
-    private float timeWhenDisappear;
+    [SerializeField]
+    private GameObject dangerMeter;
+    [SerializeField]
+    private GameObject awarenessMeter;
 
+    private float timeWhenDisappear;
     private bool hasKey;
     private int numKeysTried;
 
@@ -45,7 +49,7 @@ public class KeyPickUp : MonoBehaviour
     {
         RaycastHit hit;
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out hit))
+        if (Physics.Raycast(ray, out hit, maxInteractRange))
         {
             GameObject obj = hit.collider.gameObject;
 
@@ -54,20 +58,18 @@ public class KeyPickUp : MonoBehaviour
                 PickUpKey(obj);
                
             }
-            else if (obj.tag == "Exit")
+            else if (obj.layer == LayerMask.NameToLayer("Door"))
             {
-                // SHOW DOOR RETICLE
+                // Show Door Reticle
 
-                Rigidbody body = obj.GetComponent<Rigidbody>();
-                float distanceToDoor = Vector3.Distance(body.transform.position, this.transform.position);
-                if (Input.GetMouseButtonDown(0) && (distanceToDoor < interactWithDoorRange))
+                if (Input.GetMouseButtonDown(0))
                 {
-                    TryOpenDoor();
+                    TryOpenDoor(obj);
                 }
             }
         }
 
-        if (uiInstructions.enabled && (Time.time >= timeWhenDisappear))
+        if (Time.time >= timeWhenDisappear)
         {
             uiInstructions.enabled = false;
         }
@@ -94,21 +96,36 @@ public class KeyPickUp : MonoBehaviour
     }
 
 
-    private void TryOpenDoor()
+    private void TryOpenDoor(GameObject door)
     {
-        if (hasKey)
+        if (door.tag == "Exit")
         {
-            numKeysTried++;
-
-            if (numKeysTried == keys.Length)
+            if (hasKey)
             {
-                if (!unlockedEmitter.IsPlaying())
+                numKeysTried++;
+
+                if (numKeysTried == keys.Length)
                 {
-                    unlockedEmitter.Play();
+                    if (!unlockedEmitter.IsPlaying())
+                    {
+                        unlockedEmitter.Play();
+                    }
+
+                    Cursor.lockState = CursorLockMode.None;
+                    SceneManager.LoadScene("MainMenu");  // Temp for when you win - Diego REPLACE WITH NEWSPAPER AND PLAY AGAIN THING
+                }
+                else
+                {
+                    if (!lockedEmitter.IsPlaying())
+                    {
+                        lockedEmitter.Play();
+                    }
+
+                    SetText("Dammit, wrong key...\nWhere's the actual key?!");
+                    SpawnKey(numKeysTried);
                 }
 
-                Cursor.lockState = CursorLockMode.None;
-                SceneManager.LoadScene("MainMenu");  // Temp for when you win - Diego
+                hasKey = false;
             }
             else
             {
@@ -116,11 +133,20 @@ public class KeyPickUp : MonoBehaviour
                 {
                     lockedEmitter.Play();
                 }
-                SetText("Dammit, wrong key...\nWhere's the actual key?!");
-                SpawnKey(numKeysTried);
-            }
 
-            hasKey = false;
+                if (numKeysTried == 0)
+                {
+                    SetText("Emergency door's locked?\nMaybe there's a key...");
+                    SpawnKey(0);
+                    dangerMeter.SetActive(true);
+                    awarenessMeter.SetActive(true);
+                    mascot.SetActive(true);
+                }
+                else
+                {
+                    SetText("Wrong key...\nWho locks emergency doors anyways?");
+                }
+            }
         }
         else
         {
@@ -129,16 +155,7 @@ public class KeyPickUp : MonoBehaviour
                 lockedEmitter.Play();
             }
 
-            if (numKeysTried == 0)
-            {
-                SetText("Emergency door's locked?\nMaybe there's a key...");
-                SpawnKey(0);
-                mascot.SetActive(true);
-            }
-            else
-            {
-                SetText("Wrong key...\nWho locks emergency doors anyways?");
-            }
+            SetText("This isn't the exit...");
         }
     }
 
@@ -149,16 +166,10 @@ public class KeyPickUp : MonoBehaviour
     }
 
 
-    private void EnableText()
-    {
-        uiInstructions.enabled = true;
-        timeWhenDisappear = Time.time + timeToAppear;
-    }
-
-
     private void SetText(string text)
     {
         uiInstructions.text = text;
-        EnableText();
+        uiInstructions.enabled = true;
+        timeWhenDisappear = Time.time + timeToAppear;
     }
 }

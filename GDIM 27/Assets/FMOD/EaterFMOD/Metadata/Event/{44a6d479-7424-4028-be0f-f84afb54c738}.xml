@@ -61,7 +61,7 @@
 	</object>
 	<object class="EventAutomatableProperties" id="{3d339f59-0b5d-4303-b579-0a0f68d81dc6}">
 		<property name="maximumDistance">
-			<value>65</value>
+			<value>30</value>
 		</property>
 	</object>
 	<object class="MarkerTrack" id="{b23eb4ac-dd7e-40ab-8650-ab2e451e50f1}" />
@@ -77,7 +77,7 @@
 	</object>
 	<object class="EventMixerMaster" id="{fdabb39f-c1e0-4662-bb32-973bdd5ec137}">
 		<property name="volume">
-			<value>8.5</value>
+			<value>4</value>
 		</property>
 		<relationship name="effectChain">
 			<destination>{13f43b81-0bfc-487d-9869-21f2ea1b879b}</destination>
@@ -121,7 +121,7 @@
 	<object class="MixerBusFader" id="{4d60c9a4-b242-4343-ab11-53a4ffc55097}" />
 	<object class="SpatialiserEffect" id="{17cc4363-7f9e-4b7a-88a0-e5a240593f3e}">
 		<property name="maximumDistance">
-			<value>65</value>
+			<value>30</value>
 		</property>
 	</object>
 	<object class="SingleSound" id="{a6b3fc10-0239-469f-ba93-cdd9ebe939e9}">
