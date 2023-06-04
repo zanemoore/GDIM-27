@@ -12603,6 +12603,11 @@ PrefabInstance:
       propertyPath: keys.Array.data[2]
       value: 
       objectReference: {fileID: 1499577553}
+    - target: {fileID: 1696422704115325916, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
+        type: 3}
+      propertyPath: OverrideMaxDistance
+      value: 35
+      objectReference: {fileID: 0}
     - target: {fileID: 8616685848737228371, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
         type: 3}
       propertyPath: pause
@@ -25889,6 +25894,9 @@ GameObject:
   - component: {fileID: 1963996465}
   - component: {fileID: 1963996464}
   - component: {fileID: 1963996467}
+  - component: {fileID: 1963996470}
+  - component: {fileID: 1963996469}
+  - component: {fileID: 1963996468}
   m_Layer: 5
   m_Name: Telephone
   m_TagString: Untagged
@@ -26006,6 +26014,7 @@ MonoBehaviour:
     random: 0
     minTime: 0
     maxTime: 0
+    sound: 0
   - time: 5220
     text: "Yo Carlos, you still at the Science Library? Don\u2019t tell me you actually
       died lmao."
@@ -26014,6 +26023,7 @@ MonoBehaviour:
     random: 0
     minTime: 0
     maxTime: 0
+    sound: 0
   - time: 0
     text: "Dude please reply I\u2019m getting a little concerned. There\u2019s no
       way your phone is dead."
@@ -26022,6 +26032,7 @@ MonoBehaviour:
     random: 1
     minTime: 6480
     maxTime: 7080
+    sound: 0
   - time: 0
     text: "BRO I tried calling you but it won\u2019t go through for some reason.
       \nYour roommate said that you\u2019re not back yet. If you don\u2019t respond
@@ -26031,6 +26042,7 @@ MonoBehaviour:
     random: 1
     minTime: 7140
     maxTime: 7260
+    sound: 0
   - time: 8100
     text: DUDE
     sender: Ben
@@ -26038,6 +26050,7 @@ MonoBehaviour:
     random: 0
     minTime: 7620
     maxTime: 8100
+    sound: 0
   - time: 8100
     text: WHERE
     sender: Ben
@@ -26045,6 +26058,7 @@ MonoBehaviour:
     random: 0
     minTime: 7620
     maxTime: 8100
+    sound: 0
   - time: 10000
     text: ARE
     sender: 8100
@@ -26052,6 +26066,7 @@ MonoBehaviour:
     random: 0
     minTime: 7620
     maxTime: 8100
+    sound: 0
   - time: 8100
     text: YOU
     sender: Ben
@@ -26059,6 +26074,103 @@ MonoBehaviour:
     random: 0
     minTime: 7620
     maxTime: 8100
+    sound: 0
+  vibrateEmitter: {fileID: 1963996470}
+  selectEmitter: {fileID: 1963996469}
+  eerieEmitter: {fileID: 1963996468}
+--- !u!114 &1963996468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1963996461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 119943382
+      Data2: 1075608481
+      Data3: -1308406362
+      Data4: 421381204
+    Path: event:/Eerie Message
+  Event: 
+  PlayEvent: 0
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &1963996469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1963996461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1358190514
+      Data2: 1115416063
+      Data3: -787389517
+      Data4: -722060738
+    Path: event:/Phone Select
+  Event: 
+  PlayEvent: 0
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &1963996470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1963996461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1391591451
+      Data2: 1312144544
+      Data3: -1041419858
+      Data4: -1126118960
+    Path: event:/Phone Vibrate
+  Event: 
+  PlayEvent: 0
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &1972683018 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9215267474699151773, guid: c316f4e38a47fbb45944ce4eb5e12871,
