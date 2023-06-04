@@ -23493,6 +23493,10 @@ PrefabInstance:
       propertyPath: tempHold
       value: 
       objectReference: {fileID: 1909647180}
+    - target: {fileID: 1042108158, guid: 06c2419350d94404493083b55ef83613, type: 3}
+      propertyPath: OverrideMaxDistance
+      value: 35
+      objectReference: {fileID: 0}
     - target: {fileID: 1042108159, guid: 06c2419350d94404493083b55ef83613, type: 3}
       propertyPath: m_IsKinematic
       value: 1
