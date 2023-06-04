@@ -20,6 +20,7 @@ public class Phone : MonoBehaviour
         public bool random;
         public float minTime;
         public float maxTime;
+        public bool sound; // does the text play the eerie sfx
     }
 
 
@@ -36,6 +37,11 @@ public class Phone : MonoBehaviour
     private bool phoneActive;
 
     [SerializeField] private List<TextMessage> texts = new List<TextMessage>();
+
+    //sound
+    public FMODUnity.StudioEventEmitter vibrateEmitter;
+    public FMODUnity.StudioEventEmitter selectEmitter;
+    public FMODUnity.StudioEventEmitter eerieEmitter;
 
 
     void Start()
@@ -61,6 +67,10 @@ public class Phone : MonoBehaviour
     public void TogglePhone(InputAction.CallbackContext context)
     {
         phoneActive = !phoneActive;
+        if (phoneActive)
+        {
+            selectEmitter.Play();
+        }
         animator.SetBool("On", phoneActive);
     }
 
@@ -91,6 +101,11 @@ public class Phone : MonoBehaviour
         if (hours <= 0)
             hours = 12;
 
+        if (msg.sound)
+        {
+          eerieEmitter.Play();
+        }    
+
         message.text = msg.text;
         messageTime.text = string.Format("{0:00}:{1:00}", hours, minutes);
         PhonePeek();
@@ -100,6 +115,7 @@ public class Phone : MonoBehaviour
     {
         if(!phoneActive)
         {
+            vibrateEmitter.Play();
             animator.SetBool("Peek", true);
             StartCoroutine(PeekTime());
         }
