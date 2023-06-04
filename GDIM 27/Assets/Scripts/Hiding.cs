@@ -32,7 +32,10 @@ public class Hiding : MonoBehaviour
     [SerializeField]
     private PlayerInput _input;
 
+    public bool playingAnim = false;
+
     [SerializeField] private PauseMenu pause;
+
     private void Start()
     {
         _input.actions["Hide"].started += ToggleCamera;
@@ -64,7 +67,6 @@ public class Hiding : MonoBehaviour
 
     public void ToggleCamera(InputAction.CallbackContext context)
     {
-        Debug.Log("Calling");
         if (pause.isPaused == true)
         {
             return;
@@ -72,7 +74,6 @@ public class Hiding : MonoBehaviour
         if (!allowed)
             return;
 
-        Debug.Log("Passed the function");
         if (!switched)
         {
             CM = hideableObject.gameObject.transform.GetChild(0).GetComponent<CinemachineVirtualCamera>();
@@ -93,12 +94,21 @@ public class Hiding : MonoBehaviour
             CM.Priority = 9;
             FPC.CinemachineCameraTarget = oldGameObject;
             FPC.currentCamera = oldCamera;
-            StartCoroutine(WaitForAnimation());
+ 
+            if(!playingAnim)
+                StartCoroutine(WaitForAnimation());
+            else
+            {
+                Debug.Log("Cancelling");
+                StopCoroutine(WaitForAnimation());
+                playingAnim = false;
+            }
             isHidden = false;
             PlayerFlashLight.SetActive(FL.flashLight.activeInHierarchy);
             FL.flashLight = PlayerFlashLight;
             cameraFlashLight.SetActive(false);
             _input.actions["Move"].Enable();
+            playingAnim = true;
 
             stopBreathingSound();
         }
@@ -122,10 +132,14 @@ public class Hiding : MonoBehaviour
     IEnumerator WaitForAnimation()
     {
         yield return new WaitForSeconds(seconds);
-        body.SetActive(true);
+        if (playingAnim)
+        {
+            body.SetActive(!isHidden);
+            playingAnim= false;
+        }
 
     }
-
+     
     void OnDestroy()
     {
         stopBreathingSound();
