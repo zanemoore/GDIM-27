@@ -209,9 +209,8 @@ public class MascotAI : MonoBehaviour, MascotHearing
                         stopTimer = true;
                         mascotAnimator.SetBool("Idling", true);
                         Stop();
-                        //activate jump scare kill animation
                         Cursor.lockState = CursorLockMode.None;
-                        SceneManager.LoadScene("MainMenu");  // Temp for when you die - Diego
+                        SceneManager.LoadScene("Game Over");
                     }
                 }
                 else
@@ -463,9 +462,8 @@ public class MascotAI : MonoBehaviour, MascotHearing
                 mascotAnimator.SetBool("Idling", true);
                 playerModel.transform.LookAt(mascotModel);
                 Stop();
-                //activate jump scare kill animation?
-                //activate jump scare kill animation
-                SceneManager.LoadScene("MainMenu");  // Temp for when you die - Diego
+                SceneManager.LoadScene("MainMenu");
+                SceneManager.LoadScene("Game Over");
             }
         }
     }

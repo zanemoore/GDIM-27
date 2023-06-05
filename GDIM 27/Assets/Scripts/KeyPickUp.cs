@@ -112,7 +112,7 @@ public class KeyPickUp : MonoBehaviour
                     }
 
                     Cursor.lockState = CursorLockMode.None;
-                    SceneManager.LoadScene("MainMenu");  // Temp for when you win - Diego REPLACE WITH NEWSPAPER AND PLAY AGAIN THING
+                    SceneManager.LoadScene("Game Over");
                 }
                 else
                 {
