@@ -5,16 +5,14 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+
+
 //ALL THIS IS TEMP CODE MEANT TO TEST MENU SWITCHING
 public class MainMenuNavigator_TEMP : MonoBehaviour
 {
     [SerializeField] GameObject mainMenu;//A game object representing base menu
     [SerializeField] GameObject settingsMenu;//A game object representing settings menu
-    [SerializeField] GameObject levelSelectMenu; //A game object representing level select menu
-    [SerializeField] string mainScene; //Main scene
-
-    [SerializeField]
-    List<string> sceneMgmtList;//Stores scenes inside for easier level switching
+    [SerializeField] GameObject loadingScreen; //A game object representing level select menu
 
     [SerializeField]
     List<int> resWidths;//A list of screen size widths
@@ -42,12 +40,14 @@ public class MainMenuNavigator_TEMP : MonoBehaviour
         }
     }
 
-    // plays button sounds - dare
+    // plays btn sounds when hovering - dare
     public void hoverSound()
     {
         hover.Play();
     }
 
+
+    // plays btn sounds when clicking - dare
     public void clickSound()
     {
         click.Play();
@@ -58,15 +58,6 @@ public class MainMenuNavigator_TEMP : MonoBehaviour
     {
         mainMenu.SetActive(true);
         settingsMenu.SetActive(false);
-        levelSelectMenu.SetActive(false);
-    }
-
-    //Opens Level Select Menu
-    public void GoToLevelSelect()
-    {
-        mainMenu.SetActive(false);
-        settingsMenu.SetActive(false);
-        levelSelectMenu.SetActive(true);
     }
 
     //Opens setting menu
@@ -74,23 +65,25 @@ public class MainMenuNavigator_TEMP : MonoBehaviour
     {
         mainMenu.SetActive(false);
         settingsMenu.SetActive(true);
-        levelSelectMenu.SetActive(false);
     }
 
-    //TEMP CODE BELOW, NEEDS REFACTORING
-    public void ToUCI()
+    //Loads the next scene in the build settings asynchronously
+    public void LoadScreen(int sceneId)
     {
-        SceneManager.LoadScene(sceneMgmtList[0]);
+        StartCoroutine(LoadSceneAsync(sceneId));
     }
 
-    public void ToUCR()
+    //Enumerator for showing loading screen panel
+    IEnumerator LoadSceneAsync(int sceneId)
     {
-        SceneManager.LoadScene(sceneMgmtList[1]);
-    }
+        AsyncOperation operation = SceneManager.LoadSceneAsync(sceneId);
 
-    public void ToUCSD()
-    {
-        SceneManager.LoadScene(sceneMgmtList[2]);
+        loadingScreen.SetActive(true);
+
+        while (!operation.isDone)
+        {
+            yield return null;
+        }
     }
 
 
