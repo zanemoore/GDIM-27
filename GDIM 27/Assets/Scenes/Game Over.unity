@@ -272,10 +272,10 @@ RectTransform:
   m_Father: {fileID: 1179876266}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.12875001, y: 0}
-  m_AnchorMax: {x: 0.87875, y: 1}
-  m_AnchoredPosition: {x: 0.29489136, y: 0}
-  m_SizeDelta: {x: 0.3448, y: 0.000061035156}
+  m_AnchorMin: {x: 0.22500001, y: 0}
+  m_AnchorMax: {x: 0.77625006, y: 1}
+  m_AnchoredPosition: {x: -0.5, y: 0}
+  m_SizeDelta: {x: -0.7799988, y: 5.380005}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &140907577
 MonoBehaviour:
@@ -433,7 +433,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &766783061
 RectTransform:
   m_ObjectHideFlags: 0
@@ -489,10 +489,10 @@ RectTransform:
   m_Father: {fileID: 766783061}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4.841, y: 0.17874}
-  m_SizeDelta: {x: 597.271, y: 582.98}
+  m_AnchorMin: {x: 0.22875, y: 0}
+  m_AnchorMax: {x: 0.77125007, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0.77326965}
+  m_SizeDelta: {x: -1.8200073, y: 0.7799988}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &772411334
 MonoBehaviour:
@@ -1183,6 +1183,7 @@ GameObject:
   - component: {fileID: 1991465972}
   - component: {fileID: 1991465971}
   - component: {fileID: 1991465970}
+  - component: {fileID: 1991465973}
   m_Layer: 5
   m_Name: MainMenuButton
   m_TagString: Untagged
@@ -1206,10 +1207,10 @@ RectTransform:
   m_Father: {fileID: 766783061}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.71000004, y: 0.0044444436}
-  m_AnchorMax: {x: 0.84625006, y: 0.051111102}
-  m_AnchoredPosition: {x: -0.6000061, y: 0.47698975}
-  m_SizeDelta: {x: -2.088997, y: -0.95401}
+  m_AnchorMin: {x: 0.63124996, y: 0}
+  m_AnchorMax: {x: 0.77125007, y: 0.04888889}
+  m_AnchoredPosition: {x: -1.8999939, y: 0.977005}
+  m_SizeDelta: {x: -5.088997, y: -1.95401}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1991465970
 MonoBehaviour:
@@ -1267,6 +1268,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 41054916}
+        m_TargetAssemblyTypeName: GameOverUINavigator, Assembly-CSharp
+        m_MethodName: clickSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
 --- !u!114 &1991465971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1305,6 +1318,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1991465968}
   m_CullTransparentMesh: 1
+--- !u!114 &1991465973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1991465968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 41054916}
+          m_TargetAssemblyTypeName: GameOverUINavigator, Assembly-CSharp
+          m_MethodName: hoverSound
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 1
 --- !u!1 &2000128979
 GameObject:
   m_ObjectHideFlags: 0
@@ -1317,6 +1359,7 @@ GameObject:
   - component: {fileID: 2000128983}
   - component: {fileID: 2000128982}
   - component: {fileID: 2000128981}
+  - component: {fileID: 2000128984}
   m_Layer: 5
   m_Name: MainMenuButton
   m_TagString: Untagged
@@ -1340,10 +1383,10 @@ RectTransform:
   m_Father: {fileID: 1179876266}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.71000004, y: 0.0044444436}
-  m_AnchorMax: {x: 0.84625006, y: 0.051111102}
-  m_AnchoredPosition: {x: -0.6000061, y: 0.47698975}
-  m_SizeDelta: {x: -2.0890045, y: -0.95401}
+  m_AnchorMin: {x: 0.43375, y: 0}
+  m_AnchorMax: {x: 0.5687501, y: 0.051111102}
+  m_AnchoredPosition: {x: -1, y: 1}
+  m_SizeDelta: {x: -1.0890045, y: -2.95401}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2000128981
 MonoBehaviour:
@@ -1401,6 +1444,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 41054916}
+        m_TargetAssemblyTypeName: GameOverUINavigator, Assembly-CSharp
+        m_MethodName: clickSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
 --- !u!114 &2000128982
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1439,6 +1494,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2000128979}
   m_CullTransparentMesh: 1
+--- !u!114 &2000128984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2000128979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 41054916}
+          m_TargetAssemblyTypeName: GameOverUINavigator, Assembly-CSharp
+          m_MethodName: hoverSound
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 1
 --- !u!1 &2109690820
 GameObject:
   m_ObjectHideFlags: 0
