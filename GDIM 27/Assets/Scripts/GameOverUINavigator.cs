@@ -22,12 +22,9 @@ public class GameOverUINavigator : MonoBehaviour
     void Start()
     {
         Cursor.visible = true;
-    }
 
-
-    private void Update()
-    {
-
+        // if win setactive _winScreen and cursor.visible
+        // else play jumpscare then setactive _winScreenObject + cursor.visible
     }
 
 
