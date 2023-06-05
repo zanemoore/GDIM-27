@@ -56,6 +56,11 @@ public class PauseMenu : MonoBehaviour
                 Application.Quit();
         #endif*/
 
+        Cursor.visible = false;
+        pauseMenu.SetActive(false);
+        Time.timeScale = 1f;
+        isPaused = false;
+
         SceneManager.LoadScene(sceneId);
     }
 }
