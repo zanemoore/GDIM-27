@@ -1486,6 +1486,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: backpack 3
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: afbcd0650e046dc4ba2efcb5d3f282b1,
+        type: 3}
+      propertyPath: m_TagString
+      value: Throwable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: afbcd0650e046dc4ba2efcb5d3f282b1, type: 3}
 --- !u!1 &111996232 stripped
@@ -3008,6 +3013,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: stackedbooks (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 02d47a5fbf8e52842b967ef91b56ef69,
+        type: 3}
+      propertyPath: m_TagString
+      value: Throwable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 02d47a5fbf8e52842b967ef91b56ef69, type: 3}
 --- !u!4 &232624499 stripped
@@ -4127,6 +4137,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: backpack 5
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: afbcd0650e046dc4ba2efcb5d3f282b1,
+        type: 3}
+      propertyPath: m_TagString
+      value: Throwable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: afbcd0650e046dc4ba2efcb5d3f282b1, type: 3}
 --- !u!4 &276426024 stripped
@@ -4853,6 +4868,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: waterbottle 1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7ec86cc6d3756624995fb235818c24e6,
+        type: 3}
+      propertyPath: m_TagString
+      value: Throwable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7ec86cc6d3756624995fb235818c24e6, type: 3}
 --- !u!1 &306777975 stripped
@@ -5038,6 +5058,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: stackedbooks (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 02d47a5fbf8e52842b967ef91b56ef69,
+        type: 3}
+      propertyPath: m_TagString
+      value: Throwable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 02d47a5fbf8e52842b967ef91b56ef69, type: 3}
@@ -9341,6 +9366,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: waterbottle 4
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7ec86cc6d3756624995fb235818c24e6,
+        type: 3}
+      propertyPath: m_TagString
+      value: Throwable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7ec86cc6d3756624995fb235818c24e6, type: 3}
 --- !u!1 &645492891 stripped
@@ -9599,6 +9629,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: backpack 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: afbcd0650e046dc4ba2efcb5d3f282b1,
+        type: 3}
+      propertyPath: m_TagString
+      value: Throwable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: afbcd0650e046dc4ba2efcb5d3f282b1, type: 3}
@@ -10919,6 +10954,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: stackedbooks
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 02d47a5fbf8e52842b967ef91b56ef69,
+        type: 3}
+      propertyPath: m_TagString
+      value: Throwable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 02d47a5fbf8e52842b967ef91b56ef69, type: 3}
 --- !u!1 &777544039 stripped
@@ -11693,6 +11733,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: waterbottle 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7ec86cc6d3756624995fb235818c24e6,
+        type: 3}
+      propertyPath: m_TagString
+      value: Throwable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7ec86cc6d3756624995fb235818c24e6, type: 3}
@@ -15800,6 +15845,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6514a2e35207f1a44bfd58d98535afeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1082400914 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8616685848737228371, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
+    type: 3}
+  m_PrefabInstance: {fileID: 1082400905}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1082400911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55919ac34a26952479f3fc91f777b2fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1084642643
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17732,6 +17789,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: backpack 1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: afbcd0650e046dc4ba2efcb5d3f282b1,
+        type: 3}
+      propertyPath: m_TagString
+      value: Throwable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: afbcd0650e046dc4ba2efcb5d3f282b1, type: 3}
 --- !u!1 &1197369288 stripped
@@ -17829,7 +17891,7 @@ MonoBehaviour:
   Params: []
   OverrideAttenuation: 0
   OverrideMinDistance: 1
-  OverrideMaxDistance: 65
+  OverrideMaxDistance: 30
 --- !u!1 &1209441100 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9215267474699151773, guid: c316f4e38a47fbb45944ce4eb5e12871,
@@ -18973,6 +19035,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: backpack 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: afbcd0650e046dc4ba2efcb5d3f282b1,
+        type: 3}
+      propertyPath: m_TagString
+      value: Throwable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: afbcd0650e046dc4ba2efcb5d3f282b1, type: 3}
@@ -22348,6 +22415,22 @@ PrefabInstance:
       propertyPath: tempHold
       value: 
       objectReference: {fileID: 1909647180}
+    - target: {fileID: 1042108157, guid: 06c2419350d94404493083b55ef83613, type: 3}
+      propertyPath: grabReticle
+      value: 
+      objectReference: {fileID: 33490218}
+    - target: {fileID: 1042108157, guid: 06c2419350d94404493083b55ef83613, type: 3}
+      propertyPath: throwReticle
+      value: 
+      objectReference: {fileID: 2056708926}
+    - target: {fileID: 1042108157, guid: 06c2419350d94404493083b55ef83613, type: 3}
+      propertyPath: normalReticle
+      value: 
+      objectReference: {fileID: 1331243154}
+    - target: {fileID: 1042108158, guid: 06c2419350d94404493083b55ef83613, type: 3}
+      propertyPath: OverrideMaxDistance
+      value: 35
+      objectReference: {fileID: 0}
     - target: {fileID: 1042108159, guid: 06c2419350d94404493083b55ef83613, type: 3}
       propertyPath: m_IsKinematic
       value: 1
@@ -25486,6 +25569,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: waterbottle 5
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7ec86cc6d3756624995fb235818c24e6,
+        type: 3}
+      propertyPath: m_TagString
+      value: Throwable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7ec86cc6d3756624995fb235818c24e6, type: 3}
 --- !u!4 &1696268769 stripped
@@ -28035,6 +28123,18 @@ PrefabInstance:
       propertyPath: tempHold
       value: 
       objectReference: {fileID: 1909647180}
+    - target: {fileID: 1042108157, guid: 06c2419350d94404493083b55ef83613, type: 3}
+      propertyPath: grabReticle
+      value: 
+      objectReference: {fileID: 33490218}
+    - target: {fileID: 1042108157, guid: 06c2419350d94404493083b55ef83613, type: 3}
+      propertyPath: throwReticle
+      value: 
+      objectReference: {fileID: 2056708926}
+    - target: {fileID: 1042108157, guid: 06c2419350d94404493083b55ef83613, type: 3}
+      propertyPath: normalReticle
+      value: 
+      objectReference: {fileID: 1331243154}
     - target: {fileID: 1042108158, guid: 06c2419350d94404493083b55ef83613, type: 3}
       propertyPath: OverrideMaxDistance
       value: 35
@@ -32269,6 +32369,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: waterbottle 3
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7ec86cc6d3756624995fb235818c24e6,
+        type: 3}
+      propertyPath: m_TagString
+      value: Throwable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7ec86cc6d3756624995fb235818c24e6, type: 3}
 --- !u!1 &2052453097 stripped
@@ -34457,6 +34562,11 @@ PrefabInstance:
       propertyPath: m_Height
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6249156008004851021, guid: 57165a9fe820e2d45a893b83d4eb7dfb,
+        type: 3}
+      propertyPath: m_StoppingDistance
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 6249156008004851022, guid: 57165a9fe820e2d45a893b83d4eb7dfb,
         type: 3}
       propertyPath: m_Interpolate
@@ -34467,6 +34577,11 @@ PrefabInstance:
       propertyPath: hide
       value: 
       objectReference: {fileID: 1082400912}
+    - target: {fileID: 6249156008004851023, guid: 57165a9fe820e2d45a893b83d4eb7dfb,
+        type: 3}
+      propertyPath: meter
+      value: 
+      objectReference: {fileID: 432411781}
     - target: {fileID: 6249156008004851023, guid: 57165a9fe820e2d45a893b83d4eb7dfb,
         type: 3}
       propertyPath: value
@@ -34499,6 +34614,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6249156008004851023, guid: 57165a9fe820e2d45a893b83d4eb7dfb,
         type: 3}
+      propertyPath: runTickUp
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6249156008004851023, guid: 57165a9fe820e2d45a893b83d4eb7dfb,
+        type: 3}
       propertyPath: walkSpeed
       value: 8
       objectReference: {fileID: 0}
@@ -34525,7 +34645,7 @@ PrefabInstance:
     - target: {fileID: 6249156008004851023, guid: 57165a9fe820e2d45a893b83d4eb7dfb,
         type: 3}
       propertyPath: startWaitTime
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6249156008004851023, guid: 57165a9fe820e2d45a893b83d4eb7dfb,
         type: 3}
@@ -34557,6 +34677,11 @@ PrefabInstance:
       propertyPath: awarenessRadius
       value: 18
       objectReference: {fileID: 0}
+    - target: {fileID: 6249156008004851023, guid: 57165a9fe820e2d45a893b83d4eb7dfb,
+        type: 3}
+      propertyPath: playerController
+      value: 
+      objectReference: {fileID: 1082400914}
     - target: {fileID: 6249156008004851023, guid: 57165a9fe820e2d45a893b83d4eb7dfb,
         type: 3}
       propertyPath: wallLayer.m_Bits
@@ -35327,6 +35452,22 @@ PrefabInstance:
       propertyPath: tempHold
       value: 
       objectReference: {fileID: 1909647180}
+    - target: {fileID: 1042108157, guid: 06c2419350d94404493083b55ef83613, type: 3}
+      propertyPath: grabReticle
+      value: 
+      objectReference: {fileID: 33490218}
+    - target: {fileID: 1042108157, guid: 06c2419350d94404493083b55ef83613, type: 3}
+      propertyPath: throwReticle
+      value: 
+      objectReference: {fileID: 2056708926}
+    - target: {fileID: 1042108157, guid: 06c2419350d94404493083b55ef83613, type: 3}
+      propertyPath: normalReticle
+      value: 
+      objectReference: {fileID: 1331243154}
+    - target: {fileID: 1042108158, guid: 06c2419350d94404493083b55ef83613, type: 3}
+      propertyPath: OverrideMaxDistance
+      value: 35
+      objectReference: {fileID: 0}
     - target: {fileID: 1042108159, guid: 06c2419350d94404493083b55ef83613, type: 3}
       propertyPath: m_IsKinematic
       value: 1
@@ -36601,6 +36742,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: backpack 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7666316119767972832, guid: beb1c755e2023f542a0ed955bfa94395,
+        type: 3}
+      propertyPath: m_TagString
+      value: Throwable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: beb1c755e2023f542a0ed955bfa94395, type: 3}

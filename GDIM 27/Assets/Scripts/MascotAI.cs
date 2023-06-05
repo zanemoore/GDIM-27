@@ -7,21 +7,25 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using StarterAssets;
 
 public class MascotAI : MonoBehaviour, MascotHearing
 {
     [SerializeField] private Transform mascotModel;
     [SerializeField] private Animator mascotAnimator;
+    [SerializeField] private GameObject meter;
     [SerializeField] private Slider awarenessMeter;
     [SerializeField] private TextMeshProUGUI awarenessValueText;
     [SerializeField] private int awarenessMaxValue;
     [SerializeField] private int value;
+    [SerializeField] private float runTickUp;
     [SerializeField] private float tickUp;
     [SerializeField] private float tickDown;
 
     //Player
     [Space(10)]
     [SerializeField] private Transform playerModel;
+    [SerializeField] private FirstPersonController playerController;
     private Vector3 playerLastPosition = Vector3.zero;
     private Vector3 playerPosition;
 
@@ -66,11 +70,9 @@ public class MascotAI : MonoBehaviour, MascotHearing
     private bool reachedObject;
     private bool reachedPosition;
     private bool stopTimer;
+    private float runTimerUp;
     protected float timerUp;
     protected float timerDown;
-
-    [HideInInspector]
-    public AwarenessMeter meter;
 
     //audio
     public FMODUnity.StudioEventEmitter chaseEmitter;
@@ -107,11 +109,11 @@ public class MascotAI : MonoBehaviour, MascotHearing
 
     private void Update()
     {
-        AwarenessMeter();
+        DangerMeter();
 
         if ((hide.isHidden == true) && (isPatrol == true))
         {
-            ///player hidden while mascot is patrolling
+            ///the mascot can't see the player hiding while in patrol mode; 
         }
         else
         {
@@ -132,7 +134,7 @@ public class MascotAI : MonoBehaviour, MascotHearing
                 transform.Rotate(0f, 180f, 0f);
             }
         }
-        else if (isDistracted == true)
+        else if ((isDistracted == true) && (isChasing == false) && (isHunting == false))
         {
             Distracted();
         }
@@ -150,6 +152,17 @@ public class MascotAI : MonoBehaviour, MascotHearing
         {
             mascotAnimator.SetTrigger("Walk");
         }
+
+        /*if (isPatrol == true && !agent.hasPath && agent.pathStatus == NavMeshPathStatus.PathComplete)
+        {
+            // mascot stuck
+            agent.enabled = false;
+            Debug.Log("mascot stuck: navmesh disabled");
+
+            // mascot will HOPEFULLY start moving again
+            agent.enabled = true;
+            Debug.Log("mascot unstuck: navmesh re-enabled");
+        }*/
     }
 
     void OnDestroy()
@@ -233,10 +246,8 @@ public class MascotAI : MonoBehaviour, MascotHearing
                     }
 
                     agent.SetDestination(playerLastPosition);
-                    //Debug.Log("BEHIND A WALL");
+                    Debug.Log("BEHIND A WALL");
                 }
-
-                
             }
 
             if (Vector3.Distance(transform.position, player.position) > viewRadius)
@@ -296,6 +307,9 @@ public class MascotAI : MonoBehaviour, MascotHearing
             playerLastPosition = Vector3.zero;
             agent.SetDestination(waypoints[currentWaypointIndex].position);
 
+            Debug.Log(agent.remainingDistance);
+            Debug.Log(agent.stoppingDistance);
+
             if ((agent.remainingDistance <= agent.stoppingDistance) && (agent.remainingDistance != 0))
             {
                 if(waitTime <= 0)
@@ -310,6 +324,12 @@ public class MascotAI : MonoBehaviour, MascotHearing
                     Stop();
                     waitTime -= Time.fixedDeltaTime;
                 }
+            }
+            else if (agent.remainingDistance == 0)
+            {
+                NextPoint();
+                Move(walkSpeed);
+                waitTime = startWaitTime;
             }
         }
     }
@@ -382,15 +402,34 @@ public class MascotAI : MonoBehaviour, MascotHearing
         }
     }
 
-    void AwarenessMeter()
+    void DangerMeter()
     {
-        if (stopTimer == false)
+        // increases danger meter when the player is running
+        if ((stopTimer == false) && (playerController.isRunning == true) && (isChasing == false))
+        {
+            runTimerUp += Time.deltaTime;
+        }
+
+        // danger meter ticks up
+        if (runTimerUp >= runTickUp)
+        {
+            if (value < awarenessMaxValue)
+            {
+                runTimerUp = 0f;
+                value++;
+                awarenessMeter.value = value;
+                awarenessValueText.text = value.ToString();
+            }
+        }
+
+        // increases danger meter when the mascot is chasing the player
+        if ((stopTimer == false) && (playerInRange == true))
         {
             timerUp += Time.deltaTime;
         }
         
-
-        if ((timerUp >= tickUp) && (playerInRange == true))
+        // danger meter ticks up
+        if (timerUp >= tickUp)
         {
             if (value < awarenessMaxValue)
             {
@@ -401,12 +440,14 @@ public class MascotAI : MonoBehaviour, MascotHearing
             }
         }
 
-        if (stopTimer == false)
+        // decreases danger meter when the mascot is not chasing the player
+        if ((stopTimer == false) && (playerInRange == false))
         {
             timerDown += Time.deltaTime;
         }
 
-        if ((timerDown >= tickDown) && (playerInRange == false))
+        // danger meter ticks down
+        if (timerDown >= tickDown)
         {
             if (value > 0)
             {
@@ -517,12 +558,8 @@ public class MascotAI : MonoBehaviour, MascotHearing
     {
         if (collision.gameObject.tag == "Throwable")
         {
-
             GameObject throwable = GameObject.FindWithTag("Throwable");
             Rigidbody rigidbody = throwable.GetComponent<Rigidbody>();
-
-            //Debug.Log(rigidbody.velocity.magnitude);
-
 
             if (rigidbody.velocity.magnitude > 1)
             {
@@ -550,6 +587,13 @@ public class MascotAI : MonoBehaviour, MascotHearing
         runSpeed /= slowdownMultiplier;
     }
 
+    private Vector3 DirectionFromAngle(float eulerY, float angleInDegrees)
+    {
+        angleInDegrees += eulerY;
+
+        return new Vector3(Mathf.Sin(angleInDegrees * Mathf.Deg2Rad), 0, Mathf.Cos(angleInDegrees * Mathf.Deg2Rad));
+    }
+
     //COMMENT OUT WHEN BULDING GAME//
     /*
     private void OnDrawGizmos()
@@ -572,10 +616,4 @@ public class MascotAI : MonoBehaviour, MascotHearing
     }
     */
     //COMMENT OUT WHEN BULDING GAME//
-    private Vector3 DirectionFromAngle(float eulerY, float angleInDegrees)
-    {
-        angleInDegrees += eulerY;
-
-        return new Vector3(Mathf.Sin(angleInDegrees * Mathf.Deg2Rad), 0, Mathf.Cos(angleInDegrees * Mathf.Deg2Rad));
-    }
 }
