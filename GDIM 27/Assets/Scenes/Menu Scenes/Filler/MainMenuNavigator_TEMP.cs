@@ -79,6 +79,8 @@ public class MainMenuNavigator_TEMP : MonoBehaviour
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneId);
 
         loadingScreen.SetActive(true);
+        mainMenu.SetActive(false);
+        settingsMenu.SetActive(false);
 
         while (!operation.isDone)
         {
