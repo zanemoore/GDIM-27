@@ -97,7 +97,7 @@ MonoBehaviour:
   Path: Assets/FMOD/EaterFMOD/Build/Desktop/Player.bank
   Name: Player
   StudioPath: bank:/Player
-  lastModified: 638215051105976959
+  lastModified: 638213928636239721
   FileSizes:
   - Name: Desktop
     Value: 611424
@@ -280,7 +280,7 @@ MonoBehaviour:
   Path: Assets/FMOD/EaterFMOD/Build/Desktop/Boss.bank
   Name: Boss
   StudioPath: bank:/Boss
-  lastModified: 638215051067676452
+  lastModified: 638215092847978902
   FileSizes:
   - Name: Desktop
     Value: 1142848
@@ -390,7 +390,7 @@ MonoBehaviour:
   - {fileID: 2754642089462094760}
   StringsBanks:
   - {fileID: 469979032956789593}
-  cacheTime: 638215051129126757
+  cacheTime: 638215092896387833
   cacheVersion: 131603
 --- !u!114 &393249496385139898
 MonoBehaviour:
@@ -434,7 +434,7 @@ MonoBehaviour:
   Path: Assets/FMOD/EaterFMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638215051099827159
+  lastModified: 638215092882283680
   FileSizes:
   - Name: Desktop
     Value: 2360
@@ -562,7 +562,7 @@ MonoBehaviour:
   Path: Assets/FMOD/EaterFMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638215051099797233
+  lastModified: 638215092882263725
   FileSizes:
   - Name: Desktop
     Value: 1427232
@@ -770,7 +770,7 @@ MonoBehaviour:
   Path: Assets/FMOD/EaterFMOD/Build/Desktop/Meter.bank
   Name: Meter
   StudioPath: bank:/Meter
-  lastModified: 638215051102158464
+  lastModified: 638213928635399642
   FileSizes:
   - Name: Desktop
     Value: 120288
@@ -925,7 +925,7 @@ MonoBehaviour:
   Path: Assets/FMOD/EaterFMOD/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638215051129126757
+  lastModified: 638215092896387833
   FileSizes:
   - Name: Desktop
     Value: 1245664
