@@ -98,6 +98,12 @@ namespace Sounds
             {
                 Rigidbody body = item.GetComponent<Rigidbody>();
 
+                // I'm doing this just to avoid a random error that keeps cropping up - Diego
+                if (hide == null)
+                {
+                    return;
+                }
+
                 if (distance <= 3.5 && !hide.isHidden)
                 {
                     isHolding = true;
@@ -122,6 +128,11 @@ namespace Sounds
             if (isStandingOn == false)
             {
                 Rigidbody body = item.GetComponent<Rigidbody>();
+
+                if (hide == null)
+                {
+                    return;
+                }
 
                 if (distance <= 3.5 && !hide.isHidden)
                 {

@@ -64,7 +64,6 @@ public class KeyPickUp : MonoBehaviour
             if (obj.tag == "Key" && Input.GetMouseButtonDown(0))
             {
                 PickUpKey(obj);
-               
             }
             else if (obj.layer == LayerMask.NameToLayer("Door") && !hide.isHidden)
             {
@@ -147,6 +146,8 @@ public class KeyPickUp : MonoBehaviour
                     }
 
                     Cursor.lockState = CursorLockMode.None;
+                    SaveBetweenScenes saveBetweenScenes = GameObject.Find("SaveBetweenScenes").GetComponent<SaveBetweenScenes>();
+                    saveBetweenScenes.PlayerWon = true;
                     SceneManager.LoadScene("Game Over");
                 }
                 else

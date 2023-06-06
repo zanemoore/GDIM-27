@@ -222,8 +222,7 @@ public class MascotAI : MonoBehaviour, MascotHearing
                         stopTimer = true;
                         mascotAnimator.SetBool("Idling", true);
                         Stop();
-                        Cursor.lockState = CursorLockMode.None;
-                        SceneManager.LoadScene("Game Over");
+                        LoadGameOver();
                     }
                 }
                 else
@@ -503,8 +502,7 @@ public class MascotAI : MonoBehaviour, MascotHearing
                 mascotAnimator.SetBool("Idling", true);
                 playerModel.transform.LookAt(mascotModel);
                 Stop();
-                SceneManager.LoadScene("MainMenu");
-                SceneManager.LoadScene("Game Over");
+                LoadGameOver();
             }
         }
     }
@@ -585,6 +583,13 @@ public class MascotAI : MonoBehaviour, MascotHearing
         yield return new WaitForSeconds(slowdownDuration);
         walkSpeed /= slowdownMultiplier;
         runSpeed /= slowdownMultiplier;
+    }
+
+
+    private void LoadGameOver()
+    {
+        GameObject.Find("SaveBetweenScenes").GetComponent<SaveBetweenScenes>().PlayerWon = false;
+        SceneManager.LoadScene("Game Over");
     }
 
     private Vector3 DirectionFromAngle(float eulerY, float angleInDegrees)

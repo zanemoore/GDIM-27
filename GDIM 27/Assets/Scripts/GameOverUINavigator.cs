@@ -17,12 +17,20 @@ public class GameOverUINavigator : MonoBehaviour
     public FMODUnity.StudioEventEmitter hover;
     public FMODUnity.StudioEventEmitter click;
 
-
     // Adding this to Start to ensure cursor is visible at beginning
     void Start()
     {
-        Cursor.visible = true;
+        SaveBetweenScenes saveBetweenScenes = GameObject.Find("SaveBetweenScenes").GetComponent<SaveBetweenScenes>();
 
+        if (saveBetweenScenes.PlayerWon)
+        {
+            Cursor.visible = true;
+            _winScreenObject.SetActive(true);
+        }
+        else
+        {
+            _loseScreenObject.SetActive(true);
+        }
         // if win setactive _winScreen and cursor.visible
         // else play jumpscare then setactive _winScreenObject + cursor.visible
     }
