@@ -3,67 +3,45 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Video;
 
 public class LevelChanger : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject openingConversation;
-    [SerializeField]
-    private WhiteNoiseHandler whiteNoise;
-    [SerializeField]
-    private TextMeshProUGUI skipInstructions;
-    [SerializeField]
-    private GameObject fpsController;
+    [SerializeField] private WhiteNoiseHandler whiteNoise;
+    [SerializeField] private TextMeshProUGUI skipInstructions;
+    [SerializeField] private KeyCode _skipButton;
+    [SerializeField] private GameObject fpsController;
+    [SerializeField] private GameObject _openingConversationObject;
+    [SerializeField] private VideoPlayer _openingConversationVideo;
 
     public Animator animator;
     private KeyCode skipButton;
 
     void Start()
     {
-        skipButton = KeyCode.Space; // If you want to change key to skip, just change it to KeyCode.WHATEVER
-        skipInstructions.text = string.Format("Press {0} to Skip.", skipButton.ToString());
+        _openingConversationVideo.loopPointReached += DeleteLevelChanger;
+
+        // skipButton = KeyCode.Space; // If you want to change key to skip, just change it to KeyCode.WHATEVER
+        skipInstructions.text = string.Format("Press {0} to Skip.", _skipButton.ToString());
 
         LockControls();
-
-        //Start the coroutine we define below named ExampleCoroutine.
-        StartCoroutine(ExampleCoroutine());
-        FadeToLevel(1);
     }
 
 
     void Update()
     {
-        if (Input.GetKeyDown(skipButton))
+        if (Input.GetKeyDown(_skipButton))
         {
-            DeleteLevelChanger();
+            DeleteLevelChanger(_openingConversationVideo);
         }
     }
 
 
-    IEnumerator ExampleCoroutine()
+    private void DeleteLevelChanger(VideoPlayer vp)
     {
-        //Print the time of when the function is first called.
-        Debug.Log("Started Coroutine at timestamp : " + Time.time);
-
-        //yield on a new YieldInstruction that waits for 5 seconds.
-        yield return new WaitForSeconds(45);
-        DeleteLevelChanger();
-
-        //After we have waited 5 seconds print the time again.
-        Debug.Log("Finished Coroutine at timestamp : " + Time.time);
-    }
-
-    public void FadeToLevel(int levelIndex)
-    {
-        animator.SetTrigger("FadeIn");
         whiteNoise.startNoise();
-    }
-
-
-    private void DeleteLevelChanger()
-    {
         UnlockControls();
-        Destroy(openingConversation);
+        _openingConversationObject.SetActive(false);
         Destroy(this.gameObject);
     }
 
