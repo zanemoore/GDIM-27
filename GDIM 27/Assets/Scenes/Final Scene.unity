@@ -123,6 +123,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &776344 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1264571825908127798, guid: e8d2d721c0473aa47951bbc952a1a5b7,
+    type: 3}
+  m_PrefabInstance: {fileID: 1041732513}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &853667
 GameObject:
   m_ObjectHideFlags: 0
@@ -1419,6 +1425,79 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 99262781}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &105443593
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 105443594}
+  - component: {fileID: 105443596}
+  - component: {fileID: 105443595}
+  m_Layer: 5
+  m_Name: Reticle Hide
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &105443594
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 105443593}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 232115268}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 10, y: 10}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &105443595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 105443593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Texture: {fileID: 2800000, guid: fe0bdfabf5e285747b156af07a5fe2b6, type: 3}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+--- !u!222 &105443596
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 105443593}
+  m_CullTransparentMesh: 1
 --- !u!1001 &111996231
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1539,6 +1618,7 @@ MonoBehaviour:
   throwForce: 1000
   soundRange: 50
   startGameAttenuation: 0
+  hide: {fileID: 1082400912}
   normalReticle: {fileID: 1331243154}
   grabReticle: {fileID: 33490218}
   throwReticle: {fileID: 2056708926}
@@ -1588,7 +1668,7 @@ MonoBehaviour:
   Params: []
   OverrideAttenuation: 0
   OverrideMinDistance: 1
-  OverrideMaxDistance: 65
+  OverrideMaxDistance: 30
 --- !u!1 &120407542
 GameObject:
   m_ObjectHideFlags: 0
@@ -2917,6 +2997,10 @@ RectTransform:
   - {fileID: 1331243155}
   - {fileID: 33490219}
   - {fileID: 2056708927}
+  - {fileID: 1103335225}
+  - {fileID: 1427665420}
+  - {fileID: 105443594}
+  - {fileID: 1952813493}
   m_Father: {fileID: 1435696013}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3062,7 +3146,7 @@ MonoBehaviour:
   Params: []
   OverrideAttenuation: 0
   OverrideMinDistance: 1
-  OverrideMaxDistance: 65
+  OverrideMaxDistance: 30
 --- !u!114 &232624502
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3084,6 +3168,7 @@ MonoBehaviour:
   throwForce: 1000
   soundRange: 50
   startGameAttenuation: 0
+  hide: {fileID: 1082400912}
   normalReticle: {fileID: 1331243154}
   grabReticle: {fileID: 33490218}
   throwReticle: {fileID: 2056708926}
@@ -4186,7 +4271,7 @@ MonoBehaviour:
   Params: []
   OverrideAttenuation: 0
   OverrideMinDistance: 1
-  OverrideMaxDistance: 65
+  OverrideMaxDistance: 30
 --- !u!114 &276426027
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4208,6 +4293,7 @@ MonoBehaviour:
   throwForce: 1000
   soundRange: 50
   startGameAttenuation: 0
+  hide: {fileID: 1082400912}
   normalReticle: {fileID: 1331243154}
   grabReticle: {fileID: 33490218}
   throwReticle: {fileID: 2056708926}
@@ -4921,6 +5007,7 @@ MonoBehaviour:
   throwForce: 1000
   soundRange: 50
   startGameAttenuation: 0
+  hide: {fileID: 1082400912}
   normalReticle: {fileID: 1331243154}
   grabReticle: {fileID: 33490218}
   throwReticle: {fileID: 2056708926}
@@ -4970,7 +5057,7 @@ MonoBehaviour:
   Params: []
   OverrideAttenuation: 0
   OverrideMinDistance: 1
-  OverrideMaxDistance: 65
+  OverrideMaxDistance: 30
 --- !u!1001 &325342572
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5112,6 +5199,7 @@ MonoBehaviour:
   throwForce: 1000
   soundRange: 50
   startGameAttenuation: 0
+  hide: {fileID: 1082400912}
   normalReticle: {fileID: 1331243154}
   grabReticle: {fileID: 33490218}
   throwReticle: {fileID: 2056708926}
@@ -5161,7 +5249,7 @@ MonoBehaviour:
   Params: []
   OverrideAttenuation: 0
   OverrideMinDistance: 1
-  OverrideMaxDistance: 65
+  OverrideMaxDistance: 30
 --- !u!1 &330320904 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9215267474699151773, guid: c316f4e38a47fbb45944ce4eb5e12871,
@@ -7800,6 +7888,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 494300631}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &497660504 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1264571825908127798, guid: e8d2d721c0473aa47951bbc952a1a5b7,
+    type: 3}
+  m_PrefabInstance: {fileID: 1490580022}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &515401019
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9419,6 +9513,7 @@ MonoBehaviour:
   throwForce: 1000
   soundRange: 50
   startGameAttenuation: 0
+  hide: {fileID: 1082400912}
   normalReticle: {fileID: 1331243154}
   grabReticle: {fileID: 33490218}
   throwReticle: {fileID: 2056708926}
@@ -9568,7 +9663,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: afbcd0650e046dc4ba2efcb5d3f282b1,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: afbcd0650e046dc4ba2efcb5d3f282b1,
         type: 3}
@@ -9679,7 +9774,7 @@ MonoBehaviour:
   Params: []
   OverrideAttenuation: 0
   OverrideMinDistance: 1
-  OverrideMaxDistance: 65
+  OverrideMaxDistance: 30
 --- !u!114 &650349421
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9701,6 +9796,7 @@ MonoBehaviour:
   throwForce: 1000
   soundRange: 50
   startGameAttenuation: 0
+  hide: {fileID: 1082400912}
   normalReticle: {fileID: 1331243154}
   grabReticle: {fileID: 33490218}
   throwReticle: {fileID: 2056708926}
@@ -11007,6 +11103,7 @@ MonoBehaviour:
   throwForce: 1000
   soundRange: 50
   startGameAttenuation: 0
+  hide: {fileID: 1082400912}
   normalReticle: {fileID: 1331243154}
   grabReticle: {fileID: 33490218}
   throwReticle: {fileID: 2056708926}
@@ -11056,7 +11153,7 @@ MonoBehaviour:
   Params: []
   OverrideAttenuation: 0
   OverrideMinDistance: 1
-  OverrideMaxDistance: 65
+  OverrideMaxDistance: 30
 --- !u!1001 &777990694
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11787,6 +11884,7 @@ MonoBehaviour:
   throwForce: 1000
   soundRange: 50
   startGameAttenuation: 0
+  hide: {fileID: 1082400912}
   normalReticle: {fileID: 1331243154}
   grabReticle: {fileID: 33490218}
   throwReticle: {fileID: 2056708926}
@@ -14743,6 +14841,26 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1041732513}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1041732519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 776344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffb60885d09b40f469624bb6fbd41bf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hideReticle: {fileID: 105443593}
+  normalReticle: {fileID: 1331243154}
+  leaveHideReticle: {fileID: 1952813492}
+  grabReticle: {fileID: 33490218}
+  doorReticle: {fileID: 1427665419}
+  exitReticle: {fileID: 1103335224}
+  hide: {fileID: 1082400912}
+  mouseOver: 0
 --- !u!1 &1041977528 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9215267474699151773, guid: c316f4e38a47fbb45944ce4eb5e12871,
@@ -15667,6 +15785,30 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1082400912, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+      propertyPath: doorReticle
+      value: 
+      objectReference: {fileID: 1427665419}
+    - target: {fileID: 1082400912, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+      propertyPath: exitReticle
+      value: 
+      objectReference: {fileID: 1103335224}
+    - target: {fileID: 1082400912, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+      propertyPath: grabReticle
+      value: 
+      objectReference: {fileID: 33490218}
+    - target: {fileID: 1082400912, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+      propertyPath: hideReticle
+      value: 
+      objectReference: {fileID: 105443593}
+    - target: {fileID: 1082400912, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+      propertyPath: normalReticle
+      value: 
+      objectReference: {fileID: 1331243154}
+    - target: {fileID: 1082400912, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+      propertyPath: exitHideReticle
+      value: 
+      objectReference: {fileID: 1103335224}
+    - target: {fileID: 1082400912, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: PlayerFlashLight
       value: 
       objectReference: {fileID: 1613977593}
@@ -15674,6 +15816,43 @@ PrefabInstance:
       propertyPath: cameraFlashLight
       value: 
       objectReference: {fileID: 1743464406}
+    - target: {fileID: 1082400912, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+      propertyPath: leaveHideReticle
+      value: 
+      objectReference: {fileID: 1952813492}
+    - target: {fileID: 1082400912, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+      propertyPath: tables.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1082400912, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+      propertyPath: tables.Array.data[0]
+      value: 
+      objectReference: {fileID: 2063466367}
+    - target: {fileID: 1082400912, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+      propertyPath: tables.Array.data[1]
+      value: 
+      objectReference: {fileID: 1359929706}
+    - target: {fileID: 1082400912, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+      propertyPath: tables.Array.data[2]
+      value: 
+      objectReference: {fileID: 1504910774}
+    - target: {fileID: 1082400912, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+      propertyPath: tables.Array.data[3]
+      value: 
+      objectReference: {fileID: 1490580028}
+    - target: {fileID: 1082400912, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+      propertyPath: tables.Array.data[4]
+      value: 
+      objectReference: {fileID: 1150937347}
+    - target: {fileID: 1082400912, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+      propertyPath: tables.Array.data[5]
+      value: 
+      objectReference: {fileID: 1041732519}
+    - target: {fileID: 1089222880674915203, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
+        type: 3}
+      propertyPath: hide
+      value: 
+      objectReference: {fileID: 1082400912}
     - target: {fileID: 1089222880674915203, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
         type: 3}
       propertyPath: mascot
@@ -15684,6 +15863,21 @@ PrefabInstance:
       propertyPath: dangerMeter
       value: 
       objectReference: {fileID: 432411781}
+    - target: {fileID: 1089222880674915203, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
+        type: 3}
+      propertyPath: doorReticle
+      value: 
+      objectReference: {fileID: 1427665419}
+    - target: {fileID: 1089222880674915203, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
+        type: 3}
+      propertyPath: exitReticle
+      value: 
+      objectReference: {fileID: 1103335224}
+    - target: {fileID: 1089222880674915203, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
+        type: 3}
+      propertyPath: normalReticle
+      value: 
+      objectReference: {fileID: 1331243154}
     - target: {fileID: 1089222880674915203, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
         type: 3}
       propertyPath: awarenessMeter
@@ -15962,6 +16156,79 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1084642643}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1103335224
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1103335225}
+  - component: {fileID: 1103335227}
+  - component: {fileID: 1103335226}
+  m_Layer: 5
+  m_Name: Reticle Exit
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1103335225
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1103335224}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 232115268}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 10, y: 10}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1103335226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1103335224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Texture: {fileID: 2800000, guid: d2045a25e2d0cff4aa9d505f03e15873, type: 3}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+--- !u!222 &1103335227
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1103335224}
+  m_CullTransparentMesh: 1
 --- !u!1 &1103994170
 GameObject:
   m_ObjectHideFlags: 0
@@ -16618,6 +16885,32 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 9850976d6d8a72c4db0ad7bde230eed5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a9a1e4d7ee879d4db4e8b4d162031a7, type: 3}
+--- !u!1 &1150937342 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1264571825908127798, guid: e8d2d721c0473aa47951bbc952a1a5b7,
+    type: 3}
+  m_PrefabInstance: {fileID: 478170420}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1150937347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1150937342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffb60885d09b40f469624bb6fbd41bf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hideReticle: {fileID: 105443593}
+  normalReticle: {fileID: 1331243154}
+  leaveHideReticle: {fileID: 1952813492}
+  grabReticle: {fileID: 33490218}
+  doorReticle: {fileID: 1427665419}
+  exitReticle: {fileID: 1103335224}
+  hide: {fileID: 1082400912}
+  mouseOver: 0
 --- !u!4 &1153115962 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6323582616882643617, guid: 9ff9cb86b92e9f2429f4b47412804464,
@@ -17170,6 +17463,12 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!1 &1177257638 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1264571825908127798, guid: e8d2d721c0473aa47951bbc952a1a5b7,
+    type: 3}
+  m_PrefabInstance: {fileID: 1359929700}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1179171935
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17842,6 +18141,7 @@ MonoBehaviour:
   throwForce: 1000
   soundRange: 50
   startGameAttenuation: 0
+  hide: {fileID: 1082400912}
   normalReticle: {fileID: 1331243154}
   grabReticle: {fileID: 33490218}
   throwReticle: {fileID: 2056708926}
@@ -19089,6 +19389,7 @@ MonoBehaviour:
   throwForce: 1000
   soundRange: 50
   startGameAttenuation: 0
+  hide: {fileID: 1082400912}
   normalReticle: {fileID: 1331243154}
   grabReticle: {fileID: 33490218}
   throwReticle: {fileID: 2056708926}
@@ -19138,7 +19439,7 @@ MonoBehaviour:
   Params: []
   OverrideAttenuation: 0
   OverrideMinDistance: 1
-  OverrideMaxDistance: 65
+  OverrideMaxDistance: 30
 --- !u!1 &1318223077
 GameObject:
   m_ObjectHideFlags: 0
@@ -19631,6 +19932,26 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1359929700}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1359929706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1177257638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffb60885d09b40f469624bb6fbd41bf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hideReticle: {fileID: 105443593}
+  normalReticle: {fileID: 1331243154}
+  leaveHideReticle: {fileID: 1952813492}
+  grabReticle: {fileID: 33490218}
+  doorReticle: {fileID: 1427665419}
+  exitReticle: {fileID: 1103335224}
+  hide: {fileID: 1082400912}
+  mouseOver: 0
 --- !u!1 &1368288924
 GameObject:
   m_ObjectHideFlags: 0
@@ -20947,6 +21268,79 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1425565116}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1427665419
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1427665420}
+  - component: {fileID: 1427665422}
+  - component: {fileID: 1427665421}
+  m_Layer: 5
+  m_Name: Reticle Door
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1427665420
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1427665419}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 232115268}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 10, y: 10}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1427665421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1427665419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Texture: {fileID: 2800000, guid: 75f88c6182b21a44b85f49c484eb6672, type: 3}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+--- !u!222 &1427665422
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1427665419}
+  m_CullTransparentMesh: 1
 --- !u!1 &1435696009
 GameObject:
   m_ObjectHideFlags: 0
@@ -22369,6 +22763,26 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1490580022}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1490580028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 497660504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffb60885d09b40f469624bb6fbd41bf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hideReticle: {fileID: 105443593}
+  normalReticle: {fileID: 1331243154}
+  leaveHideReticle: {fileID: 1952813492}
+  grabReticle: {fileID: 33490218}
+  doorReticle: {fileID: 1427665419}
+  exitReticle: {fileID: 1103335224}
+  hide: {fileID: 1082400912}
+  mouseOver: 0
 --- !u!1 &1491785986
 GameObject:
   m_ObjectHideFlags: 0
@@ -22429,7 +22843,7 @@ PrefabInstance:
       objectReference: {fileID: 1331243154}
     - target: {fileID: 1042108158, guid: 06c2419350d94404493083b55ef83613, type: 3}
       propertyPath: OverrideMaxDistance
-      value: 35
+      value: 65
       objectReference: {fileID: 0}
     - target: {fileID: 1042108159, guid: 06c2419350d94404493083b55ef83613, type: 3}
       propertyPath: m_IsKinematic
@@ -22738,6 +23152,32 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1503937135}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1504910769 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1264571825908127798, guid: e8d2d721c0473aa47951bbc952a1a5b7,
+    type: 3}
+  m_PrefabInstance: {fileID: 860384530}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1504910774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1504910769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffb60885d09b40f469624bb6fbd41bf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hideReticle: {fileID: 105443593}
+  normalReticle: {fileID: 1331243154}
+  leaveHideReticle: {fileID: 1952813492}
+  grabReticle: {fileID: 33490218}
+  doorReticle: {fileID: 1427665419}
+  exitReticle: {fileID: 1103335224}
+  hide: {fileID: 1082400912}
+  mouseOver: 0
 --- !u!1001 &1513471105
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25640,6 +26080,7 @@ MonoBehaviour:
   throwForce: 1000
   soundRange: 50
   startGameAttenuation: 0
+  hide: {fileID: 1082400912}
   normalReticle: {fileID: 1331243154}
   grabReticle: {fileID: 33490218}
   throwReticle: {fileID: 2056708926}
@@ -28137,7 +28578,7 @@ PrefabInstance:
       objectReference: {fileID: 1331243154}
     - target: {fileID: 1042108158, guid: 06c2419350d94404493083b55ef83613, type: 3}
       propertyPath: OverrideMaxDistance
-      value: 35
+      value: 65
       objectReference: {fileID: 0}
     - target: {fileID: 1042108159, guid: 06c2419350d94404493083b55ef83613, type: 3}
       propertyPath: m_IsKinematic
@@ -30586,6 +31027,79 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!1 &1952813492
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1952813493}
+  - component: {fileID: 1952813495}
+  - component: {fileID: 1952813494}
+  m_Layer: 5
+  m_Name: Reticle Leave Hide
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1952813493
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1952813492}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 232115268}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 10, y: 10}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1952813494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1952813492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Texture: {fileID: 2800000, guid: 9d0a5646b5a156444a79a9f3e5706824, type: 3}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+--- !u!222 &1952813495
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1952813492}
+  m_CullTransparentMesh: 1
 --- !u!1001 &1954831614
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32422,6 +32936,7 @@ MonoBehaviour:
   throwForce: 1000
   soundRange: 50
   startGameAttenuation: 0
+  hide: {fileID: 1082400912}
   normalReticle: {fileID: 1331243154}
   grabReticle: {fileID: 33490218}
   throwReticle: {fileID: 2056708926}
@@ -32581,6 +33096,32 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2056708926}
   m_CullTransparentMesh: 1
+--- !u!1 &2063466362 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1264571825908127798, guid: e8d2d721c0473aa47951bbc952a1a5b7,
+    type: 3}
+  m_PrefabInstance: {fileID: 156086812}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2063466367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2063466362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffb60885d09b40f469624bb6fbd41bf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hideReticle: {fileID: 105443593}
+  normalReticle: {fileID: 1331243154}
+  leaveHideReticle: {fileID: 1952813492}
+  grabReticle: {fileID: 33490218}
+  doorReticle: {fileID: 1427665419}
+  exitReticle: {fileID: 1103335224}
+  hide: {fileID: 1082400912}
+  mouseOver: 0
 --- !u!1 &2064464121
 GameObject:
   m_ObjectHideFlags: 0
@@ -35466,7 +36007,7 @@ PrefabInstance:
       objectReference: {fileID: 1331243154}
     - target: {fileID: 1042108158, guid: 06c2419350d94404493083b55ef83613, type: 3}
       propertyPath: OverrideMaxDistance
-      value: 35
+      value: 65
       objectReference: {fileID: 0}
     - target: {fileID: 1042108159, guid: 06c2419350d94404493083b55ef83613, type: 3}
       propertyPath: m_IsKinematic
@@ -36650,6 +37191,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6559610269838384091, guid: beb1c755e2023f542a0ed955bfa94395,
         type: 3}
+      propertyPath: hide
+      value: 
+      objectReference: {fileID: 1082400912}
+    - target: {fileID: 6559610269838384091, guid: beb1c755e2023f542a0ed955bfa94395,
+        type: 3}
       propertyPath: tempHold
       value: 
       objectReference: {fileID: 1909647180}
@@ -36668,6 +37214,11 @@ PrefabInstance:
       propertyPath: normalReticle
       value: 
       objectReference: {fileID: 1331243154}
+    - target: {fileID: 6559610269838384094, guid: beb1c755e2023f542a0ed955bfa94395,
+        type: 3}
+      propertyPath: OverrideMaxDistance
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 7003072441101492570, guid: beb1c755e2023f542a0ed955bfa94395,
         type: 3}
       propertyPath: m_RootOrder

@@ -21,6 +21,7 @@ namespace Sounds
         private bool waited = false;
         private float timer = 0;
         private float waitTime = 1;
+        [SerializeField] private Hiding hide;
         [SerializeField] private GameObject normalReticle;
         [SerializeField] private GameObject grabReticle;
         [SerializeField] private GameObject throwReticle;
@@ -28,16 +29,7 @@ namespace Sounds
 
         private float distance;
         private Vector3 objectPos;
-        private bool afterStart = false;
-
-        private void Start()
-        {
-            //normalReticle = GameObject.Find("Reticle D");
-            //grabReticle = GameObject.Find("Reticle G");
-            //throwReticle = GameObject.Find("Reticle T");
-            afterStart = true;
-        }
-
+       
         void Update()
         {
             if (!waited) // controls sound at the very beginning
@@ -45,13 +37,6 @@ namespace Sounds
                 waitALittle();
             }
 
-            if (afterStart)
-            {
-                grabReticle.SetActive(false);
-                normalReticle.SetActive(true);
-                throwReticle.SetActive(false);
-                afterStart = false;
-            }
 
             Rigidbody body = item.GetComponent<Rigidbody>();
 
@@ -113,7 +98,7 @@ namespace Sounds
             {
                 Rigidbody body = item.GetComponent<Rigidbody>();
 
-                if (distance <= 3.5)
+                if (distance <= 3.5 && !hide.isHidden)
                 {
                     isHolding = true;
                     body.useGravity = false;
@@ -138,7 +123,7 @@ namespace Sounds
             {
                 Rigidbody body = item.GetComponent<Rigidbody>();
 
-                if (distance <= 3.5)
+                if (distance <= 3.5 && !hide.isHidden)
                 {
                     body.useGravity = false;
                     body.detectCollisions = true;

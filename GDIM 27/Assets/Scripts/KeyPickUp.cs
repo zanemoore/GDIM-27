@@ -29,6 +29,14 @@ public class KeyPickUp : MonoBehaviour
     private GameObject dangerMeter;
     [SerializeField]
     private GameObject awarenessMeter;
+    [SerializeField]
+    private GameObject doorReticle;
+    [SerializeField]
+    private GameObject exitReticle;
+    [SerializeField]
+    private GameObject normalReticle;
+    [SerializeField]
+    private Hiding hide;
 
     private float timeWhenDisappear;
     private bool hasKey;
@@ -58,15 +66,42 @@ public class KeyPickUp : MonoBehaviour
                 PickUpKey(obj);
                
             }
-            else if (obj.layer == LayerMask.NameToLayer("Door"))
+            else if (obj.layer == LayerMask.NameToLayer("Door") && !hide.isHidden)
             {
                 // Show Door Reticle
+                if (obj.tag == "Exit")
+                {
+                    exitReticle.SetActive(true);
+                }
+                else if (obj.tag == "Untagged")
+                {
+                    doorReticle.SetActive(true);
+                    normalReticle.SetActive(false);
+                }
+                else
+                {
+                    doorReticle.SetActive(false);
+                    exitReticle.SetActive(false);
+                    normalReticle.SetActive(true);
+                }
 
                 if (Input.GetMouseButtonDown(0))
                 {
                     TryOpenDoor(obj);
                 }
             }
+            else
+            {
+                exitReticle.SetActive(false);
+                doorReticle.SetActive(false);
+            }
+            
+        }
+        else
+        {
+            exitReticle.SetActive(false);
+            doorReticle.SetActive(false);
+            normalReticle.SetActive(true);
         }
 
         if (Time.time >= timeWhenDisappear)
