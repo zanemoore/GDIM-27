@@ -35008,6 +35008,11 @@ PrefabInstance:
       propertyPath: waypoints.Array.data[4]
       value: 
       objectReference: {fileID: 2038903853}
+    - target: {fileID: 6249156008004851023, guid: 57165a9fe820e2d45a893b83d4eb7dfb,
+        type: 3}
+      propertyPath: awarenessIndicatorObject
+      value: 
+      objectReference: {fileID: 1267266224}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 57165a9fe820e2d45a893b83d4eb7dfb, type: 3}
 --- !u!4 &2144508361 stripped

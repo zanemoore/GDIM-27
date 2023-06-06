@@ -146,8 +146,7 @@ public class KeyPickUp : MonoBehaviour
                     }
 
                     Cursor.lockState = CursorLockMode.None;
-                    SaveBetweenScenes saveBetweenScenes = GameObject.Find("SaveBetweenScenes").GetComponent<SaveBetweenScenes>();
-                    saveBetweenScenes.PlayerWon = true;
+                    GameObject.Find("SaveBetweenScenes").GetComponent<SaveBetweenScenes>().PlayerWon = true;
                     SceneManager.LoadScene("Game Over");
                 }
                 else
@@ -174,9 +173,10 @@ public class KeyPickUp : MonoBehaviour
                 {
                     SetText("Emergency door's locked?\nMaybe there's a key...");
                     SpawnKey(0);
-                    dangerMeter.SetActive(true);
-                    awarenessMeter.SetActive(true);
+                    // dangerMeter.SetActive(true);
+                    // awarenessMeter.SetActive(true);
                     mascot.SetActive(true);
+                    // play zot noise
                 }
                 else
                 {
