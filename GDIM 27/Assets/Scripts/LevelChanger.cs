@@ -11,17 +11,14 @@ public class LevelChanger : MonoBehaviour
     [SerializeField] private TextMeshProUGUI skipInstructions;
     [SerializeField] private KeyCode _skipButton;
     [SerializeField] private GameObject fpsController;
-    [SerializeField] private GameObject _openingConversationObject;
     [SerializeField] private VideoPlayer _openingConversationVideo;
+    [SerializeField] private float _timeInOpeningConvoToStartWhiteNoise;
 
-    public Animator animator;
-    private KeyCode skipButton;
 
     void Start()
     {
         _openingConversationVideo.loopPointReached += DeleteLevelChanger;
 
-        // skipButton = KeyCode.Space; // If you want to change key to skip, just change it to KeyCode.WHATEVER
         skipInstructions.text = string.Format("Press {0} to Skip.", _skipButton.ToString());
 
         LockControls();
@@ -30,6 +27,12 @@ public class LevelChanger : MonoBehaviour
 
     void Update()
     {
+        if (_openingConversationVideo.time >= _timeInOpeningConvoToStartWhiteNoise && !whiteNoise.IsPlaying())
+        {
+            whiteNoise.startNoise();
+            skipInstructions.text = "";
+        }
+
         if (Input.GetKeyDown(_skipButton))
         {
             DeleteLevelChanger(_openingConversationVideo);
@@ -39,9 +42,15 @@ public class LevelChanger : MonoBehaviour
 
     private void DeleteLevelChanger(VideoPlayer vp)
     {
-        whiteNoise.startNoise();
+        if (!whiteNoise.IsPlaying())
+        {
+            whiteNoise.startNoise();
+        }
+
+        skipInstructions.text = "";
+
         UnlockControls();
-        _openingConversationObject.SetActive(false);
+
         Destroy(this.gameObject);
     }
 
