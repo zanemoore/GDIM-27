@@ -14,7 +14,6 @@ public class MascotAI : MonoBehaviour, MascotHearing
 {
     [SerializeField] private Transform mascotModel;
     [SerializeField] private Animator mascotAnimator;
-    [SerializeField] private GameObject awarenessIndicatorObject;
     [SerializeField] private GameObject meter;
     [SerializeField] private Slider awarenessMeter;
     [SerializeField] private TextMeshProUGUI awarenessValueText;
@@ -211,7 +210,6 @@ public class MascotAI : MonoBehaviour, MascotHearing
 
                 if (!Physics.Raycast(transform.position, directionToPlayer, distanceToPlayer, wallLayer))
                 {
-                    awarenessIndicatorObject.SetActive(true);
                     meter.SetActive(true);
 
                     playerInRange = true;
@@ -237,8 +235,6 @@ public class MascotAI : MonoBehaviour, MascotHearing
                 }
                 else
                 {
-                    awarenessIndicatorObject.SetActive(false);
-
                     playerInRange = false;
 
                     if (isPatrol == true)
@@ -263,14 +259,11 @@ public class MascotAI : MonoBehaviour, MascotHearing
 
             if (Vector3.Distance(transform.position, player.position) > viewRadius)
             {
-                awarenessIndicatorObject.SetActive(false);
-
                 playerInRange = false;
             }
 
             if (playerInRange == true)
             {
-                awarenessIndicatorObject.SetActive(true);
                 playerPosition = player.transform.position;
             }
         }
@@ -603,7 +596,6 @@ public class MascotAI : MonoBehaviour, MascotHearing
 
     private void PlayJumpscare()
     {
-        awarenessIndicatorObject.SetActive(false);
         meter.SetActive(false);
         _jumpscareObject.SetActive(true);  // Play on Awake is set to true, so should automatically work - Diego
     }
