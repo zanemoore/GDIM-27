@@ -35,7 +35,7 @@ public class KeyPickUp : MonoBehaviour
     {
         hasKey = false;
         numKeysTried = 0;
-        timeToAppear = 50f;  // This is 50f to make sure the text stays up past the entirety of the cutscene
+        timeToAppear = 55f;  // This is 50f to make sure the text stays up past the entirety of the cutscene
         SetText("I gotta find an exit.\n[Find an Exit Door]");
         timeToAppear = 2f;
     }
