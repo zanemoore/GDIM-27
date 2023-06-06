@@ -7,6 +7,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Video;
 using StarterAssets;
 
 public class MascotAI : MonoBehaviour, MascotHearing
@@ -56,6 +57,10 @@ public class MascotAI : MonoBehaviour, MascotHearing
     [SerializeField] private Transform[] waypoints;
     private int currentWaypointIndex;
 
+    [Space(10)]
+    [SerializeField] private GameObject _jumpscareObject;
+    [SerializeField] private VideoPlayer _jumpscareVideo;
+
     //Uneditable Variables
     private float waitTime;
     private float rotateTime;
@@ -82,6 +87,7 @@ public class MascotAI : MonoBehaviour, MascotHearing
 
     void Start()
     {
+        _jumpscareVideo.loopPointReached += LoadGameOver;
         awarenessMeter.maxValue = awarenessMaxValue;
         awarenessValueText.text = value.ToString();
 
@@ -222,7 +228,7 @@ public class MascotAI : MonoBehaviour, MascotHearing
                         stopTimer = true;
                         mascotAnimator.SetBool("Idling", true);
                         Stop();
-                        LoadGameOver();
+                        PlayJumpscare();
                     }
                 }
                 else
@@ -502,7 +508,7 @@ public class MascotAI : MonoBehaviour, MascotHearing
                 mascotAnimator.SetBool("Idling", true);
                 playerModel.transform.LookAt(mascotModel);
                 Stop();
-                LoadGameOver();
+                PlayJumpscare();
             }
         }
     }
@@ -586,7 +592,13 @@ public class MascotAI : MonoBehaviour, MascotHearing
     }
 
 
-    private void LoadGameOver()
+    private void PlayJumpscare()
+    {
+        _jumpscareObject.SetActive(true);  // Play on Awake is set to true, so should automatically work - Diego
+    }
+
+
+    private void LoadGameOver(VideoPlayer vp)
     {
         GameObject.Find("SaveBetweenScenes").GetComponent<SaveBetweenScenes>().PlayerWon = false;
         SceneManager.LoadScene("Game Over");

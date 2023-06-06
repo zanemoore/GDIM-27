@@ -140,6 +140,11 @@ public class Phone : MonoBehaviour
 
     private void OnDisable()
     {
+        if (_input == null)
+        {
+            return;
+        }
+
         _input.actions["Phone"].started -= TogglePhone;
     }
 

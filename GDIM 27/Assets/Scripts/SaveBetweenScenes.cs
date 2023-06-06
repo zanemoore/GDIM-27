@@ -6,8 +6,8 @@ public class SaveBetweenScenes : MonoBehaviour
 {
     public static SaveBetweenScenes instance;
 
-    private bool _playerWon;
-    private bool _replay;
+    [SerializeField] private bool _playerWon;
+    [SerializeField] private bool _replay;
 
     public bool PlayerWon { get { return _playerWon; } set { _playerWon = value; } }
     public bool Replay { get { return _replay; } set { _replay = value; } }

@@ -32,7 +32,7 @@ public class MainMenuNavigator_TEMP : MonoBehaviour
     {
         if (settingsMenu.activeSelf)
         {
-            Debug.Log("Settings is active.");
+            // Debug.Log("Settings is active.");
             if (Input.GetKeyDown(KeyCode.Escape))
             {
                 GoToBase();
