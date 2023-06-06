@@ -270,6 +270,7 @@ public class MascotAI : MonoBehaviour, MascotHearing
 
             if (playerInRange == true)
             {
+                awarenessIndicatorObject.SetActive(true);
                 playerPosition = player.transform.position;
             }
         }
@@ -602,6 +603,8 @@ public class MascotAI : MonoBehaviour, MascotHearing
 
     private void PlayJumpscare()
     {
+        awarenessIndicatorObject.SetActive(false);
+        meter.SetActive(false);
         _jumpscareObject.SetActive(true);  // Play on Awake is set to true, so should automatically work - Diego
     }
 

@@ -7,36 +7,24 @@ using UnityEngine.SceneManagement;
 
 public class KeyPickUp : MonoBehaviour
 {
-    [SerializeField]
-    private FMODUnity.StudioEventEmitter keyEmitter;
-    [SerializeField]
-    private FMODUnity.StudioEventEmitter lockedEmitter;
-    [SerializeField]
-    private FMODUnity.StudioEventEmitter unlockedEmitter;
-    [SerializeField]
-    private float soundRange;
-    [SerializeField]
-    private float maxInteractRange;
-    [SerializeField]
-    private GameObject[] keys;
-    [SerializeField]
-    private GameObject mascot;
-    [SerializeField]
-    private TextMeshProUGUI uiInstructions;
-    [SerializeField]
-    private float timeToAppear = 2f;
-    [SerializeField]
-    private GameObject dangerMeter;
-    [SerializeField]
-    private GameObject awarenessMeter;
-    [SerializeField]
-    private GameObject doorReticle;
-    [SerializeField]
-    private GameObject exitReticle;
-    [SerializeField]
-    private GameObject normalReticle;
-    [SerializeField]
-    private Hiding hide;
+    [SerializeField] private FMODUnity.StudioEventEmitter keyEmitter;
+    [SerializeField] private FMODUnity.StudioEventEmitter lockedEmitter;
+    [SerializeField] private FMODUnity.StudioEventEmitter unlockedEmitter;
+    [SerializeField] private float soundRange;
+
+    [SerializeField] private float maxInteractRange;
+    [SerializeField] private GameObject[] keys;
+
+    [SerializeField] private GameObject mascot;
+    [SerializeField] private FMODUnity.StudioEventEmitter zotEmitter;
+
+    [SerializeField] private TextMeshProUGUI uiInstructions;
+    [SerializeField] private float timeToAppear = 2f;
+
+    [SerializeField] private GameObject doorReticle;
+    [SerializeField] private GameObject exitReticle;
+    [SerializeField] private GameObject normalReticle;
+    [SerializeField] private Hiding hide;
 
     private float timeWhenDisappear;
     private bool hasKey;
@@ -173,10 +161,9 @@ public class KeyPickUp : MonoBehaviour
                 {
                     SetText("Emergency door's locked?\nMaybe there's a key...");
                     SpawnKey(0);
-                    // dangerMeter.SetActive(true);
-                    // awarenessMeter.SetActive(true);
+
                     mascot.SetActive(true);
-                    // play zot noise
+                    zotEmitter.Play();
                 }
                 else
                 {
