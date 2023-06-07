@@ -30481,31 +30481,31 @@ MonoBehaviour:
     sent: 0
     random: 0
     minTime: 7620
-    maxTime: 8100
+    maxTime: 7621
     sound: 0
   - time: 8100
     text: WHERE
     sender: Ben
     sent: 0
     random: 0
-    minTime: 7620
-    maxTime: 8100
+    minTime: 7621
+    maxTime: 7622
     sound: 0
   - time: 10000
     text: ARE
     sender: 8100
     sent: 0
     random: 0
-    minTime: 7620
-    maxTime: 8100
+    minTime: 7623
+    maxTime: 7624
     sound: 0
   - time: 8100
     text: YOU
     sender: Ben
     sent: 0
     random: 0
-    minTime: 7620
-    maxTime: 8100
+    minTime: 7625
+    maxTime: 7626
     sound: 0
   vibrateEmitter: {fileID: 1963996470}
   selectEmitter: {fileID: 1963996469}
