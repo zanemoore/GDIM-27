@@ -56,12 +56,12 @@ public class KeyPickUp : MonoBehaviour
             else if (obj.layer == LayerMask.NameToLayer("Door") && !hide.isHidden)
             {
                 // Show Door Reticle
-                if (obj.tag == "Exit")
+                if (obj.tag == "Exit" && !hide.allowed)
                 {
                     exitReticle.SetActive(true);
                     normalReticle.SetActive(false);
                 }
-                else if (obj.tag == "Untagged")
+                else if (obj.tag == "Untagged" && !hide.allowed)
                 {
                     doorReticle.SetActive(true);
                     normalReticle.SetActive(false);
