@@ -87,7 +87,7 @@ VideoPlayer:
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
-  m_TargetTexture: {fileID: 8400000, guid: ea60078bf97cf1b4dbc429c7c51d4a93, type: 2}
+  m_TargetTexture: {fileID: 8400000, guid: 7836d1cf46478eb438f8ae292de7dc82, type: 2}
   m_TimeReference: 0
   m_TargetMaterialRenderer: {fileID: 0}
   m_TargetMaterialProperty: <noninit>
@@ -145,7 +145,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.0018920898, y: -0.0006713867}
+  m_AnchoredPosition: {x: 0.001953125, y: -0.0006713867}
   m_SizeDelta: {x: -591.75, y: -336}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1416806930
@@ -176,7 +176,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 8400000, guid: ea60078bf97cf1b4dbc429c7c51d4a93, type: 2}
+  m_Texture: {fileID: 8400000, guid: 7836d1cf46478eb438f8ae292de7dc82, type: 2}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -276,14 +276,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 55
-  m_fontSizeBase: 55
+  m_fontSize: 28
+  m_fontSizeBase: 28
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 4
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -470,4 +470,4 @@ MonoBehaviour:
   _skipButton: 32
   fpsController: {fileID: 0}
   _openingConversationVideo: {fileID: 675474047}
-  _timeInOpeningConvoToStartWhiteNoise: 0
+  _timeInOpeningConvoToStartWhiteNoise: 34

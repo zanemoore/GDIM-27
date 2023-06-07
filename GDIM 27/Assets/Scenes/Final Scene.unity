@@ -30320,53 +30320,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 12919629, guid: e39598940180e104e873fb12a76d462b, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1416806928, guid: e39598940180e104e873fb12a76d462b, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0.001953125
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583171290, guid: e39598940180e104e873fb12a76d462b, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583171292, guid: e39598940180e104e873fb12a76d462b, type: 3}
-      propertyPath: m_text
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583171292, guid: e39598940180e104e873fb12a76d462b, type: 3}
-      propertyPath: m_fontSize
-      value: 28
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583171292, guid: e39598940180e104e873fb12a76d462b, type: 3}
-      propertyPath: m_fontSizeBase
-      value: 28
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583171292, guid: e39598940180e104e873fb12a76d462b, type: 3}
-      propertyPath: m_HorizontalAlignment
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 6688677873723367284, guid: e39598940180e104e873fb12a76d462b,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6688677873723367285, guid: e39598940180e104e873fb12a76d462b,
-        type: 3}
-      propertyPath: m_IgnoreReversedGraphics
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6688677874510296161, guid: e39598940180e104e873fb12a76d462b,
         type: 3}
       propertyPath: m_Name
       value: OpeningConversation
-      objectReference: {fileID: 0}
-    - target: {fileID: 6688677874510296161, guid: e39598940180e104e873fb12a76d462b,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6688677874510296162, guid: e39598940180e104e873fb12a76d462b,
         type: 3}
@@ -30433,11 +30390,6 @@ PrefabInstance:
       propertyPath: fpsController
       value: 
       objectReference: {fileID: 1082400911}
-    - target: {fileID: 6688677874510296172, guid: e39598940180e104e873fb12a76d462b,
-        type: 3}
-      propertyPath: _timeInOpeningConvoToStartWhiteNoise
-      value: 34
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e39598940180e104e873fb12a76d462b, type: 3}
 --- !u!1001 &1945367342
