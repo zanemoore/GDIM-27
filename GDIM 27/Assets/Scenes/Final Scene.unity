@@ -26679,7 +26679,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 0.2735849, g: 0.16131185, b: 0.16131185, a: 1}
-  m_Intensity: 0.15
+  m_Intensity: 105.2
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -30335,7 +30335,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1963996462
 RectTransform:
   m_ObjectHideFlags: 0
@@ -30433,7 +30433,7 @@ MonoBehaviour:
   animator: {fileID: 1963996464}
   clockText: {fileID: 1440373272}
   time: 5220
-  timeScale: 100
+  timeScale: 6
   textContainer: {fileID: 972396520}
   textPrefab: {fileID: 4179402891730799114, guid: cd97b314bb05ef34eb20a376b483a1ea,
     type: 3}
