@@ -73,7 +73,7 @@ public class KeyPickUp : MonoBehaviour
             }
             else 
             {
-                if (obj.tag == "Untagged")
+                if (obj.tag == "Untagged" && !hide.allowed)
                 {
                     normalReticle.SetActive(true);
                 }
@@ -86,9 +86,12 @@ public class KeyPickUp : MonoBehaviour
         }
         else 
         {
-            exitReticle.SetActive(false);
-            doorReticle.SetActive(false);
-            normalReticle.SetActive(true);
+            if (!hide.allowed)
+            {
+                exitReticle.SetActive(false);
+                doorReticle.SetActive(false);
+                normalReticle.SetActive(true);
+            }
         }
 
         if (Time.time >= timeWhenDisappear)
