@@ -61,16 +61,13 @@ public class Hiding : MonoBehaviour
         }
         else if (allowed)
         {
-            for (int i = 0; i < tables.Length; i++)
-            {
-                if (tables[i].mouseOver)
-                {
-                    hideReticle.SetActive(true);
-                    leaveHideReticle.SetActive(false);
-                    normalReticle.SetActive(false);
+            
+            hideReticle.SetActive(true);
+            leaveHideReticle.SetActive(false);
+            normalReticle.SetActive(false);
                     
-                }
-            }
+               
+            
         }
         else
         {
@@ -86,7 +83,7 @@ public class Hiding : MonoBehaviour
             hideableObject = other.gameObject;
             allowed = true;
             Debug.Log("ACTUALLY ENTERED");
-            hideReticle.SetActive(true);
+            //hideReticle.SetActive(true);
             normalReticle.SetActive(false);
         }
         

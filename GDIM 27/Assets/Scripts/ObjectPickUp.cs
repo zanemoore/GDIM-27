@@ -104,7 +104,7 @@ namespace Sounds
                     return;
                 }
 
-                if (distance <= 3.5 && !hide.isHidden)
+                if (distance <= 3.5 && !hide.isHidden && !hide.allowed)
                 {
                     isHolding = true;
                     body.useGravity = false;
@@ -117,10 +117,13 @@ namespace Sounds
         }
         void OnMouseUp()
         {
-            isHolding = false;
-            grabReticle.SetActive(false);
-            normalReticle.SetActive(true);
-            throwReticle.SetActive(false);
+            if (!hide.allowed)
+            {
+                isHolding = false;
+                grabReticle.SetActive(false);
+                normalReticle.SetActive(true);
+                throwReticle.SetActive(false);
+            }
         }
 
         void OnMouseOver()
@@ -134,7 +137,7 @@ namespace Sounds
                     return;
                 }
 
-                if (distance <= 3.5 && !hide.isHidden)
+                if (distance <= 3.5 && !hide.isHidden && !hide.allowed)
                 {
                     body.useGravity = false;
                     body.detectCollisions = true;
@@ -147,9 +150,16 @@ namespace Sounds
 
         private void OnMouseExit()
         {
-            grabReticle.SetActive(false);
-            normalReticle.SetActive(true);
-            throwReticle.SetActive(false);
+            if (!hide.allowed)
+            {
+                grabReticle.SetActive(false);
+                normalReticle.SetActive(true);
+                throwReticle.SetActive(false);
+            }
+            else
+            {
+                normalReticle.SetActive(false);
+            }
         }
 
         void OnCollisionEnter(Collision collision)

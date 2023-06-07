@@ -59,32 +59,32 @@ public class KeyPickUp : MonoBehaviour
                 if (obj.tag == "Exit")
                 {
                     exitReticle.SetActive(true);
+                    normalReticle.SetActive(false);
                 }
                 else if (obj.tag == "Untagged")
                 {
                     doorReticle.SetActive(true);
                     normalReticle.SetActive(false);
                 }
-                else
-                {
-                    doorReticle.SetActive(false);
-                    exitReticle.SetActive(false);
-                    normalReticle.SetActive(true);
-                }
-
                 if (Input.GetMouseButtonDown(0))
                 {
                     TryOpenDoor(obj);
                 }
             }
-            else
+            else 
             {
+                if (obj.tag == "Untagged")
+                {
+                    normalReticle.SetActive(true);
+                }
                 exitReticle.SetActive(false);
                 doorReticle.SetActive(false);
+
             }
             
+            
         }
-        else
+        else 
         {
             exitReticle.SetActive(false);
             doorReticle.SetActive(false);
