@@ -98,13 +98,7 @@ namespace Sounds
             {
                 Rigidbody body = item.GetComponent<Rigidbody>();
 
-                // I'm doing this just to avoid a random error that keeps cropping up - Diego
-                if (hide == null)
-                {
-                    return;
-                }
-
-                if (distance <= 3.5 && !hide.isHidden && !hide.allowed)
+                if (distance <= 3.5 && hide != null && !hide.isHidden && !hide.allowed)
                 {
                     isHolding = true;
                     body.useGravity = false;
@@ -117,7 +111,7 @@ namespace Sounds
         }
         void OnMouseUp()
         {
-            if (!hide.allowed)
+            if (hide != null && !hide.allowed)
             {
                 isHolding = false;
                 grabReticle.SetActive(false);
@@ -132,12 +126,7 @@ namespace Sounds
             {
                 Rigidbody body = item.GetComponent<Rigidbody>();
 
-                if (hide == null)
-                {
-                    return;
-                }
-
-                if (distance <= 3.5 && !hide.isHidden && !hide.allowed)
+                if (hide != null && distance <= 3.5 && !hide.isHidden && !hide.allowed)
                 {
                     body.useGravity = false;
                     body.detectCollisions = true;
@@ -150,7 +139,7 @@ namespace Sounds
 
         private void OnMouseExit()
         {
-            if (!hide.allowed)
+            if (hide != null && !hide.allowed)
             {
                 grabReticle.SetActive(false);
                 normalReticle.SetActive(true);
