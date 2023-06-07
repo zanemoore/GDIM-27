@@ -13,6 +13,7 @@ public class LevelChanger : MonoBehaviour
     [SerializeField] private GameObject fpsController;
     [SerializeField] private VideoPlayer _openingConversationVideo;
     [SerializeField] private float _timeInOpeningConvoToStartWhiteNoise;
+    [SerializeField] private Phone phone; 
 
 
     void Start()
@@ -47,11 +48,13 @@ public class LevelChanger : MonoBehaviour
             whiteNoise.startNoise();
         }
 
+        phone.startTimer = true;
+
         skipInstructions.text = "";
 
         UnlockControls();
 
-        Destroy(this.gameObject);
+        Destroy(gameObject);
     }
 
 

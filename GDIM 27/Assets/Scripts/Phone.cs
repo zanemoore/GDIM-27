@@ -23,7 +23,7 @@ public class Phone : MonoBehaviour
         public bool sound; // does the text play the eerie sfx
     }
 
-
+    public bool startTimer;
     [SerializeField] private PlayerInput _input;
     [SerializeField] private Animator animator;
     [SerializeField] private TMP_Text clockText;
@@ -59,6 +59,7 @@ public class Phone : MonoBehaviour
 
     private void Update()
     {
+        if (!startTimer) return;
         time += Time.deltaTime * timeScale;
         PhoneClock();
         CheckTimes();

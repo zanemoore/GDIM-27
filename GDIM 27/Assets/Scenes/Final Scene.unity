@@ -15850,6 +15850,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1331243154}
     - target: {fileID: 1082400912, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+      propertyPath: PlayerFlashLight
+      value: 
+      objectReference: {fileID: 1483359523}
+    - target: {fileID: 1082400912, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: cameraFlashLight
       value: 
       objectReference: {fileID: 1743464406}
@@ -22001,6 +22005,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1163164282332566261, guid: deef274b601d22d4da52735956b690b9,
     type: 3}
   m_PrefabInstance: {fileID: 1467418848}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1483359523 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1401099026, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
+    type: 3}
+  m_PrefabInstance: {fileID: 1082400905}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1484048444
 PrefabInstance:
@@ -29825,6 +29835,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6688677874510296172, guid: e39598940180e104e873fb12a76d462b,
         type: 3}
+      propertyPath: phone
+      value: 
+      objectReference: {fileID: 1963996467}
+    - target: {fileID: 6688677874510296172, guid: e39598940180e104e873fb12a76d462b,
+        type: 3}
       propertyPath: whiteNoise
       value: 
       objectReference: {fileID: 1103994172}
@@ -30429,6 +30444,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44592c2664984c9418b10edf90264899, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startTimer: 0
   _input: {fileID: 1082400907}
   animator: {fileID: 1963996464}
   clockText: {fileID: 1440373272}
