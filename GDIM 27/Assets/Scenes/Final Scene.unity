@@ -14408,6 +14408,25 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1015972083}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1016662466 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 675474045, guid: e39598940180e104e873fb12a76d462b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1945312462}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1016662469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1016662466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 087585316fb39a144b1b52a20340ee0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vp: {fileID: 1945312463}
 --- !u!1001 &1018431246
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25003,7 +25022,7 @@ MonoBehaviour:
   Params: []
   OverrideAttenuation: 0
   OverrideMinDistance: 1
-  OverrideMaxDistance: 65
+  OverrideMaxDistance: 30
 --- !u!114 &1696268772
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29156,6 +29175,24 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1909647179}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1909647181 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9005220659476430823, guid: 2d3a85ecde41a8246a79669975912b74,
+    type: 3}
+  m_PrefabInstance: {fileID: 1909647179}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1909647182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1909647181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 560f806c316c2394c96375969374d2d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1910769026
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29874,6 +29911,12 @@ PrefabInstance:
       objectReference: {fileID: 1082400911}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e39598940180e104e873fb12a76d462b, type: 3}
+--- !u!328 &1945312463 stripped
+VideoPlayer:
+  m_CorrespondingSourceObject: {fileID: 675474047, guid: e39598940180e104e873fb12a76d462b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1945312462}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1945367342
 PrefabInstance:
   m_ObjectHideFlags: 0
