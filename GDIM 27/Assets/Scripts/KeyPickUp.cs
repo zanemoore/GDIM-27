@@ -16,7 +16,7 @@ public class KeyPickUp : MonoBehaviour
     [SerializeField] private GameObject[] keys;
 
     [SerializeField] private GameObject mascot;
-    [SerializeField] private FMODUnity.StudioEventEmitter zotEmitter;
+    [SerializeField] private FMODUnity.StudioEventEmitter zotEmitter; // remember to add directional zots
 
     [SerializeField] private TextMeshProUGUI uiInstructions;
     [SerializeField] private float timeToAppear = 2f;
@@ -169,7 +169,7 @@ public class KeyPickUp : MonoBehaviour
                     SpawnKey(0);
 
                     mascot.SetActive(true);
-                    zotEmitter.Play();
+                    // zotEmitter.Play(); commented out; old version of beginning zot - dare
                 }
                 else
                 {

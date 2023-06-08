@@ -8,7 +8,7 @@
 			<value>2</value>
 		</property>
 		<relationship name="folder">
-			<destination>{79cff77d-feb6-4aed-a6ae-9a7816e1269b}</destination>
+			<destination>{fcfdc113-3d27-4f52-be80-d4f95cdb30f5}</destination>
 		</relationship>
 		<relationship name="mixer">
 			<destination>{a73f7d9a-f832-4010-9ca8-2cb703357fec}</destination>
@@ -61,7 +61,7 @@
 	</object>
 	<object class="EventAutomatableProperties" id="{3d339f59-0b5d-4303-b579-0a0f68d81dc6}">
 		<property name="maximumDistance">
-			<value>30</value>
+			<value>65</value>
 		</property>
 	</object>
 	<object class="MarkerTrack" id="{b23eb4ac-dd7e-40ab-8650-ab2e451e50f1}" />
@@ -121,7 +121,7 @@
 	<object class="MixerBusFader" id="{4d60c9a4-b242-4343-ab11-53a4ffc55097}" />
 	<object class="SpatialiserEffect" id="{17cc4363-7f9e-4b7a-88a0-e5a240593f3e}">
 		<property name="maximumDistance">
-			<value>30</value>
+			<value>65</value>
 		</property>
 	</object>
 	<object class="SingleSound" id="{a6b3fc10-0239-469f-ba93-cdd9ebe939e9}">

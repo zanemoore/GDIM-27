@@ -1178,6 +1178,7 @@ MonoBehaviour:
   throwForce: 1000
   soundRange: 50
   startGameAttenuation: 0
+  hide: {fileID: 0}
   normalReticle: {fileID: 1331243154}
   grabReticle: {fileID: 33490218}
   throwReticle: {fileID: 2056708926}
@@ -1216,7 +1217,7 @@ MonoBehaviour:
       Data2: 1299906615
       Data3: -61965927
       Data4: -713467054
-    Path: event:/Bag
+    Path: event:/Thorwables/Bag
   Event: 
   PlayEvent: 0
   StopEvent: 0
@@ -3774,6 +3775,7 @@ MonoBehaviour:
   throwForce: 1000
   soundRange: 50
   startGameAttenuation: 0
+  hide: {fileID: 0}
   normalReticle: {fileID: 1331243154}
   grabReticle: {fileID: 33490218}
   throwReticle: {fileID: 2056708926}
@@ -3812,7 +3814,7 @@ MonoBehaviour:
       Data2: 1076392996
       Data3: 1257770942
       Data4: 952587515
-    Path: event:/Bottle Drop
+    Path: event:/Thorwables/Bottle Drop
   Event: 
   PlayEvent: 0
   StopEvent: 0
@@ -4094,6 +4096,7 @@ MonoBehaviour:
   throwForce: 1000
   soundRange: 50
   startGameAttenuation: 0
+  hide: {fileID: 0}
   normalReticle: {fileID: 1331243154}
   grabReticle: {fileID: 33490218}
   throwReticle: {fileID: 2056708926}
@@ -4132,7 +4135,7 @@ MonoBehaviour:
       Data2: 1232240301
       Data3: 310882986
       Data4: 81995463
-    Path: event:/Book Throw
+    Path: event:/Thorwables/Book Throw
   Event: 
   PlayEvent: 0
   StopEvent: 0
@@ -7857,6 +7860,7 @@ MonoBehaviour:
   throwForce: 1000
   soundRange: 50
   startGameAttenuation: 0
+  hide: {fileID: 0}
   normalReticle: {fileID: 1331243154}
   grabReticle: {fileID: 33490218}
   throwReticle: {fileID: 2056708926}
@@ -7895,7 +7899,7 @@ MonoBehaviour:
       Data2: 1076392996
       Data3: 1257770942
       Data4: 952587515
-    Path: event:/Bottle Drop
+    Path: event:/Thorwables/Bottle Drop
   Event: 
   PlayEvent: 0
   StopEvent: 0
@@ -9272,6 +9276,7 @@ MonoBehaviour:
   throwForce: 1000
   soundRange: 50
   startGameAttenuation: 0
+  hide: {fileID: 0}
   normalReticle: {fileID: 1331243154}
   grabReticle: {fileID: 33490218}
   throwReticle: {fileID: 2056708926}
@@ -9310,7 +9315,7 @@ MonoBehaviour:
       Data2: 1232240301
       Data3: 310882986
       Data4: 81995463
-    Path: event:/Book Throw
+    Path: event:/Thorwables/Book Throw
   Event: 
   PlayEvent: 0
   StopEvent: 0
@@ -10331,6 +10336,7 @@ MonoBehaviour:
   throwForce: 1000
   soundRange: 50
   startGameAttenuation: 0
+  hide: {fileID: 0}
   normalReticle: {fileID: 1331243154}
   grabReticle: {fileID: 33490218}
   throwReticle: {fileID: 2056708926}
@@ -10369,7 +10375,7 @@ MonoBehaviour:
       Data2: 1076392996
       Data3: 1257770942
       Data4: 952587515
-    Path: event:/Bottle Drop
+    Path: event:/Thorwables/Bottle Drop
   Event: 
   PlayEvent: 0
   StopEvent: 0
@@ -15805,6 +15811,7 @@ MonoBehaviour:
   throwForce: 1000
   soundRange: 50
   startGameAttenuation: 0
+  hide: {fileID: 0}
   normalReticle: {fileID: 1331243154}
   grabReticle: {fileID: 33490218}
   throwReticle: {fileID: 2056708926}
@@ -15843,7 +15850,7 @@ MonoBehaviour:
       Data2: 1299906615
       Data3: -61965927
       Data4: -713467054
-    Path: event:/Bag
+    Path: event:/Thorwables/Bag
   Event: 
   PlayEvent: 0
   StopEvent: 0
@@ -16869,6 +16876,7 @@ MonoBehaviour:
   throwForce: 1000
   soundRange: 50
   startGameAttenuation: 0
+  hide: {fileID: 0}
   normalReticle: {fileID: 1331243154}
   grabReticle: {fileID: 33490218}
   throwReticle: {fileID: 2056708926}
@@ -16907,7 +16915,7 @@ MonoBehaviour:
       Data2: 1299906615
       Data3: -61965927
       Data4: -713467054
-    Path: event:/Bag
+    Path: event:/Thorwables/Bag
   Event: 
   PlayEvent: 0
   StopEvent: 0
@@ -26088,7 +26096,7 @@ PrefabInstance:
     - target: {fileID: 9005220659476430821, guid: 2d3a85ecde41a8246a79669975912b74,
         type: 3}
       propertyPath: field of view
-      value: 40
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 9005220659476430821, guid: 2d3a85ecde41a8246a79669975912b74,
         type: 3}
@@ -26680,6 +26688,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1583171291, guid: e39598940180e104e873fb12a76d462b, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6688677873723367287, guid: e39598940180e104e873fb12a76d462b,
         type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
@@ -27268,12 +27280,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44592c2664984c9418b10edf90264899, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startTimer: 0
   _input: {fileID: 1082400907}
   animator: {fileID: 1963996464}
   clockText: {fileID: 1440373272}
   time: 5220
   timeScale: 10
+  textContainer: {fileID: 0}
+  textPrefab: {fileID: 0}
   recievedText: 0
+  texts: []
+  vibrateEmitter: {fileID: 0}
+  selectEmitter: {fileID: 0}
+  eerieEmitter: {fileID: 0}
 --- !u!1 &1972683018 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9215267474699151773, guid: c316f4e38a47fbb45944ce4eb5e12871,
@@ -28268,6 +28287,7 @@ MonoBehaviour:
   throwForce: 1000
   soundRange: 50
   startGameAttenuation: 0
+  hide: {fileID: 0}
   normalReticle: {fileID: 1331243154}
   grabReticle: {fileID: 33490218}
   throwReticle: {fileID: 2056708926}
@@ -28306,7 +28326,7 @@ MonoBehaviour:
       Data2: 1076392996
       Data3: 1257770942
       Data4: 952587515
-    Path: event:/Bottle Drop
+    Path: event:/Thorwables/Bottle Drop
   Event: 
   PlayEvent: 0
   StopEvent: 0

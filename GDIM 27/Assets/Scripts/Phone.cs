@@ -125,9 +125,11 @@ public class Phone : MonoBehaviour
     
     public void PhonePeek()
     {
+        vibrateEmitter.Play(); // moved to outside if
+        
         if(!phoneActive)
         {
-            vibrateEmitter.Play();
+            
             animator.SetBool("Peek", true);
             StartCoroutine(PeekTime());
         }
