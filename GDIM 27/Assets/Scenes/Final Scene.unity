@@ -15747,6 +15747,41 @@ PrefabInstance:
       propertyPath: keys.Array.data[2]
       value: 
       objectReference: {fileID: 1499577553}
+    - target: {fileID: 1089222880674915203, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
+        type: 3}
+      propertyPath: openingNonExitDoorTexts.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1089222880674915203, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
+        type: 3}
+      propertyPath: openingNonExitDoorTexts.Array.data[0]
+      value: This isn't the exit...
+      objectReference: {fileID: 0}
+    - target: {fileID: 1089222880674915203, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
+        type: 3}
+      propertyPath: openingNonExitDoorTexts.Array.data[1]
+      value: Ugh this door is locked
+      objectReference: {fileID: 0}
+    - target: {fileID: 1089222880674915203, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
+        type: 3}
+      propertyPath: openingNonExitDoorTexts.Array.data[2]
+      value: Dammit it's closed
+      objectReference: {fileID: 0}
+    - target: {fileID: 1089222880674915203, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
+        type: 3}
+      propertyPath: openingNonExitDoorTexts.Array.data[3]
+      value: This isn't the exit door
+      objectReference: {fileID: 0}
+    - target: {fileID: 1089222880674915203, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
+        type: 3}
+      propertyPath: openingNonExitDoorTexts.Array.data[4]
+      value: This door is locked
+      objectReference: {fileID: 0}
+    - target: {fileID: 1089222880674915203, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
+        type: 3}
+      propertyPath: openingNonExitDoorTexts.Array.data[5]
+      value: I can't get out through here
+      objectReference: {fileID: 0}
     - target: {fileID: 8616685848737228371, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
         type: 3}
       propertyPath: pause
