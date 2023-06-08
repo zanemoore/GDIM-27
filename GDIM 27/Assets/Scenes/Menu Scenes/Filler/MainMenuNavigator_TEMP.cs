@@ -26,6 +26,8 @@ public class MainMenuNavigator_TEMP : MonoBehaviour
     void Start()
     {
         Cursor.visible = true;
+        SetScreenRes(2);
+        SetFullscreen(false);
     }
 
     private void Update()
