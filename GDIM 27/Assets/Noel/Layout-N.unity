@@ -1204,6 +1204,11 @@ MonoBehaviour:
   isStandingOn: 0
   throwForce: 1000
   soundRange: 50
+  startGameAttenuation: 0
+  hide: {fileID: 0}
+  normalReticle: {fileID: 0}
+  grabReticle: {fileID: 0}
+  throwReticle: {fileID: 0}
 --- !u!82 &111996236
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1335,7 +1340,7 @@ MonoBehaviour:
       Data2: 1232240301
       Data3: 310882986
       Data4: 81995463
-    Path: event:/Book Throw
+    Path: event:/Thorwables/Book Throw
   Event: 
   PlayEvent: 0
   StopEvent: 0
@@ -3624,6 +3629,11 @@ MonoBehaviour:
   isStandingOn: 0
   throwForce: 1000
   soundRange: 50
+  startGameAttenuation: 0
+  hide: {fileID: 0}
+  normalReticle: {fileID: 0}
+  grabReticle: {fileID: 0}
+  throwReticle: {fileID: 0}
 --- !u!82 &306777979
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3755,7 +3765,7 @@ MonoBehaviour:
       Data2: 1076392996
       Data3: 1257770942
       Data4: 952587515
-    Path: event:/Bottle Drop
+    Path: event:/Thorwables/Bottle Drop
   Event: 
   PlayEvent: 0
   StopEvent: 0
@@ -3966,6 +3976,11 @@ MonoBehaviour:
   isStandingOn: 0
   throwForce: 1000
   soundRange: 50
+  startGameAttenuation: 0
+  hide: {fileID: 0}
+  normalReticle: {fileID: 0}
+  grabReticle: {fileID: 0}
+  throwReticle: {fileID: 0}
 --- !u!82 &325342577
 AudioSource:
   m_ObjectHideFlags: 0
@@ -4097,7 +4112,7 @@ MonoBehaviour:
       Data2: 1232240301
       Data3: 310882986
       Data4: 81995463
-    Path: event:/Book Throw
+    Path: event:/Thorwables/Book Throw
   Event: 
   PlayEvent: 0
   StopEvent: 0
@@ -7536,6 +7551,11 @@ MonoBehaviour:
   isStandingOn: 0
   throwForce: 1000
   soundRange: 50
+  startGameAttenuation: 0
+  hide: {fileID: 0}
+  normalReticle: {fileID: 0}
+  grabReticle: {fileID: 0}
+  throwReticle: {fileID: 0}
 --- !u!82 &645492895
 AudioSource:
   m_ObjectHideFlags: 0
@@ -7667,7 +7687,7 @@ MonoBehaviour:
       Data2: 1076392996
       Data3: 1257770942
       Data4: 952587515
-    Path: event:/Bottle Drop
+    Path: event:/Thorwables/Bottle Drop
   Event: 
   PlayEvent: 0
   StopEvent: 0
@@ -9086,6 +9106,11 @@ MonoBehaviour:
   isStandingOn: 0
   throwForce: 1000
   soundRange: 50
+  startGameAttenuation: 0
+  hide: {fileID: 0}
+  normalReticle: {fileID: 0}
+  grabReticle: {fileID: 0}
+  throwReticle: {fileID: 0}
 --- !u!82 &777544043
 AudioSource:
   m_ObjectHideFlags: 0
@@ -9217,7 +9242,7 @@ MonoBehaviour:
       Data2: 1232240301
       Data3: 310882986
       Data4: 81995463
-    Path: event:/Book Throw
+    Path: event:/Thorwables/Book Throw
   Event: 
   PlayEvent: 0
   StopEvent: 0
@@ -10116,6 +10141,11 @@ MonoBehaviour:
   isStandingOn: 0
   throwForce: 1000
   soundRange: 50
+  startGameAttenuation: 0
+  hide: {fileID: 0}
+  normalReticle: {fileID: 0}
+  grabReticle: {fileID: 0}
+  throwReticle: {fileID: 0}
 --- !u!82 &834289298
 AudioSource:
   m_ObjectHideFlags: 0
@@ -10247,7 +10277,7 @@ MonoBehaviour:
       Data2: 1076392996
       Data3: 1257770942
       Data4: 952587515
-    Path: event:/Bottle Drop
+    Path: event:/Thorwables/Bottle Drop
   Event: 
   PlayEvent: 0
   StopEvent: 0
@@ -13781,13 +13811,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6514a2e35207f1a44bfd58d98535afeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cameraFlashLight: {fileID: 0}
+  PlayerFlashLight: {fileID: 0}
+  FL: {fileID: 0}
   FPC: {fileID: 1082400911}
   oldCamera: {fileID: 1082400910}
   oldGameObject: {fileID: 357523544}
   seconds: 2
+  allowed: 0
   body: {fileID: 1797075830}
   isHidden: 0
+  breathingEmitter: {fileID: 0}
   _input: {fileID: 1082400907}
+  playingAnim: 0
+  pause: {fileID: 0}
+  leaveHideReticle: {fileID: 0}
+  hideReticle: {fileID: 0}
+  normalReticle: {fileID: 0}
+  grabReticle: {fileID: 0}
+  doorReticle: {fileID: 0}
+  exitReticle: {fileID: 0}
+  tables: []
 --- !u!114 &1082400915
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15575,6 +15619,11 @@ MonoBehaviour:
   isStandingOn: 0
   throwForce: 1000
   soundRange: 50
+  startGameAttenuation: 0
+  hide: {fileID: 0}
+  normalReticle: {fileID: 0}
+  grabReticle: {fileID: 0}
+  throwReticle: {fileID: 0}
 --- !u!82 &1197369292
 AudioSource:
   m_ObjectHideFlags: 0
@@ -15706,7 +15755,7 @@ MonoBehaviour:
       Data2: 1232240301
       Data3: 310882986
       Data4: 81995463
-    Path: event:/Book Throw
+    Path: event:/Thorwables/Book Throw
   Event: 
   PlayEvent: 0
   StopEvent: 0
@@ -16491,6 +16540,11 @@ MonoBehaviour:
   isStandingOn: 0
   throwForce: 1000
   soundRange: 50
+  startGameAttenuation: 0
+  hide: {fileID: 0}
+  normalReticle: {fileID: 0}
+  grabReticle: {fileID: 0}
+  throwReticle: {fileID: 0}
 --- !u!82 &1306116250
 AudioSource:
   m_ObjectHideFlags: 0
@@ -16622,7 +16676,7 @@ MonoBehaviour:
       Data2: 1232240301
       Data3: 310882986
       Data4: 81995463
-    Path: event:/Book Throw
+    Path: event:/Thorwables/Book Throw
   Event: 
   PlayEvent: 0
   StopEvent: 0
@@ -24710,7 +24764,7 @@ PrefabInstance:
     - target: {fileID: 9005220659476430821, guid: 2d3a85ecde41a8246a79669975912b74,
         type: 3}
       propertyPath: field of view
-      value: 40
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 9005220659476430821, guid: 2d3a85ecde41a8246a79669975912b74,
         type: 3}
@@ -25669,9 +25723,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44592c2664984c9418b10edf90264899, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startTimer: 0
   _input: {fileID: 1082400907}
   animator: {fileID: 1963996464}
-  phoneActive: 0
+  clockText: {fileID: 0}
+  time: 0
+  timeScale: 0
+  textContainer: {fileID: 0}
+  textPrefab: {fileID: 0}
+  recievedText: 0
+  texts: []
+  vibrateEmitter: {fileID: 0}
+  selectEmitter: {fileID: 0}
+  eerieEmitter: {fileID: 0}
 --- !u!95 &1963996464
 Animator:
   serializedVersion: 5
@@ -26468,6 +26532,11 @@ MonoBehaviour:
   isStandingOn: 0
   throwForce: 1000
   soundRange: 50
+  startGameAttenuation: 0
+  hide: {fileID: 0}
+  normalReticle: {fileID: 0}
+  grabReticle: {fileID: 0}
+  throwReticle: {fileID: 0}
 --- !u!82 &2029851897
 AudioSource:
   m_ObjectHideFlags: 0
@@ -26599,7 +26668,7 @@ MonoBehaviour:
       Data2: 1232240301
       Data3: 310882986
       Data4: 81995463
-    Path: event:/Book Throw
+    Path: event:/Thorwables/Book Throw
   Event: 
   PlayEvent: 0
   StopEvent: 0
@@ -26956,6 +27025,11 @@ MonoBehaviour:
   isStandingOn: 0
   throwForce: 1000
   soundRange: 50
+  startGameAttenuation: 0
+  hide: {fileID: 0}
+  normalReticle: {fileID: 0}
+  grabReticle: {fileID: 0}
+  throwReticle: {fileID: 0}
 --- !u!82 &2052453104
 AudioSource:
   m_ObjectHideFlags: 0
@@ -27087,7 +27161,7 @@ MonoBehaviour:
       Data2: 1076392996
       Data3: 1257770942
       Data4: 952587515
-    Path: event:/Bottle Drop
+    Path: event:/Thorwables/Bottle Drop
   Event: 
   PlayEvent: 0
   StopEvent: 0
