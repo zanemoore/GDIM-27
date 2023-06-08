@@ -20,10 +20,11 @@ public class Phone : MonoBehaviour
         public bool random;
         public float minTime;
         public float maxTime;
-        public bool sound; // does the text play the eerie sfx
+        public bool isPreloaded; // is it a "pre-loaded" msg - Diego
+        public bool playEerieSfx; // does the text play the eerie sfx
     }
 
-
+    public bool startTimer;
     [SerializeField] private PlayerInput _input;
     [SerializeField] private Animator animator;
     [SerializeField] private TMP_Text clockText;
@@ -52,13 +53,20 @@ public class Phone : MonoBehaviour
         foreach (TextMessage msg in texts)
         {
             if (msg.random)
-                msg.time = UnityEngine.Random.Range(msg.minTime, msg.maxTime);    
+                msg.time = UnityEngine.Random.Range(msg.minTime, msg.maxTime);
+
+            if (msg.isPreloaded) // Display all "pre-loaded" msg's - Diego
+            {
+                DisplayMessage(msg);
+                msg.sent = true;
+            }
         }
 
     }
 
     private void Update()
     {
+        if (!startTimer) return;
         time += Time.deltaTime * timeScale;
         PhoneClock();
         CheckTimes();
@@ -101,14 +109,18 @@ public class Phone : MonoBehaviour
         if (hours <= 0)
             hours = 12;
 
-        if (msg.sound)
+        if (msg.playEerieSfx)
         {
           eerieEmitter.Play();
         }    
 
         message.text = msg.text;
         messageTime.text = string.Format("{0:00}:{1:00}", hours, minutes);
-        PhonePeek();
+
+        if (!msg.isPreloaded)  // Ensures that all DisplayMessage() calls in Start for "pre-loaded" msg's don't activate "Peek" anim + vibrate sfx - Diego
+        {
+            PhonePeek();
+        }
     }
     
     public void PhonePeek()
@@ -140,6 +152,11 @@ public class Phone : MonoBehaviour
 
     private void OnDisable()
     {
+        if (_input == null)
+        {
+            return;
+        }
+
         _input.actions["Phone"].started -= TogglePhone;
     }
 

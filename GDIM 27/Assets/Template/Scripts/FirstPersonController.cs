@@ -20,6 +20,7 @@ namespace StarterAssets
 		public float RotationSpeed = 1.0f;
 		[Tooltip("Acceleration and deceleration")]
 		public float SpeedChangeRate = 10.0f;
+		public bool isRunning;
 
 		[Space(10)]
 		[Tooltip("The height the player can jump")]
@@ -212,6 +213,16 @@ namespace StarterAssets
 
 			// move the player
 			_controller.Move(inputDirection.normalized * (_speed * Time.deltaTime) + new Vector3(0.0f, _verticalVelocity, 0.0f) * Time.deltaTime);
+
+			//checks if the player is running
+			if (targetSpeed == SprintSpeed)
+			{
+				isRunning = true;
+			}
+			else
+			{
+				isRunning = false;
+			}
 
 			// play walk/run sound based on target sound
 			if (targetSpeed == MoveSpeed && !walkEmitter.IsPlaying())

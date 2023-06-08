@@ -7,28 +7,25 @@ using UnityEngine.SceneManagement;
 
 public class KeyPickUp : MonoBehaviour
 {
-    [SerializeField]
-    private FMODUnity.StudioEventEmitter keyEmitter;
-    [SerializeField]
-    private FMODUnity.StudioEventEmitter lockedEmitter;
-    [SerializeField]
-    private FMODUnity.StudioEventEmitter unlockedEmitter;
-    [SerializeField]
-    private float soundRange;
-    [SerializeField]
-    private float maxInteractRange;
-    [SerializeField]
-    private GameObject[] keys;
-    [SerializeField]
-    private GameObject mascot;
-    [SerializeField]
-    private TextMeshProUGUI uiInstructions;
-    [SerializeField]
-    private float timeToAppear = 2f;
-    [SerializeField]
-    private GameObject dangerMeter;
-    [SerializeField]
-    private GameObject awarenessMeter;
+    [SerializeField] private FMODUnity.StudioEventEmitter keyEmitter;
+    [SerializeField] private FMODUnity.StudioEventEmitter lockedEmitter;
+    [SerializeField] private FMODUnity.StudioEventEmitter unlockedEmitter;
+    [SerializeField] private float soundRange;
+
+    [SerializeField] private float maxInteractRange;
+    [SerializeField] private GameObject[] keys;
+
+    [SerializeField] private GameObject mascot;
+    [SerializeField] private FMODUnity.StudioEventEmitter zotEmitter;
+
+    [SerializeField] private TextMeshProUGUI uiInstructions;
+    [SerializeField] private float timeToAppear = 2f;
+    [SerializeField] private List<string> openingNonExitDoorTexts;
+
+    [SerializeField] private GameObject doorReticle;
+    [SerializeField] private GameObject exitReticle;
+    [SerializeField] private GameObject normalReticle;
+    [SerializeField] private Hiding hide;
 
     private float timeWhenDisappear;
     private bool hasKey;
@@ -37,9 +34,12 @@ public class KeyPickUp : MonoBehaviour
 
     void Start()
     {
+        UnityEngine.Random.InitState(27);
+
         hasKey = false;
         numKeysTried = 0;
-        timeToAppear = 50f;  // This is 50f to make sure the text stays up past the entirety of the cutscene
+
+        timeToAppear = 56f;  // This is 56f to make sure the text stays up past the entirety of the cutscene (good idea to drag in video and do timeToAppear += video.lenght?) - Diego
         SetText("I gotta find an exit.\n[Find an Exit Door]");
         timeToAppear = 2f;
     }
@@ -56,16 +56,44 @@ public class KeyPickUp : MonoBehaviour
             if (obj.tag == "Key" && Input.GetMouseButtonDown(0))
             {
                 PickUpKey(obj);
-               
             }
-            else if (obj.layer == LayerMask.NameToLayer("Door"))
+            else if (obj.layer == LayerMask.NameToLayer("Door") && !hide.isHidden)
             {
-                // Show Door Reticle
-
+                if (obj.tag == "Exit" && !hide.allowed)
+                {
+                    exitReticle.SetActive(true);
+                    normalReticle.SetActive(false);
+                }
+                else if (obj.tag == "Untagged" && !hide.allowed)
+                {
+                    doorReticle.SetActive(true);
+                    normalReticle.SetActive(false);
+                }
                 if (Input.GetMouseButtonDown(0))
                 {
                     TryOpenDoor(obj);
                 }
+            }
+            else
+            {
+                if (obj.tag == "Untagged" && !hide.allowed)
+                {
+                    normalReticle.SetActive(true);
+                }
+                exitReticle.SetActive(false);
+                doorReticle.SetActive(false);
+
+            }
+
+
+        }
+        else
+        {
+            if (!hide.allowed)
+            {
+                exitReticle.SetActive(false);
+                doorReticle.SetActive(false);
+                normalReticle.SetActive(true);
             }
         }
 
@@ -112,7 +140,8 @@ public class KeyPickUp : MonoBehaviour
                     }
 
                     Cursor.lockState = CursorLockMode.None;
-                    SceneManager.LoadScene("MainMenu");  // Temp for when you win - Diego REPLACE WITH NEWSPAPER AND PLAY AGAIN THING
+                    GameObject.Find("SaveBetweenScenes").GetComponent<SaveBetweenScenes>().PlayerWon = true;
+                    SceneManager.LoadScene("Game Over");
                 }
                 else
                 {
@@ -138,9 +167,9 @@ public class KeyPickUp : MonoBehaviour
                 {
                     SetText("Emergency door's locked?\nMaybe there's a key...");
                     SpawnKey(0);
-                    dangerMeter.SetActive(true);
-                    awarenessMeter.SetActive(true);
+
                     mascot.SetActive(true);
+                    zotEmitter.Play();
                 }
                 else
                 {
@@ -155,7 +184,8 @@ public class KeyPickUp : MonoBehaviour
                 lockedEmitter.Play();
             }
 
-            SetText("This isn't the exit...");
+            int rndInt = UnityEngine.Random.Range(0, openingNonExitDoorTexts.Count);
+            SetText(openingNonExitDoorTexts[rndInt]);
         }
     }
 

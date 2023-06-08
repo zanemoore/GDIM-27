@@ -11,10 +11,18 @@ public class WhiteNoiseHandler : MonoBehaviour
         wn.Play();
     }
 
+
     public void stopNoise()
     {
         wn.Stop();
     }
+
+
+    public bool IsPlaying()
+    {
+        return wn.IsPlaying();
+    }
+
 
     void OnDestroy()
     {

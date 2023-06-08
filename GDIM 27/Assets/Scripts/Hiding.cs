@@ -32,14 +32,50 @@ public class Hiding : MonoBehaviour
     [SerializeField]
     private PlayerInput _input;
 
+    public bool playingAnim = false;
+
     [SerializeField] private PauseMenu pause;
+    [SerializeField] private GameObject leaveHideReticle;
+    [SerializeField] private GameObject hideReticle;
+    [SerializeField] private GameObject normalReticle;
+    [SerializeField] private GameObject grabReticle;
+    [SerializeField] private GameObject doorReticle;
+    [SerializeField] private GameObject exitReticle;
+    [SerializeField] private OnMouseOverHide[] tables;
+
     private void Start()
     {
         _input.actions["Hide"].started += ToggleCamera;
     }
 
+    private void Update()
+    {
+        if (isHidden)
+        {
+            hideReticle.SetActive(false);
+            leaveHideReticle.SetActive(true);
+            normalReticle.SetActive(false);
+            grabReticle.SetActive(false);
+            doorReticle.SetActive(false);
+            exitReticle.SetActive(false);
+        }
+        else if (allowed)
+        {
+            
+            hideReticle.SetActive(true);
+            leaveHideReticle.SetActive(false);
+            normalReticle.SetActive(false);
+                    
+               
+            
+        }
+        else
+        {
+            hideReticle.SetActive(false);
+            leaveHideReticle.SetActive(false);  
+        }
 
-
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Hideable" && pause.isPaused == false)
@@ -47,9 +83,12 @@ public class Hiding : MonoBehaviour
             hideableObject = other.gameObject;
             allowed = true;
             Debug.Log("ACTUALLY ENTERED");
+            //hideReticle.SetActive(true);
+            normalReticle.SetActive(false);
         }
-
+        
         Debug.Log("OTHER ENTER");
+        
     }
 
 
@@ -59,12 +98,13 @@ public class Hiding : MonoBehaviour
         {
             hideableObject = null;
             allowed = false;
+            hideReticle.SetActive(false);
+            normalReticle.SetActive(true);
         }
     }
 
     public void ToggleCamera(InputAction.CallbackContext context)
     {
-        Debug.Log("Calling");
         if (pause.isPaused == true)
         {
             return;
@@ -72,7 +112,6 @@ public class Hiding : MonoBehaviour
         if (!allowed)
             return;
 
-        Debug.Log("Passed the function");
         if (!switched)
         {
             CM = hideableObject.gameObject.transform.GetChild(0).GetComponent<CinemachineVirtualCamera>();
@@ -93,12 +132,21 @@ public class Hiding : MonoBehaviour
             CM.Priority = 9;
             FPC.CinemachineCameraTarget = oldGameObject;
             FPC.currentCamera = oldCamera;
-            StartCoroutine(WaitForAnimation());
+ 
+            if(!playingAnim)
+                StartCoroutine(WaitForAnimation());
+            else
+            {
+                Debug.Log("Cancelling");
+                StopCoroutine(WaitForAnimation());
+                playingAnim = false;
+            }
             isHidden = false;
             PlayerFlashLight.SetActive(FL.flashLight.activeInHierarchy);
             FL.flashLight = PlayerFlashLight;
             cameraFlashLight.SetActive(false);
             _input.actions["Move"].Enable();
+            playingAnim = true;
 
             stopBreathingSound();
         }
@@ -122,10 +170,14 @@ public class Hiding : MonoBehaviour
     IEnumerator WaitForAnimation()
     {
         yield return new WaitForSeconds(seconds);
-        body.SetActive(true);
+        if (playingAnim)
+        {
+            body.SetActive(!isHidden);
+            playingAnim= false;
+        }
 
     }
-
+     
     void OnDestroy()
     {
         stopBreathingSound();
