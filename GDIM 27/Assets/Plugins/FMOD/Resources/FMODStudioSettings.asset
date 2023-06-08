@@ -240,8 +240,13 @@ MonoBehaviour:
   Plugins: []
   MasterBanks:
   - Master
+  - Desktop/Master
   Banks:
   - Boss
+  - Desktop/Boss
+  - Desktop/Meter
+  - Desktop/Player
+  - Desktop/SFX
   - Meter
   - Player
   - SFX
