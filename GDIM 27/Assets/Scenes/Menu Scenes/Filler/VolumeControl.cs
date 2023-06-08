@@ -14,11 +14,6 @@ public class VolumeControl : MonoBehaviour
         AllSFX = FMODUnity.RuntimeManager.GetBus("bus:/All SFX");
     }
 
-    void Update()
-    {
-        
-    }
-
     public void MasterVolumeLevel(float newMasVol)
     {
         allVolume = newMasVol;
