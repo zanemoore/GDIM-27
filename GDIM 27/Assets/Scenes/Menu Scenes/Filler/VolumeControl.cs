@@ -12,6 +12,9 @@ public class VolumeControl : MonoBehaviour
     void Awake()
     {
         AllSFX = FMODUnity.RuntimeManager.GetBus("bus:/All SFX");
+
+        SaveBetweenScenes saveBtwnScenes = GameObject.Find("SaveBetweenScenes")
+            .GetComponent<SaveBetweenScenes>();
     }
 
     public void MasterVolumeLevel(float newMasVol)
