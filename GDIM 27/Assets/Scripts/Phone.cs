@@ -20,7 +20,8 @@ public class Phone : MonoBehaviour
         public bool random;
         public float minTime;
         public float maxTime;
-        public bool sound; // does the text play the eerie sfx
+        public bool isPreloaded; // is it a "pre-loaded" msg - Diego
+        public bool playEerieSfx; // does the text play the eerie sfx
     }
 
     public bool startTimer;
@@ -52,7 +53,13 @@ public class Phone : MonoBehaviour
         foreach (TextMessage msg in texts)
         {
             if (msg.random)
-                msg.time = UnityEngine.Random.Range(msg.minTime, msg.maxTime);    
+                msg.time = UnityEngine.Random.Range(msg.minTime, msg.maxTime);
+
+            if (msg.isPreloaded) // Ensures any "pre-loaded" messages (marked sent in inspector && show up in phone immedeiately)
+            {
+                DisplayMessage(msg);
+                msg.sent = true;
+            }
         }
 
     }
@@ -102,14 +109,18 @@ public class Phone : MonoBehaviour
         if (hours <= 0)
             hours = 12;
 
-        if (msg.sound)
+        if (msg.playEerieSfx)
         {
           eerieEmitter.Play();
         }    
 
         message.text = msg.text;
         messageTime.text = string.Format("{0:00}:{1:00}", hours, minutes);
-        PhonePeek();
+
+        if (!msg.isPreloaded)
+        {
+            PhonePeek();
+        }
     }
     
     public void PhonePeek()
