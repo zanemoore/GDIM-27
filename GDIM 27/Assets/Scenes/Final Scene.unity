@@ -13785,7 +13785,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.8, y: -49.1}
+  m_AnchoredPosition: {x: 4.5, y: -25.4}
   m_SizeDelta: {x: 123.39, y: 130.98}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &972396521
@@ -30510,7 +30510,7 @@ MonoBehaviour:
     playEerieSfx: 0
   - time: 0
     text: "BRO I tried calling you but it won\u2019t go through for some reason.
-      \nYour roommate said that you\u2019re not back yet. If you don\u2019t respond
+      Your roommate said that you\u2019re not back yet. If you don\u2019t respond
       I have to call the cops."
     sender: Ben
     sent: 0
@@ -30518,26 +30518,17 @@ MonoBehaviour:
     minTime: 7140
     maxTime: 7260
     isPreloaded: 0
-    playEerieSfx: 0
-  - time: 8100
-    text: DUDE
+    playEerieSfx: 1
+  - time: 7800
+    text: DUDE WHERE
     sender: Ben
     sent: 0
     random: 0
     minTime: 7620
     maxTime: 7621
     isPreloaded: 0
-    playEerieSfx: 0
-  - time: 8100
-    text: WHERE
-    sender: Ben
-    sent: 0
-    random: 0
-    minTime: 7621
-    maxTime: 7622
-    isPreloaded: 0
-    playEerieSfx: 0
-  - time: 8100
+    playEerieSfx: 1
+  - time: 7820
     text: ARE
     sender: 8100
     sent: 0
@@ -30546,7 +30537,7 @@ MonoBehaviour:
     maxTime: 7624
     isPreloaded: 0
     playEerieSfx: 0
-  - time: 8100
+  - time: 7830
     text: YOU
     sender: Ben
     sent: 0
@@ -30554,7 +30545,7 @@ MonoBehaviour:
     minTime: 7625
     maxTime: 7626
     isPreloaded: 0
-    playEerieSfx: 0
+    playEerieSfx: 1
   vibrateEmitter: {fileID: 1963996470}
   selectEmitter: {fileID: 1963996469}
   eerieEmitter: {fileID: 1963996468}
