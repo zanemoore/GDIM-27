@@ -55,7 +55,7 @@ public class Phone : MonoBehaviour
             if (msg.random)
                 msg.time = UnityEngine.Random.Range(msg.minTime, msg.maxTime);
 
-            if (msg.isPreloaded) // Ensures any "pre-loaded" messages (marked sent in inspector && show up in phone immedeiately)
+            if (msg.isPreloaded) // Display all "pre-loaded" msg's - Diego
             {
                 DisplayMessage(msg);
                 msg.sent = true;
@@ -117,7 +117,7 @@ public class Phone : MonoBehaviour
         message.text = msg.text;
         messageTime.text = string.Format("{0:00}:{1:00}", hours, minutes);
 
-        if (!msg.isPreloaded)
+        if (!msg.isPreloaded)  // Ensures that all DisplayMessage() calls in Start for "pre-loaded" msg's don't activate "Peek" anim + vibrate sfx - Diego
         {
             PhonePeek();
         }
