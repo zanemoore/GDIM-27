@@ -3530,6 +3530,8 @@ GameObject:
   m_Component:
   - component: {fileID: 247612983}
   - component: {fileID: 247612984}
+  - component: {fileID: 247612985}
+  - component: {fileID: 247612986}
   m_Layer: 5
   m_Name: Video Player
   m_TagString: Untagged
@@ -3592,6 +3594,35 @@ VideoPlayer:
   m_WaitForFirstFrame: 1
   m_FrameReadyEventEnabled: 0
   m_VideoShaders: []
+--- !u!114 &247612985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 247612982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 087585316fb39a144b1b52a20340ee0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vp: {fileID: 247612984}
+--- !u!114 &247612986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 247612982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b0e04e2572f9a940a47465f6f3c2f00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Parameter: Jumpscare
+  TriggerEvent: 1
+  Value: 1
 --- !u!1 &248048441 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9215267474699151773, guid: c316f4e38a47fbb45944ce4eb5e12871,
@@ -34067,6 +34098,11 @@ PrefabInstance:
       propertyPath: meter
       value: 
       objectReference: {fileID: 432411781}
+    - target: {fileID: 6249156008004851023, guid: 57165a9fe820e2d45a893b83d4eb7dfb,
+        type: 3}
+      propertyPath: gameVol
+      value: 
+      objectReference: {fileID: 247612985}
     - target: {fileID: 6249156008004851023, guid: 57165a9fe820e2d45a893b83d4eb7dfb,
         type: 3}
       propertyPath: playerModel
