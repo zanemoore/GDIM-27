@@ -29772,10 +29772,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 12919629, guid: e39598940180e104e873fb12a76d462b, type: 3}
+      propertyPath: m_Name
+      value: Opening Cutscene
+      objectReference: {fileID: 0}
     - target: {fileID: 675474047, guid: e39598940180e104e873fb12a76d462b, type: 3}
       propertyPath: m_VideoClip
       value: 
-      objectReference: {fileID: 32900000, guid: 23a6acc4c32c2504183c594751c11e18,
+      objectReference: {fileID: 32900000, guid: c91237826e10d4a49a3e935d9a310ddf,
         type: 3}
     - target: {fileID: 1583171292, guid: e39598940180e104e873fb12a76d462b, type: 3}
       propertyPath: m_text
