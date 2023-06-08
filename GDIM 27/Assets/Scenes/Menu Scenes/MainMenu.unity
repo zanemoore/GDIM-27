@@ -4278,7 +4278,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1782295602}
   - component: {fileID: 1782295603}
-  - component: {fileID: 1782295604}
+  - component: {fileID: 1782295605}
   m_Layer: 5
   m_Name: MusicSlider
   m_TagString: Untagged
@@ -4360,10 +4360,10 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1782295604}
-        m_TargetAssemblyTypeName: VolumeControl, Assembly-CSharp
-        m_MethodName: MasterVolumeLevel
-        m_Mode: 0
+      - m_Target: {fileID: 1782295605}
+        m_TargetAssemblyTypeName: VolumeAdjuster, Assembly-CSharp
+        m_MethodName: ChangeVolume
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4372,7 +4372,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &1782295604
+--- !u!114 &1782295605
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4381,9 +4381,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1782295601}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52f82096e54a32e4ba28dc8a50dee695, type: 3}
+  m_Script: {fileID: 11500000, guid: 42deccfa165b9884083e6cd989942fac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  volumeSlider: {fileID: 1782295603}
 --- !u!1 &1794295250
 GameObject:
   m_ObjectHideFlags: 0
