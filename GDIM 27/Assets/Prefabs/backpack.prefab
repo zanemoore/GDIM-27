@@ -137,6 +137,7 @@ MonoBehaviour:
   throwForce: 1000
   soundRange: 50
   startGameAttenuation: 0
+  hide: {fileID: 0}
   normalReticle: {fileID: 1720545098553308071, guid: 92584d68fbc83fd429ab883201cb2ce9,
     type: 3}
   grabReticle: {fileID: 8606547149915481654, guid: 7e6603689b155014e8dd5fdd935f5a14,
@@ -162,7 +163,7 @@ MonoBehaviour:
       Data2: 1299906615
       Data3: -61965927
       Data4: -713467054
-    Path: event:/Bag
+    Path: event:/Thorwables/Bag
   Event: 
   PlayEvent: 0
   StopEvent: 0

@@ -488,6 +488,10 @@ MonoBehaviour:
   throwForce: 1000
   soundRange: 1000
   startGameAttenuation: 0
+  hide: {fileID: 0}
+  normalReticle: {fileID: 0}
+  grabReticle: {fileID: 0}
+  throwReticle: {fileID: 0}
 --- !u!54 &151695762
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -601,7 +605,7 @@ MonoBehaviour:
       Data2: 1076392996
       Data3: 1257770942
       Data4: 952587515
-    Path: event:/Bottle Drop
+    Path: event:/Thorwables/Bottle Drop
   Event: 
   PlayEvent: 0
   StopEvent: 0
@@ -612,7 +616,7 @@ MonoBehaviour:
   Params: []
   OverrideAttenuation: 0
   OverrideMinDistance: 1
-  OverrideMaxDistance: 20
+  OverrideMaxDistance: 65
 --- !u!1001 &167619961
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -991,6 +995,10 @@ MonoBehaviour:
   throwForce: 1000
   soundRange: 1000
   startGameAttenuation: 0
+  hide: {fileID: 0}
+  normalReticle: {fileID: 0}
+  grabReticle: {fileID: 0}
+  throwReticle: {fileID: 0}
 --- !u!54 &262494107
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1104,7 +1112,7 @@ MonoBehaviour:
       Data2: 1076392996
       Data3: 1257770942
       Data4: 952587515
-    Path: event:/Bottle Drop
+    Path: event:/Thorwables/Bottle Drop
   Event: 
   PlayEvent: 0
   StopEvent: 0
@@ -1535,6 +1543,10 @@ MonoBehaviour:
   throwForce: 1000
   soundRange: 1000
   startGameAttenuation: 0
+  hide: {fileID: 0}
+  normalReticle: {fileID: 0}
+  grabReticle: {fileID: 0}
+  throwReticle: {fileID: 0}
 --- !u!114 &441283939
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1554,7 +1566,7 @@ MonoBehaviour:
       Data2: 1232240301
       Data3: 310882986
       Data4: 81995463
-    Path: event:/Book Throw
+    Path: event:/Thorwables/Book Throw
   Event: 
   PlayEvent: 0
   StopEvent: 0
@@ -1708,6 +1720,7 @@ MonoBehaviour:
   _input: {fileID: 2006620068}
   flashLight: {fileID: 820146697}
   flashlightEmitter: {fileID: 0}
+  pauseMenu: {fileID: 0}
 --- !u!1 &542508511
 GameObject:
   m_ObjectHideFlags: 0
@@ -2002,9 +2015,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44592c2664984c9418b10edf90264899, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startTimer: 0
   _input: {fileID: 2006620068}
   animator: {fileID: 640947256}
-  phoneActive: 0
+  clockText: {fileID: 0}
+  time: 0
+  timeScale: 0
+  textContainer: {fileID: 0}
+  textPrefab: {fileID: 0}
+  recievedText: 0
+  texts: []
+  vibrateEmitter: {fileID: 0}
+  selectEmitter: {fileID: 0}
+  eerieEmitter: {fileID: 0}
 --- !u!1 &695925836
 GameObject:
   m_ObjectHideFlags: 0
@@ -2048,6 +2071,10 @@ MonoBehaviour:
   throwForce: 1000
   soundRange: 1000
   startGameAttenuation: 0
+  hide: {fileID: 0}
+  normalReticle: {fileID: 0}
+  grabReticle: {fileID: 0}
+  throwReticle: {fileID: 0}
 --- !u!54 &695925838
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2161,7 +2188,7 @@ MonoBehaviour:
       Data2: 1232240301
       Data3: 310882986
       Data4: 81995463
-    Path: event:/Book Throw
+    Path: event:/Thorwables/Book Throw
   Event: 
   PlayEvent: 0
   StopEvent: 0
@@ -2172,7 +2199,7 @@ MonoBehaviour:
   Params: []
   OverrideAttenuation: 0
   OverrideMinDistance: 1
-  OverrideMaxDistance: 20
+  OverrideMaxDistance: 65
 --- !u!1001 &746329221
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3554,13 +3581,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mascotModel: {fileID: 1501989962}
   mascotAnimator: {fileID: 234300973}
+  meter: {fileID: 0}
   awarenessMeter: {fileID: 1401051991}
   awarenessValueText: {fileID: 1883678909}
   awarenessMaxValue: 100
   value: 50
+  runTickUp: 0
   tickUp: 0
   tickDown: 0
   playerModel: {fileID: 5393215579111688472}
+  playerController: {fileID: 0}
   agent: {fileID: 1501989966}
   playerLayer:
     serializedVersion: 2
@@ -3586,11 +3616,10 @@ MonoBehaviour:
   - {fileID: 1710829238}
   - {fileID: 1390235620}
   - {fileID: 899311814}
-  meter: {fileID: 0}
+  _jumpscareObject: {fileID: 0}
+  _jumpscareVideo: {fileID: 0}
   chaseEmitter: {fileID: 1501989967}
-  meter25Emitter: {fileID: 1501989968}
   meter50Emitter: {fileID: 1501989970}
-  meter75Emitter: {fileID: 1501989969}
   hide: {fileID: 5393215579111688478}
 --- !u!54 &1501989965
 Rigidbody:
@@ -6053,14 +6082,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6514a2e35207f1a44bfd58d98535afeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cameraFlashLight: {fileID: 0}
+  PlayerFlashLight: {fileID: 0}
+  FL: {fileID: 0}
   FPC: {fileID: 5393215579111688475}
   oldCamera: {fileID: 1616247783}
   oldGameObject: {fileID: 5393215579111688474}
   seconds: 2
+  allowed: 0
   body: {fileID: 5393215579111688473}
   isHidden: 0
   breathingEmitter: {fileID: 0}
   _input: {fileID: 2006620068}
+  playingAnim: 0
+  pause: {fileID: 0}
+  leaveHideReticle: {fileID: 0}
+  hideReticle: {fileID: 0}
+  normalReticle: {fileID: 0}
+  grabReticle: {fileID: 0}
+  doorReticle: {fileID: 0}
+  exitReticle: {fileID: 0}
+  tables: []
 --- !u!114 &5393215579111688486
 MonoBehaviour:
   m_ObjectHideFlags: 0

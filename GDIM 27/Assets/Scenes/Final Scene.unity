@@ -1797,7 +1797,7 @@ MonoBehaviour:
       Data2: 1299906615
       Data3: -61965927
       Data4: -713467054
-    Path: event:/Bag
+    Path: event:/Thorwables/Bag
   Event: 
   PlayEvent: 0
   StopEvent: 0
@@ -1808,7 +1808,7 @@ MonoBehaviour:
   Params: []
   OverrideAttenuation: 0
   OverrideMinDistance: 1
-  OverrideMaxDistance: 30
+  OverrideMaxDistance: 65
 --- !u!1001 &119158327
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3259,7 +3259,7 @@ MonoBehaviour:
       Data2: 1232240301
       Data3: 310882986
       Data4: 81995463
-    Path: event:/Book Throw
+    Path: event:/Thorwables/Book Throw
   Event: 
   PlayEvent: 0
   StopEvent: 0
@@ -3270,7 +3270,7 @@ MonoBehaviour:
   Params: []
   OverrideAttenuation: 0
   OverrideMinDistance: 1
-  OverrideMaxDistance: 30
+  OverrideMaxDistance: 65
 --- !u!114 &232624502
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4362,7 +4362,7 @@ MonoBehaviour:
       Data2: 1299906615
       Data3: -61965927
       Data4: -713467054
-    Path: event:/Bag
+    Path: event:/Thorwables/Bag
   Event: 
   PlayEvent: 0
   StopEvent: 0
@@ -4373,7 +4373,7 @@ MonoBehaviour:
   Params: []
   OverrideAttenuation: 0
   OverrideMinDistance: 1
-  OverrideMaxDistance: 30
+  OverrideMaxDistance: 65
 --- !u!114 &276426027
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5148,7 +5148,7 @@ MonoBehaviour:
       Data2: 1076392996
       Data3: 1257770942
       Data4: 952587515
-    Path: event:/Bottle Drop
+    Path: event:/Thorwables/Bottle Drop
   Event: 
   PlayEvent: 0
   StopEvent: 0
@@ -5159,7 +5159,7 @@ MonoBehaviour:
   Params: []
   OverrideAttenuation: 0
   OverrideMinDistance: 1
-  OverrideMaxDistance: 30
+  OverrideMaxDistance: 65
 --- !u!1001 &325342572
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5340,7 +5340,7 @@ MonoBehaviour:
       Data2: 1232240301
       Data3: 310882986
       Data4: 81995463
-    Path: event:/Book Throw
+    Path: event:/Thorwables/Book Throw
   Event: 
   PlayEvent: 0
   StopEvent: 0
@@ -5351,7 +5351,7 @@ MonoBehaviour:
   Params: []
   OverrideAttenuation: 0
   OverrideMinDistance: 1
-  OverrideMaxDistance: 30
+  OverrideMaxDistance: 65
 --- !u!1 &330320904 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9215267474699151773, guid: c316f4e38a47fbb45944ce4eb5e12871,
@@ -9607,7 +9607,7 @@ MonoBehaviour:
       Data2: 1076392996
       Data3: 1257770942
       Data4: 952587515
-    Path: event:/Bottle Drop
+    Path: event:/Thorwables/Bottle Drop
   Event: 
   PlayEvent: 0
   StopEvent: 0
@@ -9818,7 +9818,7 @@ MonoBehaviour:
       Data2: 1299906615
       Data3: -61965927
       Data4: -713467054
-    Path: event:/Bag
+    Path: event:/Thorwables/Bag
   Event: 
   PlayEvent: 0
   StopEvent: 0
@@ -9829,7 +9829,7 @@ MonoBehaviour:
   Params: []
   OverrideAttenuation: 0
   OverrideMinDistance: 1
-  OverrideMaxDistance: 30
+  OverrideMaxDistance: 65
 --- !u!114 &650349421
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11052,7 +11052,7 @@ MonoBehaviour:
       Data2: 1232240301
       Data3: 310882986
       Data4: 81995463
-    Path: event:/Book Throw
+    Path: event:/Thorwables/Book Throw
   Event: 
   PlayEvent: 0
   StopEvent: 0
@@ -11063,7 +11063,7 @@ MonoBehaviour:
   Params: []
   OverrideAttenuation: 0
   OverrideMinDistance: 1
-  OverrideMaxDistance: 30
+  OverrideMaxDistance: 65
 --- !u!1001 &777990694
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11923,7 +11923,7 @@ MonoBehaviour:
       Data2: 1076392996
       Data3: 1257770942
       Data4: 952587515
-    Path: event:/Bottle Drop
+    Path: event:/Thorwables/Bottle Drop
   Event: 
   PlayEvent: 0
   StopEvent: 0
@@ -17933,7 +17933,7 @@ MonoBehaviour:
       Data2: 1299906615
       Data3: -61965927
       Data4: -713467054
-    Path: event:/Bag
+    Path: event:/Thorwables/Bag
   Event: 
   PlayEvent: 0
   StopEvent: 0
@@ -17944,7 +17944,7 @@ MonoBehaviour:
   Params: []
   OverrideAttenuation: 0
   OverrideMinDistance: 1
-  OverrideMaxDistance: 30
+  OverrideMaxDistance: 65
 --- !u!1 &1209441100 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9215267474699151773, guid: c316f4e38a47fbb45944ce4eb5e12871,
@@ -19181,7 +19181,7 @@ MonoBehaviour:
       Data2: 1299906615
       Data3: -61965927
       Data4: -713467054
-    Path: event:/Bag
+    Path: event:/Thorwables/Bag
   Event: 
   PlayEvent: 0
   StopEvent: 0
@@ -19192,7 +19192,7 @@ MonoBehaviour:
   Params: []
   OverrideAttenuation: 0
   OverrideMinDistance: 1
-  OverrideMaxDistance: 30
+  OverrideMaxDistance: 65
 --- !u!1 &1318223077
 GameObject:
   m_ObjectHideFlags: 0
@@ -25011,7 +25011,7 @@ MonoBehaviour:
       Data2: 1076392996
       Data3: 1257770942
       Data4: 952587515
-    Path: event:/Bottle Drop
+    Path: event:/Thorwables/Bottle Drop
   Event: 
   PlayEvent: 0
   StopEvent: 0
@@ -25022,7 +25022,7 @@ MonoBehaviour:
   Params: []
   OverrideAttenuation: 0
   OverrideMinDistance: 1
-  OverrideMaxDistance: 30
+  OverrideMaxDistance: 65
 --- !u!114 &1696268772
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32043,7 +32043,7 @@ MonoBehaviour:
       Data2: 1076392996
       Data3: 1257770942
       Data4: 952587515
-    Path: event:/Bottle Drop
+    Path: event:/Thorwables/Bottle Drop
   Event: 
   PlayEvent: 0
   StopEvent: 0
@@ -35786,7 +35786,7 @@ PrefabInstance:
     - target: {fileID: 6559610269838384094, guid: beb1c755e2023f542a0ed955bfa94395,
         type: 3}
       propertyPath: OverrideMaxDistance
-      value: 30
+      value: 65
       objectReference: {fileID: 0}
     - target: {fileID: 7003072441101492570, guid: beb1c755e2023f542a0ed955bfa94395,
         type: 3}
