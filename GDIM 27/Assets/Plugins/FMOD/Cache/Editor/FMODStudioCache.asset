@@ -56,6 +56,57 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 0
+--- !u!114 &-7120410036629500587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Thorwables/Bottle Drop
+  m_EditorClassIdentifier: 
+  Path: event:/Thorwables/Bottle Drop
+  Guid:
+    Data1: 1151784057
+    Data2: 1076392996
+    Data3: 1257770942
+    Data4: 952587515
+  Banks:
+  - {fileID: 4627781995349910453}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 65
+  Length: 0
+--- !u!114 &-6020711210949599969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Jumpscare
+  m_EditorClassIdentifier: 
+  Name: Jumpscare
+  StudioPath: parameter:/Jumpscare
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 2990948847
+    data2: 4131710087
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &-5256161481489608388
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -98,7 +149,7 @@ MonoBehaviour:
   Path: Assets/FMOD/EaterFMOD/Build/Desktop/Meter.bank
   Name: Meter
   StudioPath: bank:/Meter
-  lastModified: 638214186342572477
+  lastModified: 638218502797414196
   FileSizes:
   - Name: Desktop
     Value: 120288
@@ -154,6 +205,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-3989559662074122500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Thorwables/Book Throw
+  m_EditorClassIdentifier: 
+  Path: event:/Thorwables/Book Throw
+  Guid:
+    Data1: 1869813752
+    Data2: 1232240301
+    Data3: 310882986
+    Data4: 81995463
+  Banks:
+  - {fileID: 4627781995349910453}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 65
+  Length: 0
 --- !u!114 &-3410225187286144995
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -198,10 +276,10 @@ MonoBehaviour:
   Path: Assets/FMOD/EaterFMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638214186340149511
+  lastModified: 638218502795590962
   FileSizes:
   - Name: Desktop
-    Value: 2360
+    Value: 2514
   Exists: 1
 --- !u!114 &-2452981991780814737
 MonoBehaviour:
@@ -257,33 +335,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &-1986189287854126476
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Bottle Drop
-  m_EditorClassIdentifier: 
-  Path: event:/Bottle Drop
-  Guid:
-    Data1: 1151784057
-    Data2: 1076392996
-    Data3: 1257770942
-    Data4: 952587515
-  Banks:
-  - {fileID: 4627781995349910453}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 30
-  Length: 0
 --- !u!114 &-1724743631007215504
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -310,6 +361,33 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
+  Length: 0
+--- !u!114 &-1635987923665438954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Thorwables/Bag
+  m_EditorClassIdentifier: 
+  Path: event:/Thorwables/Bag
+  Guid:
+    Data1: 349156713
+    Data2: 1299906615
+    Data3: -61965927
+    Data4: -713467054
+  Banks:
+  - {fileID: 4627781995349910453}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 65
   Length: 0
 --- !u!114 &-1254076989390477281
 MonoBehaviour:
@@ -338,6 +416,60 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-589744542844322034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Wake up zotty
+  m_EditorClassIdentifier: 
+  Path: event:/Wake up zotty
+  Guid:
+    Data1: 1491853792
+    Data2: 1109285458
+    Data3: 188586653
+    Data4: -62265990
+  Banks:
+  - {fileID: -86259054732126995}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 6000
+--- !u!114 &-411063900755194990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Zots
+  m_EditorClassIdentifier: 
+  Path: event:/Zots
+  Guid:
+    Data1: -138636713
+    Data2: 1146949539
+    Data3: 2022115741
+    Data4: 197599555
+  Banks:
+  - {fileID: -86259054732126995}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 65
+  Length: 0
 --- !u!114 &-86259054732126995
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -353,10 +485,10 @@ MonoBehaviour:
   Path: Assets/FMOD/EaterFMOD/Build/Desktop/Boss.bank
   Name: Boss
   StudioPath: bank:/Boss
-  lastModified: 638214186311540851
+  lastModified: 638218502775947387
   FileSizes:
   - Name: Desktop
-    Value: 1142848
+    Value: 1323328
   Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
@@ -395,21 +527,24 @@ MonoBehaviour:
   - {fileID: 1066526788211260054}
   - {fileID: 6347410081465306984}
   - {fileID: 8511330613215166649}
-  - {fileID: 1650061477522590460}
-  - {fileID: -1986189287854126476}
   - {fileID: 3938977572443644795}
   - {fileID: 8266210206736970803}
   - {fileID: -2452981991780814737}
   - {fileID: 5234204711259811318}
   - {fileID: -1724743631007215504}
   - {fileID: -2048630989161149628}
-  - {fileID: 3317290563218285604}
-  EditorParameters: []
+  - {fileID: -411063900755194990}
+  - {fileID: -589744542844322034}
+  - {fileID: -1635987923665438954}
+  - {fileID: -7120410036629500587}
+  - {fileID: -3989559662074122500}
+  EditorParameters:
+  - {fileID: -6020711210949599969}
   MasterBanks:
   - {fileID: 9136850263896283881}
   StringsBanks:
   - {fileID: -2709601502412253561}
-  cacheTime: 638214186366817613
+  cacheTime: 638218502815188962
   cacheVersion: 131603
 --- !u!114 &976500848957892584
 MonoBehaviour:
@@ -465,33 +600,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &1650061477522590460
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Bag
-  m_EditorClassIdentifier: 
-  Path: event:/Bag
-  Guid:
-    Data1: 349156713
-    Data2: 1299906615
-    Data3: -61965927
-    Data4: -713467054
-  Banks:
-  - {fileID: 4627781995349910453}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 30
-  Length: 0
 --- !u!114 &2443919068483665891
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -543,33 +651,6 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
---- !u!114 &3317290563218285604
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Book Throw
-  m_EditorClassIdentifier: 
-  Path: event:/Book Throw
-  Guid:
-    Data1: 1869813752
-    Data2: 1232240301
-    Data3: 310882986
-    Data4: 81995463
-  Banks:
-  - {fileID: 4627781995349910453}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 30
-  Length: 0
 --- !u!114 &3468615465275629707
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -666,7 +747,7 @@ MonoBehaviour:
   Path: Assets/FMOD/EaterFMOD/Build/Desktop/Player.bank
   Name: Player
   StudioPath: bank:/Player
-  lastModified: 638214186346209100
+  lastModified: 638218502800179625
   FileSizes:
   - Name: Desktop
     Value: 611424
@@ -686,7 +767,7 @@ MonoBehaviour:
   Path: Assets/FMOD/EaterFMOD/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638214186366817613
+  lastModified: 638218502815188962
   FileSizes:
   - Name: Desktop
     Value: 1245664
@@ -923,8 +1004,8 @@ MonoBehaviour:
   Path: Assets/FMOD/EaterFMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638214186340119313
+  lastModified: 638218502795570905
   FileSizes:
   - Name: Desktop
-    Value: 1427232
+    Value: 1427680
   Exists: 1
