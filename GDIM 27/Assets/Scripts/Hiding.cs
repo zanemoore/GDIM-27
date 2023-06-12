@@ -105,10 +105,11 @@ public class Hiding : MonoBehaviour
 
     public void ToggleCamera(InputAction.CallbackContext context)
     {
-        if (pause.isPaused == true)
+        if (pause.isPaused)
         {
             return;
         }
+
         if (!allowed)
             return;
 

@@ -6682,7 +6682,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &432411782
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13535,7 +13535,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: -1.4999847, y: -0.099998474}
   m_SizeDelta: {x: -0.142, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -30603,10 +30603,14 @@ MonoBehaviour:
   clockText: {fileID: 1440373272}
   time: 5220
   timeScale: 6
+  sunriseTime: 20460
   textContainer: {fileID: 972396520}
   textPrefab: {fileID: 4179402891730799114, guid: cd97b314bb05ef34eb20a376b483a1ea,
     type: 3}
+  sunriseColor: {r: 0.9622642, g: 0.81367475, b: 0.004538993, a: 0}
+  envLight: {fileID: 1780279815}
   recievedText: 0
+  THESUNRISE: 0
   texts:
   - time: 540
     text: "How\u2019s that studying going? \nWanna go see a movie after class tomorrow? "
@@ -34078,6 +34082,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Mascot
+      objectReference: {fileID: 0}
+    - target: {fileID: 6249156008004851013, guid: 57165a9fe820e2d45a893b83d4eb7dfb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6249156008004851017, guid: 57165a9fe820e2d45a893b83d4eb7dfb,
         type: 3}

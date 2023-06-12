@@ -64,7 +64,7 @@ public class MascotAI : MonoBehaviour, MascotHearing
     //Uneditable Variables
     private float waitTime;
     private float rotateTime;
-    private bool playerInRange;
+    [SerializeField] private bool playerInRange;
     private bool playerNear;
     private bool isPatrol;
     public bool isChasing { get ; private set; }
@@ -116,6 +116,16 @@ public class MascotAI : MonoBehaviour, MascotHearing
     private void Update()
     {
         DangerMeter();
+
+        if (Phone.isSunrise) // Added sunrise bool here -JOSH
+        {
+            isPatrol = false;
+            isDistracted = false;
+            isHunting = false;
+            playerInRange = true;
+        }
+
+      
 
         if ((hide.isHidden == true) && (isPatrol == true))
         {
@@ -204,11 +214,11 @@ public class MascotAI : MonoBehaviour, MascotHearing
             Transform player = playerInView[i].transform;
             Vector3 directionToPlayer = (player.position - transform.position).normalized;
 
-            if (Vector3.Angle(transform.forward, directionToPlayer) < viewAngle / 2)
+            if (Vector3.Angle(transform.forward, directionToPlayer) < viewAngle / 2 || Phone.isSunrise) // Added sunrise bool here -JOSH
             {
                 float distanceToPlayer = Vector3.Distance(transform.position, player.position);
 
-                if (!Physics.Raycast(transform.position, directionToPlayer, distanceToPlayer, wallLayer))
+                if (!Physics.Raycast(transform.position, directionToPlayer, distanceToPlayer, wallLayer) || Phone.isSunrise) // Added sunrise bool here -JOSH
                 {
                     meter.SetActive(true);
 
@@ -257,7 +267,7 @@ public class MascotAI : MonoBehaviour, MascotHearing
                 }
             }
 
-            if (Vector3.Distance(transform.position, player.position) > viewRadius)
+            if (Vector3.Distance(transform.position, player.position) > viewRadius && !Phone.isSunrise)
             {
                 playerInRange = false;
             }
@@ -360,7 +370,7 @@ public class MascotAI : MonoBehaviour, MascotHearing
             agent.SetDestination(playerPosition);
         }
 
-        if (agent.remainingDistance <= agent.stoppingDistance)
+        if (agent.remainingDistance <= agent.stoppingDistance || !Phone.isSunrise) // Added sunrise bool here -JOSH
         {
             if (waitTime <= 0 && !killPlayer && Vector3.Distance(transform.position, GameObject.FindGameObjectWithTag("Player").transform.position) >= 6f)
             {

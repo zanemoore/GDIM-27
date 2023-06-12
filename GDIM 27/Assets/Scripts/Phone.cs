@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using TMPro;
-using UnityEngine.UI;
-using Unity.XR.GoogleVr;
 using System;
+using System.Security.Cryptography;
 
 public class Phone : MonoBehaviour
 {
@@ -30,12 +29,16 @@ public class Phone : MonoBehaviour
     [SerializeField] private TMP_Text clockText;
     [SerializeField] private float time;
     [SerializeField] private float timeScale; // how fast time should pass in game
+    [SerializeField] private float sunriseTime;
     
     [SerializeField] private Transform textContainer;
     [SerializeField] private GameObject textPrefab;
-
+    [SerializeField] private Color sunriseColor;
+    [SerializeField] private Light envLight; //environment Light 
+    
     public bool recievedText;
     private bool phoneActive;
+    public static bool isSunrise;
 
     [SerializeField] private List<TextMessage> texts = new List<TextMessage>();
 
@@ -61,6 +64,8 @@ public class Phone : MonoBehaviour
                 msg.sent = true;
             }
         }
+        
+        
 
     }
 
@@ -70,6 +75,7 @@ public class Phone : MonoBehaviour
         time += Time.deltaTime * timeScale;
         PhoneClock();
         CheckTimes();
+        CheckSunrise();
     }
 
     public void TogglePhone(InputAction.CallbackContext context)
@@ -93,6 +99,15 @@ public class Phone : MonoBehaviour
                 DisplayMessage(msg);
                 msg.sent = true;
             }
+        }
+    }
+
+    public void CheckSunrise()
+    {
+        if (time >= sunriseTime)
+        {
+            envLight.color = sunriseColor;
+            isSunrise = true;
         }
     }
 
