@@ -30610,7 +30610,6 @@ MonoBehaviour:
   sunriseColor: {r: 0.9622642, g: 0.81367475, b: 0.004538993, a: 0}
   envLight: {fileID: 1780279815}
   recievedText: 0
-  THESUNRISE: 0
   texts:
   - time: 540
     text: "How\u2019s that studying going? \nWanna go see a movie after class tomorrow? "
@@ -34086,7 +34085,7 @@ PrefabInstance:
     - target: {fileID: 6249156008004851013, guid: 57165a9fe820e2d45a893b83d4eb7dfb,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6249156008004851017, guid: 57165a9fe820e2d45a893b83d4eb7dfb,
         type: 3}
