@@ -142,7 +142,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{4b7481da-9322-4203-9549-cecac0ba7862}">
 		<property name="volume">
-			<value>-3</value>
+			<value>-5</value>
 		</property>
 		<property name="name">
 			<value>Audio 2</value>
@@ -169,7 +169,11 @@
 			<destination>{cf1556f4-67e1-4a99-8344-b8ae64a82f5f}</destination>
 		</relationship>
 	</object>
-	<object class="MixerBusPanner" id="{d6a9c104-b2a0-41f3-81d4-a1006aaa690d}" />
+	<object class="MixerBusPanner" id="{d6a9c104-b2a0-41f3-81d4-a1006aaa690d}">
+		<relationship name="modulators">
+			<destination>{3bc9884b-e99b-4bad-b4b3-26b5feacb998}</destination>
+		</relationship>
+	</object>
 	<object class="FadeCurve" id="{1cb2b935-1a7b-462b-b456-b32d4ee53e79}">
 		<relationship name="startPoint">
 			<destination>{6cbae850-42d2-4cac-9019-e74f218df314}</destination>
@@ -190,11 +194,23 @@
 		<relationship name="effects">
 			<destination>{71e22354-844e-4dca-bc0a-1dffb714c193}</destination>
 			<destination>{2ef1c022-1a3c-404c-a903-4d976324b77e}</destination>
+			<destination>{91260971-bab4-428e-9c8a-03ca555a0621}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{11b46d70-84c3-4334-a236-88668cb27bc2}" />
 	<object class="MixerBusFader" id="{5d0df500-e3ea-42ba-85b6-bb579f6c5cf0}" />
 	<object class="MixerBusFader" id="{cf1556f4-67e1-4a99-8344-b8ae64a82f5f}" />
+	<object class="LFOModulator" id="{3bc9884b-e99b-4bad-b4b3-26b5feacb998}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>stereoPan</value>
+		</property>
+		<property name="rate">
+			<value>1.70000005</value>
+		</property>
+		<property name="depth">
+			<value>100</value>
+		</property>
+	</object>
 	<object class="AutomationPoint" id="{6cbae850-42d2-4cac-9019-e74f218df314}">
 		<property name="position">
 			<value>2.25</value>
@@ -243,6 +259,11 @@
 		</property>
 		<property name="level">
 			<value>-14</value>
+		</property>
+	</object>
+	<object class="SFXReverbEffect" id="{91260971-bab4-428e-9c8a-03ca555a0621}">
+		<property name="dryLevel">
+			<value>-1.5</value>
 		</property>
 	</object>
 </objects>
