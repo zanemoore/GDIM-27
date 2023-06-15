@@ -13,7 +13,8 @@ public class LevelChanger : MonoBehaviour
     [SerializeField] private GameObject _playerCapsule;
     [SerializeField] private VideoPlayer _openingConversationVideo;
     [SerializeField] private float _timeInOpeningConvoToStartWhiteNoise;
-    [SerializeField] private Phone phone; 
+    [SerializeField] private Phone phone;
+    [SerializeField] private FlashLight _flashLight;
 
 
     void Start()
@@ -58,6 +59,8 @@ public class LevelChanger : MonoBehaviour
 
     private void LockControls()
     {
+        _flashLight.enabled = false;  // Prevents flashlight from being used during opening convo - Diego
+
         phone.enabled = false;  // Prevents phone from being used during opening convo - Diego
 
         _playerCapsule.GetComponent<FirstPersonController>().enabled = false;  // Prevents player from moving camera around during opening convo - Diego
@@ -68,6 +71,8 @@ public class LevelChanger : MonoBehaviour
 
     private void UnlockControls()
     {
+        _flashLight.enabled = true;
+
         phone.enabled = true;
         phone.startTimer = true;  // Phone time begins once DeleteLevelChanger is called (which is where this should be called as well)
 
