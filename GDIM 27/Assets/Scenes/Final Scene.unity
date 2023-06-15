@@ -6682,7 +6682,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &432411782
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13535,7 +13535,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: -1.4999847, y: -0.099998474}
   m_SizeDelta: {x: -0.142, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -30086,6 +30086,11 @@ PrefabInstance:
     - target: {fileID: 6688677874510296172, guid: e39598940180e104e873fb12a76d462b,
         type: 3}
       propertyPath: fpsController
+      value: 
+      objectReference: {fileID: 1082400911}
+    - target: {fileID: 6688677874510296172, guid: e39598940180e104e873fb12a76d462b,
+        type: 3}
+      propertyPath: _playerCapsule
       value: 
       objectReference: {fileID: 1082400911}
     m_RemovedComponents: []

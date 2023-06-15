@@ -82,12 +82,12 @@ public class Hiding : MonoBehaviour
         {
             hideableObject = other.gameObject;
             allowed = true;
-            Debug.Log("ACTUALLY ENTERED");
+            // Debug.Log("ACTUALLY ENTERED");
             //hideReticle.SetActive(true);
             normalReticle.SetActive(false);
         }
         
-        Debug.Log("OTHER ENTER");
+        // Debug.Log("OTHER ENTER");
         
     }
 

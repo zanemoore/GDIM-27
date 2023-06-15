@@ -85,7 +85,7 @@ namespace Sounds
             }
 
             dropEmitter.Play();
-            Debug.Log("Make a sound!");
+            // Debug.Log("Make a sound!");
 
             var sound = new ObjectSound(transform.position, soundRange);
 

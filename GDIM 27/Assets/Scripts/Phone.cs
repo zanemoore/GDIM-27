@@ -95,7 +95,7 @@ public class Phone : MonoBehaviour
         {
             if (msg.time <= time && !msg.sent)
             {
-                Debug.Log(msg.time);
+                // Debug.Log(msg.time);
                 DisplayMessage(msg);
                 msg.sent = true;
             }

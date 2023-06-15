@@ -10,7 +10,7 @@ public class LevelChanger : MonoBehaviour
     [SerializeField] private WhiteNoiseHandler whiteNoise;
     [SerializeField] private TextMeshProUGUI skipInstructions;
     [SerializeField] private KeyCode _skipButton;
-    [SerializeField] private GameObject fpsController;
+    [SerializeField] private GameObject _playerCapsule;
     [SerializeField] private VideoPlayer _openingConversationVideo;
     [SerializeField] private float _timeInOpeningConvoToStartWhiteNoise;
     [SerializeField] private Phone phone; 
@@ -60,14 +60,14 @@ public class LevelChanger : MonoBehaviour
 
     private void LockControls()
     {
-        fpsController.GetComponent<FirstPersonController>().enabled = false;
+        _playerCapsule.GetComponent<FirstPersonController>().enabled = false;
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
     }
 
     private void UnlockControls()
     {
-        fpsController.GetComponent<FirstPersonController>().enabled = true;
+        _playerCapsule.GetComponent<FirstPersonController>().enabled = true;
         Cursor.visible = false;
     }
 }
