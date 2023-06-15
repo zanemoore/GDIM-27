@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 7679696643187053454}
   - component: {fileID: 1728298031485020487}
   m_Layer: 0
-  m_Name: Waterbottle
+  m_Name: Waterbottle (NO SFX)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
