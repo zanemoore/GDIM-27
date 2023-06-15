@@ -10,7 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1000749840890861978}
   - component: {fileID: 750370304234716783}
-  - component: {fileID: 1623371465646198819}
+  - component: {fileID: -4694390894726692670}
+  - component: {fileID: -2761141044627343274}
   m_Layer: 0
   m_Name: Lounge Chair
   m_TagString: Untagged
@@ -47,14 +48,52 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 7.8, y: 9.6, z: 7.1}
   m_Center: {x: 3.5, y: 1.25, z: -2}
---- !u!81 &1623371465646198819
-AudioListener:
+--- !u!114 &-4694390894726692670
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 479826878889476896}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d34ae4d6dc1337543b08f8cdb4e47867, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chairEmitter: {fileID: -2761141044627343274}
+  isStandingOn: 0
+  startGameAttenuation: 0
+--- !u!114 &-2761141044627343274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 479826878889476896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -706232486
+      Data2: 1180056013
+      Data3: -2014816090
+      Data4: 348528934
+    Path: event:/Thorwables/Chair
+  Event: 
+  PlayEvent: 0
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 65
 --- !u!1 &8873634848242613241
 GameObject:
   m_ObjectHideFlags: 0

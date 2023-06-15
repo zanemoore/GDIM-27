@@ -95,6 +95,8 @@ GameObject:
   - component: {fileID: 676034586}
   - component: {fileID: 676034585}
   - component: {fileID: 8110540121875399738}
+  - component: {fileID: -1103314417020481310}
+  - component: {fileID: 9209815331044550468}
   m_Layer: 13
   m_Name: Wooden Chair
   m_TagString: Untagged
@@ -161,3 +163,49 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 5.2712555, y: 9.422568, z: 5.736894}
   m_Center: {x: 2.2721674, y: 2.2835252, z: -1.1997885}
+--- !u!114 &-1103314417020481310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9215267474699151773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -706232486
+      Data2: 1180056013
+      Data3: -2014816090
+      Data4: 348528934
+    Path: event:/Thorwables/Chair
+  Event: 
+  PlayEvent: 0
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 65
+--- !u!114 &9209815331044550468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9215267474699151773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d34ae4d6dc1337543b08f8cdb4e47867, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chairEmitter: {fileID: -1103314417020481310}
+  isStandingOn: 0
+  startGameAttenuation: 0
