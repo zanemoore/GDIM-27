@@ -126,14 +126,24 @@ namespace Sounds
             {
                 Rigidbody body = item.GetComponent<Rigidbody>();
 
-                if (hide != null && distance <= 3.5 && !hide.isHidden && !hide.allowed)
+                if (distance > 3.5)
                 {
-                    body.useGravity = false;
-                    body.detectCollisions = true;
-                    grabReticle.SetActive(true);
-                    normalReticle.SetActive(false);
+                    grabReticle.SetActive(false);
+                    normalReticle.SetActive(true);
                     throwReticle.SetActive(false);
                 }
+                else
+                {
+                    if (hide != null && distance <= 3.5 && !hide.isHidden && !hide.allowed)
+                    {
+                        body.useGravity = false;
+                        body.detectCollisions = true;
+                        grabReticle.SetActive(true);
+                        normalReticle.SetActive(false);
+                        throwReticle.SetActive(false);
+                    }
+                }
+                
             }
         }
 

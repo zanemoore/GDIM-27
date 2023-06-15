@@ -15787,6 +15787,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1089222880674915203, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
         type: 3}
+      propertyPath: pause
+      value: 
+      objectReference: {fileID: 1435696014}
+    - target: {fileID: 1089222880674915203, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
+        type: 3}
       propertyPath: mascot
       value: 
       objectReference: {fileID: 1386066627}

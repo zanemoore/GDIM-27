@@ -26,6 +26,7 @@ public class KeyPickUp : MonoBehaviour
     [SerializeField] private GameObject exitReticle;
     [SerializeField] private GameObject normalReticle;
     [SerializeField] private Hiding hide;
+    [SerializeField] private PauseMenu pause;
 
     private float timeWhenDisappear;
     private bool hasKey;
@@ -69,7 +70,7 @@ public class KeyPickUp : MonoBehaviour
                     doorReticle.SetActive(true);
                     normalReticle.SetActive(false);
                 }
-                if (Input.GetMouseButtonDown(0))
+                if (Input.GetMouseButtonDown(0) && !pause.isPaused)
                 {
                     TryOpenDoor(obj);
                 }
@@ -87,15 +88,18 @@ public class KeyPickUp : MonoBehaviour
 
 
         }
-        else
+        else if (Physics.Raycast(ray, out hit, maxInteractRange + 10f))
         {
-            if (!hide.allowed)
+            GameObject obj = hit.collider.gameObject;
+            if (obj.tag != "Throwable" && !hide.allowed)
             {
-                exitReticle.SetActive(false);
-                doorReticle.SetActive(false);
                 normalReticle.SetActive(true);
             }
+            exitReticle.SetActive(false);
+            doorReticle.SetActive(false);
+
         }
+    
 
         if (Time.time >= timeWhenDisappear)
         {
