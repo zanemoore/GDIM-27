@@ -53,15 +53,15 @@ public class LevelChanger : MonoBehaviour
 
         UnlockControls();
 
-        Destroy(gameObject);
+        Destroy(this.gameObject);
     }
 
 
     private void LockControls()
     {
-        _flashLight.enabled = false;  // Prevents flashlight from being used during opening convo - Diego
+        _flashLight.SetIsOpeningConvoPlaying(true);  // Prevents flashlight from being used during opening convo - Diego
 
-        phone.enabled = false;  // Prevents phone from being used during opening convo - Diego
+        phone.SetIsOpeningConvoPlaying(true);  // Prevents phone from being used during opening convo - Diego
 
         _playerCapsule.GetComponent<FirstPersonController>().enabled = false;  // Prevents player from moving camera around during opening convo - Diego
 
@@ -71,9 +71,9 @@ public class LevelChanger : MonoBehaviour
 
     private void UnlockControls()
     {
-        _flashLight.enabled = true;
+        _flashLight.SetIsOpeningConvoPlaying(false);
 
-        phone.enabled = true;
+        phone.SetIsOpeningConvoPlaying(false);
         phone.startTimer = true;  // Phone time begins once DeleteLevelChanger is called (which is where this should be called as well)
 
         _playerCapsule.GetComponent<FirstPersonController>().enabled = true;

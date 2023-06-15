@@ -38,6 +38,7 @@ public class Phone : MonoBehaviour
     
     public bool recievedText;
     private bool phoneActive;
+    private bool _isOpeningConvoPlaying;
     public static bool isSunrise;
 
     [SerializeField] private List<TextMessage> texts = new List<TextMessage>();
@@ -64,9 +65,8 @@ public class Phone : MonoBehaviour
                 msg.sent = true;
             }
         }
-        
-        
 
+        _isOpeningConvoPlaying = false;  // I'm defaulting it to false, but value should only be updated in LevelChanger - Diego
     }
 
     private void Update()
@@ -80,12 +80,15 @@ public class Phone : MonoBehaviour
 
     public void TogglePhone(InputAction.CallbackContext context)
     {
-        phoneActive = !phoneActive;
-        if (phoneActive)
+        if (!_isOpeningConvoPlaying)
         {
-            selectEmitter.Play();
+            phoneActive = !phoneActive;
+            if (phoneActive)
+            {
+                selectEmitter.Play();
+            }
+            animator.SetBool("On", phoneActive);
         }
-        animator.SetBool("On", phoneActive);
     }
 
 
@@ -155,6 +158,13 @@ public class Phone : MonoBehaviour
         yield return new WaitForSeconds(5f);
         animator.SetBool("Peek", false);
     }
+
+
+    public void SetIsOpeningConvoPlaying(bool isPlaying)    // Adding this to ensure phone doesn't display during opening convo. Called in LevelChanger - Diego
+    {
+        _isOpeningConvoPlaying = isPlaying;
+    }
+
 
     private void PhoneClock()
     {
