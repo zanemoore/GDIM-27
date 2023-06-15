@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="EncodableAsset" id="{1f040950-70df-4bdd-80bb-1a3a6c028565}">
+		<property name="assetPath">
+			<value>Chairs/</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{317a16db-c38b-4f03-82bf-20c8dc50849c}</destination>
+		</relationship>
+	</object>
+</objects>
