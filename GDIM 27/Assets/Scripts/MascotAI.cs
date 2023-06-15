@@ -82,6 +82,9 @@ public class MascotAI : MonoBehaviour, MascotHearing
     //audio
     public FMODUnity.StudioEventEmitter chaseEmitter;
     public FMODUnity.StudioEventEmitter meter50Emitter;
+    public FMODUnity.StudioEventEmitter walkEmitter;
+    public FMODUnity.StudioEventEmitter runEmitter;
+    public FMODUnity.StudioEventEmitter hitEmitter;
     
     public Hiding hide;
 
@@ -191,12 +194,26 @@ public class MascotAI : MonoBehaviour, MascotHearing
     {
         agent.isStopped = false;
         agent.speed = speed;
+
+        if (speed == walkSpeed)
+        {
+            walkEmitter.Play();
+        }
+        else
+        {
+            runEmitter.Play();
+        }
+
+        runEmitter.SetParameter("isSlowed", 0);
     }
 
     void Stop()
     {
         agent.isStopped = true;
         agent.speed = 0;
+
+        walkEmitter.Stop();
+        runEmitter.Stop();
     }
 
     private void NextPoint()
@@ -583,6 +600,8 @@ public class MascotAI : MonoBehaviour, MascotHearing
 
                 walkSpeed *= slowdownMultiplier;
                 runSpeed *= slowdownMultiplier;
+                hitEmitter.Play();
+                runEmitter.SetParameter("isSlowed", 1);
                 StartCoroutine(Slowdown());
             }
             else

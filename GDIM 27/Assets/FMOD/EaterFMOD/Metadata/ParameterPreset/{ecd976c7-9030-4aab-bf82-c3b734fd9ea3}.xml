@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="ParameterPreset" id="{ecd976c7-9030-4aab-bf82-c3b734fd9ea3}">
 		<property name="name">
-			<value>WalkRun</value>
+			<value>isSlowed</value>
 		</property>
 		<relationship name="folder">
 			<destination>{bd3d6ae4-2095-49ed-9857-471fbf79f512}</destination>
@@ -12,14 +12,11 @@
 		</relationship>
 	</object>
 	<object class="GameParameter" id="{ade19c04-40cd-42aa-991d-8287949b6299}">
-		<property name="parameterType">
-			<value>1</value>
-		</property>
-		<property name="maximum">
-			<value>2</value>
-		</property>
 		<property name="initialValue">
 			<value>0</value>
+		</property>
+		<property name="seekSpeed">
+			<value>1.8000000715255737</value>
 		</property>
 	</object>
 </objects>
