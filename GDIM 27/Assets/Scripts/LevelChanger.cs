@@ -41,14 +41,12 @@ public class LevelChanger : MonoBehaviour
     }
 
 
-    private void DeleteLevelChanger(VideoPlayer vp)
+    private void DeleteLevelChanger(VideoPlayer vp)  // VideoPlayer is a needed argument because this function is subscribed to an Action that requires it - Diego
     {
         if (!whiteNoise.IsPlaying())
         {
             whiteNoise.startNoise();
         }
-
-        phone.startTimer = true;
 
         skipInstructions.text = "";
 
@@ -60,14 +58,21 @@ public class LevelChanger : MonoBehaviour
 
     private void LockControls()
     {
-        _playerCapsule.GetComponent<FirstPersonController>().enabled = false;
+        phone.enabled = false;  // Prevents phone from being used during opening convo - Diego
+
+        _playerCapsule.GetComponent<FirstPersonController>().enabled = false;  // Prevents player from moving camera around during opening convo - Diego
+
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
     }
 
     private void UnlockControls()
     {
+        phone.enabled = true;
+        phone.startTimer = true;  // Phone time begins once DeleteLevelChanger is called (which is where this should be called as well)
+
         _playerCapsule.GetComponent<FirstPersonController>().enabled = true;
+
         Cursor.visible = false;
     }
 }
