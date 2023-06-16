@@ -13,6 +13,8 @@ public class MainMenuNavigator_TEMP : MonoBehaviour
     [SerializeField] GameObject mainMenu;//A game object representing base menu
     [SerializeField] GameObject settingsMenu;//A game object representing settings menu
     [SerializeField] GameObject loadingScreen; //A game object representing level select menu
+    [SerializeField] private GameObject _flashingLightsWarningScreen; // A game object representing the warning flashing lights screen
+    [SerializeField] private float _warningFlashingLightsScreenTime; // Time the warning flashing lights screen should stay up
 
     [SerializeField]
     List<int> resWidths;//A list of screen size widths
@@ -22,16 +24,28 @@ public class MainMenuNavigator_TEMP : MonoBehaviour
     public FMODUnity.StudioEventEmitter hover;
     public FMODUnity.StudioEventEmitter click;
 
+    private SaveBetweenScenes _saveBetweenScenes;
+    private float _startTime;
+
     // Adding this to Start to ensure cursor is visible at beginning
     void Start()
     {
         Cursor.visible = true;
         SetScreenRes(2);
         SetFullscreen(false);
+
+        _saveBetweenScenes = GameObject.Find("SaveBetweenScenes").GetComponent<SaveBetweenScenes>();
+        _startTime = Time.time;
     }
 
     private void Update()
     {
+        if (!_saveBetweenScenes.Replay)
+        {
+            bool keepWarningScreenUp = _warningFlashingLightsScreenTime > (Time.time - _startTime);
+            _flashingLightsWarningScreen.SetActive(keepWarningScreenUp);
+        }
+
         if (settingsMenu.activeSelf)
         {
             // Debug.Log("Settings is active.");
