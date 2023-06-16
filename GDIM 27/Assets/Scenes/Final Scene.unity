@@ -29129,6 +29129,18 @@ PrefabInstance:
       propertyPath: minTime
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 252920348, guid: 2d3a85ecde41a8246a79669975912b74, type: 3}
+      propertyPath: Params.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 252920348, guid: 2d3a85ecde41a8246a79669975912b74, type: 3}
+      propertyPath: Params.Array.data[0].Name
+      value: Panning
+      objectReference: {fileID: 0}
+    - target: {fileID: 252920348, guid: 2d3a85ecde41a8246a79669975912b74, type: 3}
+      propertyPath: Params.Array.data[0].Value
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 514435193, guid: 2d3a85ecde41a8246a79669975912b74, type: 3}
       propertyPath: _input
       value: 
