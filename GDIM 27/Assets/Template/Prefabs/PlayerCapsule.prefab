@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 560454018}
   - component: {fileID: 560454019}
   m_Layer: 0
-  m_Name: Flaslight
+  m_Name: FlashLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -657,7 +657,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraFlashLight: {fileID: 0}
-  PlayerFlashLight: {fileID: 1613977593}
+  PlayerFlashLight: {fileID: 1401099026}
   FL: {fileID: 560454019}
   FPC: {fileID: 8616685848737228371}
   oldCamera: {fileID: 8616685848737228372}
@@ -708,10 +708,18 @@ MonoBehaviour:
   zotEmitter: {fileID: 1082400924}
   uiInstructions: {fileID: 0}
   timeToAppear: 2
+  openingNonExitDoorTexts:
+  - This isn't the exit...
+  - Ugh this door is locked
+  - Dammit it's closed
+  - This isn't the exit door
+  - This door is locked
+  - I can't get out through here
   doorReticle: {fileID: 0}
   exitReticle: {fileID: 0}
   normalReticle: {fileID: 0}
   hide: {fileID: 1082400912}
+  pause: {fileID: 0}
 --- !u!114 &1082400915
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -913,11 +921,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: 119943382
-      Data2: 1075608481
-      Data3: -1308406362
-      Data4: 421381204
-    Path: event:/Eerie Message
+      Data1: -138636713
+      Data2: 1146949539
+      Data3: 2022115741
+      Data4: 197599555
+    Path: event:/Zots
   Event: 
   PlayEvent: 0
   StopEvent: 0
@@ -928,4 +936,4 @@ MonoBehaviour:
   Params: []
   OverrideAttenuation: 0
   OverrideMinDistance: 1
-  OverrideMaxDistance: 20
+  OverrideMaxDistance: 65

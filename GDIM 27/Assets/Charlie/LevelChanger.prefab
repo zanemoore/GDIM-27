@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 12919630}
   m_Layer: 5
-  m_Name: VehicleOfCinema
+  m_Name: Opening Cutscene
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48,6 +48,7 @@ GameObject:
   m_Component:
   - component: {fileID: 675474046}
   - component: {fileID: 675474047}
+  - component: {fileID: 1016662469}
   m_Layer: 5
   m_Name: Video Player
   m_TagString: Untagged
@@ -83,7 +84,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 675474045}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 050b890fea739964cbd9862ef7cd53a0, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: 6edda168a9b2edf428484ae6d2d024ac, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
@@ -110,6 +111,19 @@ VideoPlayer:
   m_WaitForFirstFrame: 1
   m_FrameReadyEventEnabled: 0
   m_VideoShaders: []
+--- !u!114 &1016662469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 675474045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 087585316fb39a144b1b52a20340ee0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vp: {fileID: 675474047}
 --- !u!1 &1416806927
 GameObject:
   m_ObjectHideFlags: 0
@@ -251,8 +265,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 0c30fbe315278064bb56eca16a2ef3e8, type: 2}
+  m_sharedMaterial: {fileID: 3975480418462663352, guid: 0c30fbe315278064bb56eca16a2ef3e8,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -466,8 +481,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   whiteNoise: {fileID: 0}
+  _ambientNoise: {fileID: 0}
   skipInstructions: {fileID: 1583171292}
   _skipButton: 32
-  fpsController: {fileID: 0}
+  _playerCapsule: {fileID: 0}
   _openingConversationVideo: {fileID: 675474047}
   _timeInOpeningConvoToStartWhiteNoise: 34
+  phone: {fileID: 0}
+  _flashLight: {fileID: 0}

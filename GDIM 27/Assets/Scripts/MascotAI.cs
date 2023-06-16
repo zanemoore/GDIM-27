@@ -85,7 +85,8 @@ public class MascotAI : MonoBehaviour, MascotHearing
     public FMODUnity.StudioEventEmitter walkEmitter;
     public FMODUnity.StudioEventEmitter runEmitter;
     public FMODUnity.StudioEventEmitter hitEmitter;
-    
+    [SerializeField] private FMODUnity.StudioEventEmitter _ambientNoiseEmitter;
+
     public Hiding hide;
 
     void Start()
@@ -625,6 +626,7 @@ public class MascotAI : MonoBehaviour, MascotHearing
 
     private void PlayJumpscare()
     {
+        Destroy(_ambientNoiseEmitter.gameObject);
         meter.SetActive(false);
         _jumpscareObject.SetActive(true);  // Play on Awake is set to true, so should automatically work - Diego
     }

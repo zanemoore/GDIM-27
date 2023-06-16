@@ -8,6 +8,7 @@ using UnityEngine.Video;
 public class LevelChanger : MonoBehaviour
 {
     [SerializeField] private WhiteNoiseHandler whiteNoise;
+    [SerializeField] private AmbientNoiseHandler _ambientNoise;
     [SerializeField] private TextMeshProUGUI skipInstructions;
     [SerializeField] private KeyCode _skipButton;
     [SerializeField] private GameObject _playerCapsule;
@@ -48,6 +49,8 @@ public class LevelChanger : MonoBehaviour
         {
             whiteNoise.startNoise();
         }
+
+        _ambientNoise.StartNoise();
 
         skipInstructions.text = "";
 
