@@ -626,7 +626,8 @@ public class MascotAI : MonoBehaviour, MascotHearing
 
     private void PlayJumpscare()
     {
-        Destroy(_ambientNoiseEmitter.gameObject);
+        if (_ambientNoiseEmitter)
+            Destroy(_ambientNoiseEmitter.gameObject);
         meter.SetActive(false);
         _jumpscareObject.SetActive(true);  // Play on Awake is set to true, so should automatically work - Diego
     }
