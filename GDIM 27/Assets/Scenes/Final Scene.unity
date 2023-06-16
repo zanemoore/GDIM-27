@@ -13840,8 +13840,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4.5, y: -25.4}
-  m_SizeDelta: {x: 123.39, y: 130.98}
+  m_AnchoredPosition: {x: 4.5001, y: -51.956924}
+  m_SizeDelta: {x: 123.39, y: 204.6938}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &972396521
 MonoBehaviour:
@@ -21212,7 +21212,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 00:00
+  m_text: 1:27
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -29819,6 +29819,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: OpeningConversation
       objectReference: {fileID: 0}
+    - target: {fileID: 6688677874510296161, guid: e39598940180e104e873fb12a76d462b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6688677874510296162, guid: e39598940180e104e873fb12a76d462b,
         type: 3}
       propertyPath: m_RootOrder
@@ -30495,7 +30500,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44592c2664984c9418b10edf90264899, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startTimer: 0
+  startTimer: 1
   _input: {fileID: 1082400907}
   animator: {fileID: 1963996464}
   clockText: {fileID: 1440373272}
@@ -30540,9 +30545,8 @@ MonoBehaviour:
     isPreloaded: 0
     playEerieSfx: 0
   - time: 0
-    text: "BRO I tried calling you but it won\u2019t go through for some reason.
-      Your roommate said that you\u2019re not back yet. If you don\u2019t respond
-      I have to call the cops."
+    text: "BRO I tried calling but it won\u2019t go through for some reason. Your
+      roommate said that you\u2019re not back yet?!"
     sender: Ben
     sent: 0
     random: 1
