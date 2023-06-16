@@ -69,7 +69,11 @@ public class Phone : MonoBehaviour
         }
 
         _sunriseWaitTime = sunriseWaitTime;
-        _isOpeningConvoPlaying = false;  // I'm defaulting it to false, but value should only be updated in LevelChanger - Diego
+
+        if (!_isOpeningConvoPlaying)  // This IF ensures bool isn't overwritten if SetIsOpeningConvoPlaying was called first
+        {
+            _isOpeningConvoPlaying = false;  // I'm defaulting it to false, but value should only be updated in LevelChanger - Diego
+        }
     }
 
     private void Update()

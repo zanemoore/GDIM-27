@@ -18,7 +18,11 @@ public class FlashLight : MonoBehaviour
     void Start()
     {
         _input.actions["Flashlight"].started += ToggleFlashlight;
-        _isOpeningConvoPlaying = false;  // I'm defaulting it to false, but value should only be updated in LevelChanger - Diego
+
+        if (!_isOpeningConvoPlaying)  // This IF ensures bool isn't overwritten if SetIsOpeningConvoPlaying was called first
+        {
+            _isOpeningConvoPlaying = false;  // I'm defaulting it to false, but value should only be updated in LevelChanger - Diego
+        }
     }
 
     public void ToggleFlashlight(InputAction.CallbackContext context)
