@@ -13,14 +13,19 @@ public class GameOverUINavigator : MonoBehaviour
     public FMODUnity.StudioEventEmitter hover;
     public FMODUnity.StudioEventEmitter click;
 
+    private SaveBetweenScenes _saveBetweenScenes;
+
     void Start()
     {
-        SaveBetweenScenes saveBetweenScenes = GameObject.Find("SaveBetweenScenes").GetComponent<SaveBetweenScenes>();
-        GameObject screen = saveBetweenScenes.PlayerWon ? _winScreenObject : _loseScreenObject;
+        _saveBetweenScenes = GameObject.Find("SaveBetweenScenes").GetComponent<SaveBetweenScenes>();
+        GameObject screen = _saveBetweenScenes.PlayerWon ? _winScreenObject : _loseScreenObject;
         screen.SetActive(true);
 
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+
+        _saveBetweenScenes.Replay = true;
+        _saveBetweenScenes.FirstTime = false;
     }
 
 

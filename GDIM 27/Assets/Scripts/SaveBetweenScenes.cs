@@ -8,9 +8,11 @@ public class SaveBetweenScenes : MonoBehaviour
 
     [SerializeField] private bool _playerWon;
     [SerializeField] private bool _replay;
+    [SerializeField] private bool _firstTime;
 
     public bool PlayerWon { get { return _playerWon; } set { _playerWon = value; } }
     public bool Replay { get { return _replay; } set { _replay = value; } }
+    public bool FirstTime { get { return _firstTime; } set { _firstTime = value; } }
 
     void Awake()
     {

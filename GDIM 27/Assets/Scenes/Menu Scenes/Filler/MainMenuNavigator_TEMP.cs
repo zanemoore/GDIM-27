@@ -40,7 +40,7 @@ public class MainMenuNavigator_TEMP : MonoBehaviour
 
     private void Update()
     {
-        if (!_saveBetweenScenes.Replay)
+        if (_saveBetweenScenes.FirstTime)
         {
             bool keepWarningScreenUp = _warningFlashingLightsScreenTime > (Time.time - _startTime);
             _flashingLightsWarningScreen.SetActive(keepWarningScreenUp);
