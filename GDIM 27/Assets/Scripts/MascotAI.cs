@@ -124,7 +124,7 @@ public class MascotAI : MonoBehaviour, MascotHearing
         if (Phone.isSunrise) // Added sunrise bool here -JOSH
         {
             meter.SetActive(true);
-            StartCoroutine(SunriseWaitTime());
+            /*StartCoroutine(SunriseWaitTime());*/
    
         }
 
