@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-7946701667387768858
+--- !u!114 &-9142824076375204274
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9,21 +9,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/MonsterRun/isSlowed
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Thorwables/Chair
   m_EditorClassIdentifier: 
-  Name: isSlowed
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 3342406137
-    data2: 3159423548
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
+  Path: event:/Thorwables/Chair
+  Guid:
+    Data1: -706232486
+    Data2: 1180056013
+    Data3: -2014816090
+    Data4: 348528934
+  Banks:
+  - {fileID: 4627781995349910453}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 65
+  Length: 0
 --- !u!114 &-7711551470936205876
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51,33 +54,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 7500
---- !u!114 &-7469062092450121466
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Thorwables/Chair
-  m_EditorClassIdentifier: 
-  Path: event:/Thorwables/Chair
-  Guid:
-    Data1: -706232486
-    Data2: 1180056013
-    Data3: -2014816090
-    Data4: 348528934
-  Banks:
-  - {fileID: 4627781995349910453}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 65
-  Length: 0
 --- !u!114 &-7348499614549267516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -107,7 +83,7 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 0
---- !u!114 &-6153422156030142030
+--- !u!114 &-6698854832667317077
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -117,50 +93,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Zots
+  m_Name: event:/Wake up zotty
   m_EditorClassIdentifier: 
-  Path: event:/Zots
+  Path: event:/Wake up zotty
   Guid:
-    Data1: -138636713
-    Data2: 1146949539
-    Data3: 2022115741
-    Data4: 197599555
+    Data1: 1491853792
+    Data2: 1109285458
+    Data3: 188586653
+    Data4: -62265990
   Banks:
   - {fileID: -86259054732126995}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
-  MaxDistance: 65
-  Length: 0
---- !u!114 &-5699914564027869758
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Thorwables/Book Throw
-  m_EditorClassIdentifier: 
-  Path: event:/Thorwables/Book Throw
-  Guid:
-    Data1: 1869813752
-    Data2: 1232240301
-    Data3: 310882986
-    Data4: 81995463
-  Banks:
-  - {fileID: 4627781995349910453}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 65
-  Length: 0
+  MaxDistance: 20
+  Length: 6000
 --- !u!114 &-5256161481489608388
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -203,7 +152,7 @@ MonoBehaviour:
   Path: Assets/FMOD/EaterFMOD/Build/Desktop/Meter.bank
   Name: Meter
   StudioPath: bank:/Meter
-  lastModified: 638224659773298883
+  lastModified: 638224684670299085
   FileSizes:
   - Name: Desktop
     Value: 120288
@@ -259,57 +208,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &-4092081781253888838
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Jumpscare
-  m_EditorClassIdentifier: 
-  Name: Jumpscare
-  StudioPath: parameter:/Jumpscare
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 2990948847
-    data2: 4131710087
-  Type: 0
-  IsGlobal: 1
-  Labels: []
-  Exists: 1
---- !u!114 &-3522063500398154728
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Wake up zotty
-  m_EditorClassIdentifier: 
-  Path: event:/Wake up zotty
-  Guid:
-    Data1: 1491853792
-    Data2: 1109285458
-    Data3: 188586653
-    Data4: -62265990
-  Banks:
-  - {fileID: -86259054732126995}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 6000
 --- !u!114 &-3410225187286144995
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -339,6 +237,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 38817
+--- !u!114 &-3389259208910327322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Zots
+  m_EditorClassIdentifier: 
+  Path: event:/Zots
+  Guid:
+    Data1: -138636713
+    Data2: 1146949539
+    Data3: 2022115741
+    Data4: 197599555
+  Banks:
+  - {fileID: -86259054732126995}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 65
+  Length: 0
 --- !u!114 &-2709601502412253561
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -354,12 +279,12 @@ MonoBehaviour:
   Path: Assets/FMOD/EaterFMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638224659773048153
+  lastModified: 638224684669690716
   FileSizes:
   - Name: Desktop
     Value: 2808
   Exists: 1
---- !u!114 &-2617502159446190057
+--- !u!114 &-2564011452928859567
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -368,21 +293,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/SFXeerie/Panning
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFXeerie
   m_EditorClassIdentifier: 
-  Name: Panning
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 979286529
-    data2: 2230942680
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
+  Path: event:/SFXeerie
+  Guid:
+    Data1: 512198049
+    Data2: 1305715384
+    Data3: -484925007
+    Data4: -1565424037
+  Banks:
+  - {fileID: 4627781995349910453}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 8080978723578950600}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-2452981991780814737
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -464,6 +393,34 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-1451218053863445117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/MonsterRun
+  m_EditorClassIdentifier: 
+  Path: event:/MonsterRun
+  Guid:
+    Data1: -1087669680
+    Data2: 1160994469
+    Data3: -1706510435
+    Data4: 974560318
+  Banks:
+  - {fileID: -86259054732126995}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 843357457981342700}
+  MinDistance: 1
+  MaxDistance: 100
+  Length: 6264
 --- !u!114 &-1254076989390477281
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -491,6 +448,60 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-315319080918884214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/MonsterWalk
+  m_EditorClassIdentifier: 
+  Path: event:/MonsterWalk
+  Guid:
+    Data1: -1701172371
+    Data2: 1093065518
+    Data3: 2131439293
+    Data4: -1968940381
+  Banks:
+  - {fileID: -86259054732126995}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 100
+  Length: 18048
+--- !u!114 &-232453424170046259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Thorwables/Bottle Drop
+  m_EditorClassIdentifier: 
+  Path: event:/Thorwables/Bottle Drop
+  Guid:
+    Data1: 1151784057
+    Data2: 1076392996
+    Data3: 1257770942
+    Data4: 952587515
+  Banks:
+  - {fileID: 4627781995349910453}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 65
+  Length: 0
 --- !u!114 &-86259054732126995
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -506,7 +517,7 @@ MonoBehaviour:
   Path: Assets/FMOD/EaterFMOD/Build/Desktop/Boss.bank
   Name: Boss
   StudioPath: bank:/Boss
-  lastModified: 638224659772657477
+  lastModified: 638224684648438697
   FileSizes:
   - Name: Desktop
     Value: 1539776
@@ -554,24 +565,75 @@ MonoBehaviour:
   - {fileID: 5234204711259811318}
   - {fileID: -1724743631007215504}
   - {fileID: -2048630989161149628}
-  - {fileID: 2518761555966933720}
-  - {fileID: -6153422156030142030}
-  - {fileID: 5556493495692783020}
-  - {fileID: -3522063500398154728}
-  - {fileID: -7469062092450121466}
-  - {fileID: 5970239262608688694}
-  - {fileID: 6219470043175213466}
-  - {fileID: 7754322313521425111}
-  - {fileID: 7641000021577368314}
-  - {fileID: -5699914564027869758}
+  - {fileID: -1451218053863445117}
+  - {fileID: -3389259208910327322}
+  - {fileID: -315319080918884214}
+  - {fileID: -6698854832667317077}
+  - {fileID: -9142824076375204274}
+  - {fileID: 5562808762789650969}
+  - {fileID: -232453424170046259}
+  - {fileID: -2564011452928859567}
+  - {fileID: 904463731953599440}
+  - {fileID: 9130937178754973982}
   EditorParameters:
-  - {fileID: -4092081781253888838}
+  - {fileID: 6304241287783732713}
   MasterBanks:
   - {fileID: 9136850263896283881}
   StringsBanks:
   - {fileID: -2709601502412253561}
-  cacheTime: 638224659775560824
+  cacheTime: 638224684690056295
   cacheVersion: 131603
+--- !u!114 &843357457981342700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/MonsterRun/isSlowed
+  m_EditorClassIdentifier: 
+  Name: isSlowed
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 3342406137
+    data2: 3159423548
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &904463731953599440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/MonsterHit
+  m_EditorClassIdentifier: 
+  Path: event:/MonsterHit
+  Guid:
+    Data1: -582693955
+    Data2: 1083179960
+    Data3: -1956762224
+    Data4: -277147741
+  Banks:
+  - {fileID: 4627781995349910453}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1606
 --- !u!114 &976500848957892584
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -653,34 +715,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &2518761555966933720
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/MonsterRun
-  m_EditorClassIdentifier: 
-  Path: event:/MonsterRun
-  Guid:
-    Data1: -1087669680
-    Data2: 1160994469
-    Data3: -1706510435
-    Data4: 974560318
-  Banks:
-  - {fileID: -86259054732126995}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 0
-  Parameters:
-  - {fileID: -7946701667387768858}
-  MinDistance: 1
-  MaxDistance: 100
-  Length: 6264
 --- !u!114 &2883158646395757570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -801,7 +835,7 @@ MonoBehaviour:
   Path: Assets/FMOD/EaterFMOD/Build/Desktop/Player.bank
   Name: Player
   StudioPath: bank:/Player
-  lastModified: 638224659773543318
+  lastModified: 638224684673193255
   FileSizes:
   - Name: Desktop
     Value: 611424
@@ -821,7 +855,7 @@ MonoBehaviour:
   Path: Assets/FMOD/EaterFMOD/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638224659775560824
+  lastModified: 638224684690056295
   FileSizes:
   - Name: Desktop
     Value: 1498624
@@ -880,7 +914,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &5556493495692783020
+--- !u!114 &5562808762789650969
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -890,23 +924,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/MonsterWalk
+  m_Name: event:/Thorwables/Bag
   m_EditorClassIdentifier: 
-  Path: event:/MonsterWalk
+  Path: event:/Thorwables/Bag
   Guid:
-    Data1: -1701172371
-    Data2: 1093065518
-    Data3: 2131439293
-    Data4: -1968940381
+    Data1: 349156713
+    Data2: 1299906615
+    Data3: -61965927
+    Data4: -713467054
   Banks:
-  - {fileID: -86259054732126995}
-  IsStream: 1
+  - {fileID: 4627781995349910453}
+  IsStream: 0
   Is3D: 1
-  IsOneShot: 0
+  IsOneShot: 1
   Parameters: []
   MinDistance: 1
-  MaxDistance: 100
-  Length: 18048
+  MaxDistance: 65
+  Length: 0
 --- !u!114 &5962943262500138387
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -934,7 +968,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 7047
---- !u!114 &5970239262608688694
+--- !u!114 &6304241287783732713
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -943,51 +977,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Thorwables/Bag
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Jumpscare
   m_EditorClassIdentifier: 
-  Path: event:/Thorwables/Bag
-  Guid:
-    Data1: 349156713
-    Data2: 1299906615
-    Data3: -61965927
-    Data4: -713467054
-  Banks:
-  - {fileID: 4627781995349910453}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 65
-  Length: 0
---- !u!114 &6219470043175213466
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Thorwables/Bottle Drop
-  m_EditorClassIdentifier: 
-  Path: event:/Thorwables/Bottle Drop
-  Guid:
-    Data1: 1151784057
-    Data2: 1076392996
-    Data3: 1257770942
-    Data4: 952587515
-  Banks:
-  - {fileID: 4627781995349910453}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 65
-  Length: 0
+  Name: Jumpscare
+  StudioPath: parameter:/Jumpscare
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 2990948847
+    data2: 4131710087
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &6347410081465306984
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1043,7 +1047,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 34601
---- !u!114 &7641000021577368314
+--- !u!114 &8080978723578950600
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1052,52 +1056,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/MonsterHit
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/SFXeerie/Panning
   m_EditorClassIdentifier: 
-  Path: event:/MonsterHit
-  Guid:
-    Data1: -582693955
-    Data2: 1083179960
-    Data3: -1956762224
-    Data4: -277147741
-  Banks:
-  - {fileID: 4627781995349910453}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 1606
---- !u!114 &7754322313521425111
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFXeerie
-  m_EditorClassIdentifier: 
-  Path: event:/SFXeerie
-  Guid:
-    Data1: 512198049
-    Data2: 1305715384
-    Data3: -484925007
-    Data4: -1565424037
-  Banks:
-  - {fileID: 4627781995349910453}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters:
-  - {fileID: -2617502159446190057}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
+  Name: Panning
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 979286529
+    data2: 2230942680
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &8266210206736970803
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1179,6 +1152,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 5757
+--- !u!114 &9130937178754973982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Thorwables/Book Throw
+  m_EditorClassIdentifier: 
+  Path: event:/Thorwables/Book Throw
+  Guid:
+    Data1: 1869813752
+    Data2: 1232240301
+    Data3: 310882986
+    Data4: 81995463
+  Banks:
+  - {fileID: 4627781995349910453}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 65
+  Length: 0
 --- !u!114 &9136850263896283881
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1194,7 +1194,7 @@ MonoBehaviour:
   Path: Assets/FMOD/EaterFMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638224659773018232
+  lastModified: 638224684669680734
   FileSizes:
   - Name: Desktop
     Value: 1427680
