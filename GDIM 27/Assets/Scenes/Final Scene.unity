@@ -9927,6 +9927,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &654951474 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 252920348, guid: 2d3a85ecde41a8246a79669975912b74,
+    type: 3}
+  m_PrefabInstance: {fileID: 1909647179}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &655948231
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20009,6 +20021,30 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2144508360}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1386066628 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1386066631, guid: 57165a9fe820e2d45a893b83d4eb7dfb,
+    type: 3}
+  m_PrefabInstance: {fileID: 2144508360}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1386066627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1386066630 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1386066629, guid: 57165a9fe820e2d45a893b83d4eb7dfb,
+    type: 3}
+  m_PrefabInstance: {fileID: 2144508360}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1386066627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1392890741
 GameObject:
   m_ObjectHideFlags: 0
@@ -30472,6 +30508,7 @@ MonoBehaviour:
   sunriseColor: {r: 0.9622642, g: 0.81367475, b: 0.004538993, a: 0}
   envLight: {fileID: 1780279815}
   recievedText: 0
+  sunriseWaitTime: 10
   texts:
   - time: 540
     text: "How\u2019s that studying going? \nWanna go see a movie after class tomorrow? "
@@ -34011,6 +34048,26 @@ PrefabInstance:
       objectReference: {fileID: 432411781}
     - target: {fileID: 6249156008004851023, guid: 57165a9fe820e2d45a893b83d4eb7dfb,
         type: 3}
+      propertyPath: phone
+      value: 
+      objectReference: {fileID: 1963996467}
+    - target: {fileID: 6249156008004851023, guid: 57165a9fe820e2d45a893b83d4eb7dfb,
+        type: 3}
+      propertyPath: gameVol
+      value: 
+      objectReference: {fileID: 247612985}
+    - target: {fileID: 6249156008004851023, guid: 57165a9fe820e2d45a893b83d4eb7dfb,
+        type: 3}
+      propertyPath: hitEmitter
+      value: 
+      objectReference: {fileID: 1386066628}
+    - target: {fileID: 6249156008004851023, guid: 57165a9fe820e2d45a893b83d4eb7dfb,
+        type: 3}
+      propertyPath: runEmitter
+      value: 
+      objectReference: {fileID: 1386066630}
+    - target: {fileID: 6249156008004851023, guid: 57165a9fe820e2d45a893b83d4eb7dfb,
+        type: 3}
       propertyPath: playerModel
       value: 
       objectReference: {fileID: 1082400909}
@@ -34039,6 +34096,11 @@ PrefabInstance:
       propertyPath: awarenessValueText
       value: 
       objectReference: {fileID: 1075270102}
+    - target: {fileID: 6249156008004851023, guid: 57165a9fe820e2d45a893b83d4eb7dfb,
+        type: 3}
+      propertyPath: _ambientNoiseEmitter
+      value: 
+      objectReference: {fileID: 654951474}
     - target: {fileID: 6249156008004851023, guid: 57165a9fe820e2d45a893b83d4eb7dfb,
         type: 3}
       propertyPath: waypoints.Array.data[0]

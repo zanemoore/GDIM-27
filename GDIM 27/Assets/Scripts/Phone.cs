@@ -40,6 +40,8 @@ public class Phone : MonoBehaviour
     private bool phoneActive;
     private bool _isOpeningConvoPlaying;
     public static bool isSunrise;
+    public float sunriseWaitTime;
+    public static float _sunriseWaitTime;
 
     [SerializeField] private List<TextMessage> texts = new List<TextMessage>();
 
@@ -66,6 +68,7 @@ public class Phone : MonoBehaviour
             }
         }
 
+        _sunriseWaitTime = sunriseWaitTime;
         _isOpeningConvoPlaying = false;  // I'm defaulting it to false, but value should only be updated in LevelChanger - Diego
     }
 
@@ -186,5 +189,7 @@ public class Phone : MonoBehaviour
 
         _input.actions["Phone"].started -= TogglePhone;
     }
+
+
 
 }

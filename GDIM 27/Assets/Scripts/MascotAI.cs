@@ -123,13 +123,10 @@ public class MascotAI : MonoBehaviour, MascotHearing
 
         if (Phone.isSunrise) // Added sunrise bool here -JOSH
         {
-            isPatrol = false;
-            isDistracted = false;
-            isHunting = false;
-            playerInRange = true;
+            meter.SetActive(true);
+            StartCoroutine(SunriseWaitTime());
+   
         }
-
-      
 
         if ((hide.isHidden == true) && (isPatrol == true))
         {
@@ -232,11 +229,11 @@ public class MascotAI : MonoBehaviour, MascotHearing
             Transform player = playerInView[i].transform;
             Vector3 directionToPlayer = (player.position - transform.position).normalized;
 
-            if (Vector3.Angle(transform.forward, directionToPlayer) < viewAngle / 2 || Phone.isSunrise) // Added sunrise bool here -JOSH
+            if (Vector3.Angle(transform.forward, directionToPlayer) < viewAngle / 2 ) // Added sunrise bool here -JOSH
             {
                 float distanceToPlayer = Vector3.Distance(transform.position, player.position);
 
-                if (!Physics.Raycast(transform.position, directionToPlayer, distanceToPlayer, wallLayer) || Phone.isSunrise) // Added sunrise bool here -JOSH
+                if (!Physics.Raycast(transform.position, directionToPlayer, distanceToPlayer, wallLayer)) // Added sunrise bool here -JOSH
                 {
                     meter.SetActive(true);
 
@@ -285,7 +282,7 @@ public class MascotAI : MonoBehaviour, MascotHearing
                 }
             }
 
-            if (Vector3.Distance(transform.position, player.position) > viewRadius && !Phone.isSunrise)
+            if (Vector3.Distance(transform.position, player.position) > viewRadius)
             {
                 playerInRange = false;
             }
@@ -388,7 +385,7 @@ public class MascotAI : MonoBehaviour, MascotHearing
             agent.SetDestination(playerPosition);
         }
 
-        if (agent.remainingDistance <= agent.stoppingDistance || !Phone.isSunrise) // Added sunrise bool here -JOSH
+        if (agent.remainingDistance <= agent.stoppingDistance) // Added sunrise bool here -JOSH
         {
             if (waitTime <= 0 && !killPlayer && Vector3.Distance(transform.position, GameObject.FindGameObjectWithTag("Player").transform.position) >= 6f)
             {
@@ -458,7 +455,7 @@ public class MascotAI : MonoBehaviour, MascotHearing
         }
 
         // increases danger meter when the mascot is chasing the player
-        if ((stopTimer == false) && (playerInRange == true))
+        if ((stopTimer == false) && (playerInRange == true) || Phone.isSunrise)
         {
             timerUp += Time.deltaTime;
         }
@@ -474,7 +471,6 @@ public class MascotAI : MonoBehaviour, MascotHearing
                 awarenessValueText.text = value.ToString();
             }
         }
-
         // decreases danger meter when the mascot is not chasing the player
         if ((stopTimer == false) && (playerInRange == false))
         {
@@ -668,4 +664,12 @@ public class MascotAI : MonoBehaviour, MascotHearing
     }
     */
     //COMMENT OUT WHEN BULDING GAME//
+
+    IEnumerator SunriseWaitTime()
+    {
+        Debug.Log("HELLO");
+        yield return new WaitForSeconds(Phone._sunriseWaitTime);
+        PlayJumpscare();
+    }
+
 }
